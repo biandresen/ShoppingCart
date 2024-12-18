@@ -1,0 +1,13 @@
+---------------------------------------
+#useFetch(string)
+---------------------------------------
+Input: URL (string)
+
+Logic:
+1. USE TanStack React Query's `useQuery` hook.
+2. FETCH data from the given URL.
+3. HANDLE loading and error states.
+4. RETURN fetched data, loading state, and error state.
+
+Output: { data, isLoading, error }
+
