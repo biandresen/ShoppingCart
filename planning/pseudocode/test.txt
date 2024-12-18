@@ -1,0 +1,4 @@
+GET 5 products from database
+  IF any product not have price THEN
+    REMOVE product, ELSE
+    PRINT products to screen
