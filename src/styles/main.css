@@ -2,9 +2,14 @@
 @import "variables.css";
 @import "utilities.css";
 @import "Header.module.css";
+@import "Home.module.css";
+
+body {
+  font-family: var(--font-primary);
+}
 
 .width-container {
-  width: var(--breakpoint-xxl);
+  width: var(--breakpoint-2xl);
   margin: auto;
 }
 
@@ -29,19 +34,19 @@
 h1 {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-m);
+  line-height: var(--line-height-xs);
 }
 
 h2 {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-m);
+  line-height: var(--line-height-xs);
 }
 
 h3 {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-xs);
 }
 
 h4 {
@@ -51,8 +56,8 @@ h4 {
 }
 
 h5 {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semi-bold);
   line-height: var(--line-height-xs);
 }
 
