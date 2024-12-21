@@ -21,6 +21,10 @@
   justify-content: center;
   align-items: center;
 }
+.u-double-buttons {
+  display: flex;
+  gap: var(--spacing-m);
+}
 
 .u-text-center {
   text-align: center;
