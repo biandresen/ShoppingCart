@@ -3,123 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Shopping Cart</title>
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body>
     <!-- <div id="root"></div> -->
     <header class="header">
-      <div class="header__branding">
-        <a href="/" aria-label="Plant Plaza Homepage">
-          <img
-            class="header__logo"
-            src="./src/assets/icons/plantPlazaLogo.png"
-            alt="Plant Plaza Logo"
-            loading="lazy"
-            style="width: 64px"
-          />
-        </a>
-        <h1 class="header__title">PLANT PLAZA</h1>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__nav-links">
-          <li class="header__nav-item">
-            <a href="/" class="header__nav-link header__nav-link--active"
-              >Home</a
-            >
-          </li>
-          <li class="header__nav-item">
-            <a href="/products" class="header__nav-link">Products</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="/about" class="header__nav-link">About</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="/contact" class="header__nav-link">Contact</a>
-          </li>
-        </ul>
-        <div class="header__nav-buttons">
-          <button
-            class="header__button header__button--outline"
-            type="button"
-            aria-label="Get Help"
-          >
-            Help
-          </button>
-          <button
-            class="header__button header__button--filled"
-            type="button"
-            aria-label="Search the site"
-          >
-            Search
-          </button>
-          <button
-            class="header__cart-button"
-            type="button"
-            aria-label="Open Shopping Cart"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xml:space="preserve"
-              width="56px"
-              height="56px"
-              style="
-                shape-rendering: geometricPrecision;
-                text-rendering: geometricPrecision;
-                image-rendering: optimizeQuality;
-                fill-rule: evenodd;
-                clip-rule: evenodd;
-              "
-              viewBox="0 0 6.82666 6.82666"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              aria-hidden="true"
-            >
-              <defs>
-                <style type="text/css">
-                  <![CDATA[
-                    .fil0 {
-                      fill: #A7410B;
-                    }
-                    .fil1 {
-                      fill: #FFFFFE;
-                    }
-                    .fil2 {
-                      fill: #FFFFFE;
-                      fill-rule: nonzero;
-                    }
-                  ]]>
-                </style>
-              </defs>
-              <g id="Layer_x0020_1">
-                <rect
-                  class="fil0"
-                  width="6.82666"
-                  height="6.82666"
-                  rx="0.853335"
-                  ry="0.853335"
-                />
-                <g id="_486076848">
-                  <path
-                    id="_512193792"
-                    class="fil1"
-                    d="M1.60805 2.02401l4.18407 0 0.148705 0 -0.0478701 0.140835 -0.572791 1.68516 -0.0246457 0.0725039 -0.076189 0 -3.15974 0 -0.0817008 0 -0.0212165 -0.0791693 -0.451535 -1.68516 -0.0359488 -0.134169 0.138866 0zm0.683732 1.28265l2.67333 0 -0.0739921 0.213339 -2.54153 0 -0.0578071 -0.213339zm-0.115098 -0.424764l2.93575 0 -0.0739921 0.213339 -2.80395 0 -0.0578071 -0.213339zm-0.11613 -0.428563l3.19863 0 0 0.00546457 -0.0720984 0.207874 -3.06872 0 -0.0578071 -0.213339z"
-                  />
-                  <polygon
-                    id="_512193264"
-                    class="fil2"
-                    points="0.885843,1.51369 1.4713,1.51369 1.553,1.51369 1.57422,1.59286 2.26067,4.15474 5.21719,4.15474 5.14478,4.36807 2.17897,4.36807 2.09727,4.36807 2.07605,4.28891 1.38959,1.72703 0.885843,1.72703 "
-                  />
-                  <path
-                    id="_512193216"
-                    class="fil2"
-                    d="M2.42267 4.51418c0.110276,0 0.21013,0.0447087 0.282409,0.116988 0.0722835,0.0722835 0.116992,0.172134 0.116992,0.282409 0,0.110283 -0.0447087,0.210134 -0.116992,0.282409 -0.0722756,0.0722835 -0.172134,0.116992 -0.282409,0.116992 -0.110276,0 -0.210126,-0.0447087 -0.282409,-0.116992 -0.0722795,-0.0722795 -0.116988,-0.172134 -0.116988,-0.282409 0,-0.110276 0.0447087,-0.210126 0.116988,-0.282406 0.0722835,-0.0722835 0.172134,-0.116992 0.282409,-0.116992zm0.131575 0.267823c-0.0336614,-0.0336614 -0.080185,-0.0544843 -0.131575,-0.0544843 -0.0513898,0 -0.0979094,0.0208228 -0.131575,0.0544882 -0.0336614,0.0336614 -0.0544843,0.0801811 -0.0544843,0.131571 0,0.0513898 0.0208228,0.0979134 0.0544843,0.131575 0.0336654,0.0336654 0.080185,0.0544882 0.131575,0.0544882 0.0513898,0 0.0979134,-0.0208268 0.131575,-0.0544882 0.0336614,-0.0336614 0.0544882,-0.0801811 0.0544882,-0.131575 0,-0.0513898 -0.0208228,-0.0979094 -0.0544882,-0.131575z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </button>
+      <div class="width-container u-flex-row">
+        <div class="header__branding">
+          <a href="/" aria-label="Plant Plaza Homepage">
+            <img
+              class="header__logo logo"
+              src="./src/assets/icons/plantPlazaLogo.png"
+              alt="Plant Plaza Logo"
+              loading="lazy"
+            />
+            <h1 class="header__title">PLANT PLAZA</h1>
+          </a>
         </div>
-      </nav>
+        <nav class="header__nav">
+          <ul class="header__nav-links">
+            <li class="header__nav-item">
+              <a href="/" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/products" class="header__nav-link">Products</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/about" class="header__nav-link">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/contact" class="header__nav-link">Contact</a>
+            </li>
+          </ul>
+          <div class="header__nav-buttons">
+            <button
+              class="header__button button--outline"
+              type="button"
+              aria-label="Get Help"
+            >
+              Help
+            </button>
+            <button
+              class="header__button button--filled"
+              type="button"
+              aria-label="Search the site"
+            >
+              Search
+            </button>
+            <button
+              class="header__cart-button"
+              type="button"
+              aria-label="Open Shopping Cart"
+            >
+              <img
+                class="header__cart-image"
+                src="./src/assets/icons/cartIcon.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main class="main">
