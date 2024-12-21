@@ -36,6 +36,7 @@
   gap: var(--spacing-m);
 }
 .header__cart-button {
+  position: relative;
   width: fit-content;
   background-color: transparent;
   border: none;
@@ -46,4 +47,16 @@
   border-radius: 50%;
   padding: var(--spacing-s);
   cursor: pointer;
+}
+.cart-button__number {
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
