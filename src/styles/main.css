@@ -3,6 +3,7 @@
 @import "utilities.css";
 @import "Header.module.css";
 @import "Home.module.css";
+@import "Footer.module.css";
 
 body {
   font-family: var(--font-primary);
@@ -31,6 +32,12 @@ body {
   cursor: pointer;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--color-text-muted);
+}
+
 h1 {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
@@ -50,13 +57,13 @@ h3 {
 }
 
 h4 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
 }
 
 h5 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-m);
   font-weight: var(--font-weight-semi-bold);
   line-height: var(--line-height-xs);
 }
@@ -69,6 +76,27 @@ p {
 button {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-medium);
+}
+
+input {
+  color: var(--color-text-alternative);
+
+  font-size: var(--font-size-xl);
+  width: 60%;
+  background-color: inherit;
+  border-radius: inherit;
+  padding: 0 var(--spacing-m);
+  border: none;
+}
+input::placeholder {
+  color: var(--color-bg);
+}
+input:focus {
+  outline: none;
+}
+
+.policy-text {
+  font-size: var(--font-size-s);
 }
 
 .logo {

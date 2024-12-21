@@ -49,6 +49,13 @@
   --spacing-xl: 3rem;
   --spacing-2xl: 3.5rem;
   --spacing-3xl: 4rem;
+  --spacing-4xl: 5rem;
+
+  /* Profile Size */
+  --profile-testimonial: 150px;
+
+  /* Border Radius */
+  --border-radius: 20px;
 
   /* Breakpoints */
   --breakpoint-xs: 320px;
@@ -59,7 +66,7 @@
   --breakpoint-2xl: 1400px;
 
   /* Shadows */
-  --shadow-s: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-m: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-s: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-m: 0px 4px 6px rgba(0, 0, 0, 0.5);
   --shadow-l: 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
