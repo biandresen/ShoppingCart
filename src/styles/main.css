@@ -10,8 +10,9 @@ body {
 }
 
 .width-container {
-  width: var(--breakpoint-2xl);
+  max-width: var(--breakpoint-2xl);
   margin: auto;
+  padding: 0 var(--spacing-l);
 }
 
 .button--outline {
@@ -73,16 +74,17 @@ p {
   font-weight: var(--font-weight-regular);
 }
 
-button {
+.button--filled,
+.button--outline {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-xs);
 }
 
 input {
   color: var(--color-text-alternative);
-
   font-size: var(--font-size-xl);
-  width: 60%;
+  width: 50%;
   background-color: inherit;
   border-radius: inherit;
   padding: 0 var(--spacing-m);
@@ -100,12 +102,10 @@ input:focus {
 }
 
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  width: 64px;
+  width: var(--font-size-5xl);
 }
 
-.navlink {
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-regular);
-}
+/* .navlink {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+  } */

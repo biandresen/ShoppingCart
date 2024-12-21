@@ -18,6 +18,7 @@
   width: 100%;
   margin: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-s);
 }
 
 .shop-section {
@@ -37,6 +38,7 @@
   width: 100%;
   margin: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-s);
 }
 
 .explore-section {
@@ -68,6 +70,7 @@
 }
 .explore-section__image {
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-s);
 }
 .explore-section__card-text p {
   padding-top: 10px;
@@ -114,7 +117,7 @@
   height: var(--profile-testimonial);
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-s);
   position: relative;
 }
 .testimonial-card__image.first {
@@ -153,7 +156,7 @@
   align-items: center;
 }
 .newsletter-section__content {
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);

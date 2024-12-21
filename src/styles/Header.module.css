@@ -1,7 +1,14 @@
 .header {
+  position: sticky;
+  top: 0;
   color: var(--color-text-alternative);
   background-color: var(--color-primary);
   padding: var(--spacing-s) 0;
+  box-shadow: var(--shadow-m);
+  z-index: 1;
+}
+.header__branding {
+  display: flex;
 }
 .header__branding a {
   display: flex;
@@ -13,6 +20,7 @@
 .header__title {
   font-size: var(--font-size-2xl);
   color: var(--color-secondary);
+  text-shadow: var(--shadow-s);
 }
 .header__nav {
   display: flex;
@@ -42,11 +50,12 @@
   border: none;
 }
 .header__cart-image {
-  width: var(--font-size-4xl);
+  width: var(--font-size-3xl);
   background-color: var(--color-detail);
   border-radius: 50%;
   padding: var(--spacing-s);
   cursor: pointer;
+  box-shadow: var(--shadow-s);
 }
 .cart-button__number {
   background-color: var(--color-secondary);
