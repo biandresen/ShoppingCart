@@ -1,0 +1,53 @@
+/* UTILITIES */
+.u-flex-row {
+  display: flex;
+}
+.u-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.u-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.u-flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.u-flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-padding-xs {
+  padding: var(--spacing-xs);
+}
+.u-padding-s {
+  padding: var(--spacing-s);
+}
+.u-padding-m {
+  padding: var(--spacing-m);
+}
+.u-padding-l {
+  padding: var(--spacing-l);
+}
+.u-padding-xl {
+  padding: var(--spacing-xl);
+}
+
+.u-shadow-s {
+  box-shadow: var(--shadow-s);
+}
+.u-shadow-md {
+  box-shadow: var(--shadow-l);
+}
+.u-shadow-l {
+  box-shadow: var(--shadow-l);
+}

@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --color-primary: #3f4e4f;
+  --color-secondary: #eebf7f;
+  --color-detail: #a7410b;
+  --color-bg: #dcd7c9;
+  --color-text: #333;
+  --color-text-muted: #666;
+  --color-text-alternative: #fff;
+  --color-dark: black;
+
+  /* Font type */
+  --font-primary: "Source Serif 4", sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-s: 0.875rem; /* 14px */
+  --font-size-m: 1rem; /* 16px (base size) */
+  --font-size-l: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 2.5rem; /* 40px */
+  --font-size-4xl: 3rem; /* 48px */
+  --font-size-5xl: 3.5rem; /* 56px */
+
+  /* Line Height */
+  --line-height-x: 1.25; /* Tight */
+  --line-height-s: 1.5; /* Standard */
+  --line-height-m: 1.75; /* Loose */
+  --line-height-l: 2; /* Extra Loose */
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-s: 480px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+
+  /* Shadows */
+  --shadow-s: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-m: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-l: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
