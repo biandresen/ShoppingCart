@@ -5,6 +5,7 @@
 @import "Home.module.css";
 @import "Footer.module.css";
 @import "Products.module.css";
+@import "Cart.module.css";
 
 body {
   font-family: var(--font-primary);
