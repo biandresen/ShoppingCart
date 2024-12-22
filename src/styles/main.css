@@ -7,7 +7,7 @@
 @import "Products.module.css";
 @import "Cart.module.css";
 @import "About.module.css";
-
+@import "Contact.module.css";
 
 body {
   font-family: var(--font-primary);
