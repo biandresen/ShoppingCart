@@ -1,0 +1,18 @@
+.about-section {
+}
+.about-section__heading {
+  text-align: center;
+  padding: var(--spacing-3xl);
+}
+.about-section__content {
+  background-color: var(--color-primary);
+  padding: var(--spacing-3xl);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+.about-section__body-text {
+  color: var(--color-text-alternative);
+  font-size: var(--font-size-xl);
+}
