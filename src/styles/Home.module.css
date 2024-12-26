@@ -176,3 +176,105 @@
 }
 .newsletter-section__input {
 }
+
+/* Between XS and S (320px - 480px) */
+@media (min-width: 320px) and (max-width: 479px) {
+  .hero-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .hero-section__content {
+    flex-direction: column;
+  }
+  .hero-section__image {
+    margin: var(--spacing-l) 0 0 0;
+  }
+  .shop-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .shop-section__content {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  .shop-section__text {
+    gap: var(--spacing-m);
+  }
+  .shop-section__image {
+    margin: var(--spacing-l) 0 0 0;
+  }
+
+  .explore-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .explore-section__content {
+    gap: var(--spacing-s);
+  }
+  .explore-section__text {
+    width: 100%;
+    gap: var(--spacing-m);
+  }
+  .explore-section__cards {
+    flex-direction: column;
+  }
+  .explore-section__card {
+    flex-direction: column;
+    gap: var(--spacing-m);
+    padding: var(--spacing-l) 0;
+  }
+
+  .testimonials-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .testimonials-section__header p {
+    padding-top: var(--spacing-m);
+  }
+  .testimonials-section__cards {
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+  }
+  .testimonial-card {
+    gap: var(--spacing-m);
+  }
+
+  .discover-section {
+    padding: var(--spacing-m) 0;
+  }
+  .discover-section__content {
+    flex-direction: column;
+  }
+
+  .newsletter-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .newsletter-section__container {
+    flex-direction: column;
+    gap: var(--spacing-m);
+  }
+  .newsletter-section__content {
+    width: 100%;
+    gap: var(--spacing-l);
+  }
+  .newsletter-section__form {
+    gap: var(--spacing-m);
+  }
+  .newsletter-section__form-group {
+    flex-direction: column;
+    width: 100%;
+    background-color: inherit;
+    gap: var(--spacing-m);
+  }
+}
+
+/* Between S and M (480px - 768px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Styles here */
+}
+
+/* Between L and XL (1024px - 1200px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Styles here */
+}
+
+/* Above 2XL (1400px and up) */
+@media (min-width: 1400px) {
+  /* Styles here */
+}

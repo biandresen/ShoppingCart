@@ -15,7 +15,7 @@
   <body>
     <!-- <div id="root"></div> -->
     <header class="header">
-      <div class="width-container u-flex-row">
+      <div class="header__container width-container">
         <div class="header__branding">
           <a href="/" aria-label="Plant Plaza Homepage">
             <img
@@ -26,8 +26,9 @@
             />
             <h1 class="header__title">PLANT PLAZA</h1>
           </a>
+          <button type="button" class="header__menu-button">x</button>
         </div>
-        <nav class="header__nav">
+        <!-- <nav class="header__nav">
           <ul class="header__nav-links">
             <li class="header__nav-item">
               <a href="/" class="header__nav-link">Home</a>
@@ -70,11 +71,11 @@
               <div class="cart-button__number">0</div>
             </button>
           </div>
-        </nav>
+        </nav> -->
       </div>
     </header>
 
-    <!-- <main class="main">
+    <main class="main">
       <div class="width-container u-flex-column">
         <section class="hero-section">
           <div class="hero-section__content">
@@ -107,7 +108,8 @@
           </div>
           <img
             class="hero-section__image"
-            src="./src/assets/images/plantImageSun.jpg"
+            src="./src/assets/images/plantImageSun/plantImageSun1200.jpg"
+            srcset="./src/assets/images/plantImageSun/plantImageSun480.jpg 480w"
             alt="A green plant basking in the sun"
             loading="lazy"
           />
@@ -408,9 +410,9 @@
         </section>
         <section class="discover-section">
           <div class="discover-section__content">
-            <h1 class="discover-section__heading">
+            <h2 class="discover-section__heading">
               Discover Your Next Favorite Plants Today!
-            </h1>
+            </h2>
             <div class="discover-section__text-container">
               <p class="discover-section__text">
                 Explore our carefully curated selection of products designed to
@@ -471,7 +473,7 @@
           </div>
         </section>
       </div>
-    </main> -->
+    </main>
 
     <!-- <main class="main">
       <div class="width-container u-flex-column">
@@ -850,7 +852,7 @@
       </div>
     </main> -->
 
-    <main class="main">
+    <!-- <main class="main">
       <div class="width-container u-flex-column">
         <section class="contact-section">
           <h1 class="contact-section__heading">CONTACT US</h1>
@@ -892,7 +894,7 @@
           </article>
         </section>
       </div>
-    </main>
+    </main> -->
 
     <footer class="footer">
       <div class="width-container u-flex-column">
