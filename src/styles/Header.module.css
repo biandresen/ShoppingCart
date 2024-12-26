@@ -7,6 +7,9 @@
   box-shadow: var(--shadow-m);
   z-index: 1;
 }
+.header__container {
+  display: flex;
+}
 .header__branding {
   display: flex;
 }
@@ -16,6 +19,14 @@
   align-items: center;
   gap: var(--spacing-m);
   text-decoration: none;
+}
+.header__menu-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: var(--font-size-xl);
+  font-family: monospace;
+  color: var(--color-text-alternative);
 }
 .header__title {
   font-size: var(--font-size-2xl);
@@ -68,4 +79,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .header__branding {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__title {
+    font-size: calc(var(--font-size-xs) + 4vw);
+  }
+  .header__menu-button {
+    display: block;
+  }
+  .header__container {
+    flex-direction: column;
+  }
+  .header__nav {
+    flex-direction: column;
+    padding: var(--spacing-l) 0;
+  }
+  .header__nav-links {
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 0;
+    gap: var(--spacing-m);
+  }
+  .header__nav-buttons {
+    padding-top: var(--spacing-m);
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+  .header__nav-buttons button {
+    width: 100%;
+  }
+  .header__nav-buttons .button--outline {
+    order: 2;
+  }
+  .header__nav-buttons .button--filled {
+    order: 3;
+  }
+  .header__cart-button {
+    order: 1;
+    width: fit-content !important;
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1400px) {
 }
