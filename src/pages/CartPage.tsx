@@ -1,4 +1,3 @@
-
 export default function CartPage() {
   return (
     <div className="width-container u-flex-column">
@@ -8,7 +7,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/blueFlower.png"
+              src="./src/assets/images/blue-flower.png"
               alt="product: blue flower"
             />
             <div className="cart-card__container">
@@ -30,7 +29,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/tulipSmall.png"
+              src="./src/assets/images/tulip.png"
               alt="product: tulip"
             />
             <div className="cart-card__container">
@@ -52,7 +51,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/purpleFlowerSmall.png"
+              src="./src/assets/images/purple-flower.png"
               alt="product: purple flower"
             />
             <div className="cart-card__container">
@@ -74,7 +73,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/mandalaPlant.png"
+              src="./src/assets/images/mandala-plant.png"
               alt="product: mandala plant"
             />
             <div className="cart-card__container">
@@ -96,7 +95,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/birdFoot.png"
+              src="./src/assets/images/bird-foot.png"
               alt="product: bird foot"
             />
             <div className="cart-card__container">
@@ -118,7 +117,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/blueFrog.png"
+              src="./src/assets/images/blue-frog.png"
               alt="product: blue frog"
             />
             <div className="cart-card__container">
@@ -140,7 +139,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/pinkPrincess.png"
+              src="./src/assets/images/pink-princess.png"
               alt="product: pink princess"
             />
             <div className="cart-card__container">
@@ -162,7 +161,7 @@ export default function CartPage() {
           <div className="cart-section__card">
             <img
               className="cart-card__image"
-              src="./src/assets/images/kingsball.png"
+              src="./src/assets/images/kings-ball.png"
               alt="product: king's ball"
             />
             <div className="cart-card__container">
