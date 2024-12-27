@@ -29,3 +29,25 @@
   width: clamp(200px, 500px, 80%);
   height: auto;
 }
+
+@media (max-width: 768px) {
+  .about-section__image {
+    min-width: 100%;
+    height: auto;
+  }
+  .about-section__content {
+    padding: var(--spacing-l);
+  }
+  .about-section__heading {
+    padding: var(--spacing-3xl) 0;
+    font-size: calc(var(--font-size-2xl) + 3.5vw);
+  }
+  .about-section__text-area {
+    width: 100%;
+  }
+}
+@media (max-width: 1100px) {
+  .about-section__content {
+    flex-direction: column;
+  }
+}

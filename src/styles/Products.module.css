@@ -51,3 +51,13 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
 }
+
+@media (max-width: 767px) {
+  .products-section__heading {
+    font-size: var(--font-size-3xl);
+    padding: var(--spacing-xl) 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+}
