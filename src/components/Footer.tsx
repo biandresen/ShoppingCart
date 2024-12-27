@@ -1,3 +1,5 @@
+import SignupForm from "./sharedComponents/SignupForm";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -23,26 +25,7 @@ export default function Footer() {
                 Subscribe to our newsletter for the latest updates on features
                 and new product.
               </p>
-              <form className="footer__form">
-                <div className="footer__form-group">
-                  <input
-                    type="email"
-                    className="footer__input"
-                    placeholder="Your Email Address"
-                    required
-                  />
-                  <button
-                    className="footer__button button--filled"
-                    type="submit"
-                  >
-                    Join Now
-                  </button>
-                </div>
-                <p className="footer__terms policy-text">
-                  By subscribing, you consent to our Privacy Policy and agree to
-                  receive updates.
-                </p>
-              </form>
+              <SignupForm formClass="footer" buttonText="Join Now" />
             </div>
             <div className="footer__links-container">
               <div className="footer__links-group">

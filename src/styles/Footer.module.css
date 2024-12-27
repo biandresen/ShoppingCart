@@ -34,6 +34,9 @@
   background-color: var(--color-secondary);
   gap: var(--spacing-m);
 }
+.footer__form-group input {
+  color: var(--color-text);
+}
 .footer__form-group input::placeholder {
   color: var(--color-text-muted);
 }
