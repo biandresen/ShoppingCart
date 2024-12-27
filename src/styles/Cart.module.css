@@ -1,4 +1,5 @@
 .cart-section {
+  padding-bottom: var(--spacing-2xl);
 }
 .cart-section__heading {
   text-align: center;

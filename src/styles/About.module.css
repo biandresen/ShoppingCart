@@ -1,4 +1,5 @@
 .about-section {
+  padding-bottom: var(--spacing-2xl);
 }
 .about-section__heading {
   text-align: center;
