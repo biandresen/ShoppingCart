@@ -16,18 +16,18 @@
 }
 .hero-section__image {
   width: 100%;
-  margin: var(--spacing-3xl) 0 0 0;
+  padding: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-s);
 }
 
 .shop-section {
-  padding: var(--spacing-3xl) 0;
+  padding: 0 0 var(--spacing-3xl) 0;
 }
 .shop-section__content {
   display: flex;
   align-items: center;
-  gap: var(--spacing-m);
+  gap: var(--spacing-l);
 }
 .shop-section__text {
   display: flex;
@@ -35,7 +35,7 @@
   gap: var(--spacing-l);
 }
 .shop-section__image {
-  width: 100%;
+  width: 50%;
   margin: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-s);
@@ -64,6 +64,7 @@
 .explore-section__card {
   display: flex;
   flex-direction: column;
+  justify-content: start;
   flex: 1;
   gap: var(--spacing-l);
   padding: 0 var(--spacing-l);
@@ -97,6 +98,7 @@
   border-radius: var(--border-radius);
   display: flex;
   gap: var(--spacing-4xl);
+  justify-content: space-evenly;
 }
 .testimonial-card {
   display: flex;
@@ -154,9 +156,9 @@
 .newsletter-section__container {
   display: flex;
   align-items: center;
+  gap: var(--spacing-l);
 }
 .newsletter-section__content {
-  width: 70%;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);
@@ -177,8 +179,7 @@
 .newsletter-section__input {
 }
 
-/* Between XS and S (320px - 480px) */
-@media (min-width: 320px) and (max-width: 479px) {
+@media (max-width: 767px) {
   .hero-section {
     padding: var(--spacing-xl) 0;
   }
@@ -200,6 +201,7 @@
   }
   .shop-section__image {
     margin: var(--spacing-l) 0 0 0;
+    width: 100%;
   }
 
   .explore-section {
@@ -264,17 +266,47 @@
   }
 }
 
-/* Between S and M (480px - 768px) */
-@media (min-width: 480px) and (max-width: 767px) {
-  /* Styles here */
-}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .shop-section__content {
+    flex-direction: column;
+  }
+  .shop-section__image {
+    width: 100%;
+  }
 
-/* Between L and XL (1024px - 1200px) */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  /* Styles here */
-}
+  .explore-section__text {
+    width: 80%;
+  }
+  .explore-section__card {
+    padding: 0 var(--spacing-m);
+  }
+  .explore-section__card-text p {
+    line-height: 26px;
+  }
 
-/* Above 2XL (1400px and up) */
-@media (min-width: 1400px) {
-  /* Styles here */
+  .testimonials-section__cards {
+    color: var(--color-text-alternative);
+    background-color: var(--color-primary);
+    padding: var(--spacing-l);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--spacing-m);
+  }
+  .testimonial-card {
+    justify-content: space-between;
+  }
+
+  .newsletter-section__content {
+    width: 100%;
+    gap: var(--spacing-l);
+  }
+  .newsletter-section__form {
+    gap: var(--spacing-m);
+  }
+  .newsletter-section__form-group {
+    flex-direction: column;
+    width: 100%;
+    background-color: inherit;
+    gap: var(--spacing-m);
+  }
 }

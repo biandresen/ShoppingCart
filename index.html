@@ -28,7 +28,7 @@
           </a>
           <button type="button" class="header__menu-button">x</button>
         </div>
-        <!-- <nav class="header__nav">
+        <nav class="header__nav">
           <ul class="header__nav-links">
             <li class="header__nav-item">
               <a href="/" class="header__nav-link">Home</a>
@@ -71,7 +71,7 @@
               <div class="cart-button__number">0</div>
             </button>
           </div>
-        </nav> -->
+        </nav>
       </div>
     </header>
 
@@ -107,9 +107,12 @@
             </div>
           </div>
           <img
-            class="hero-section__image"
             src="./src/assets/images/plantImageSun/plantImageSun1200.jpg"
-            srcset="./src/assets/images/plantImageSun/plantImageSun480.jpg 480w"
+            srcset="
+              ./src/assets/images/plantImageSun/plantImageSun480.jpg   480w,
+              ./src/assets/images/plantImageSun/plantImageSun1200.jpg 1200w
+            "
+            class="hero-section__image"
             alt="A green plant basking in the sun"
             loading="lazy"
           />
@@ -144,7 +147,11 @@
               </div>
             </div>
             <img
-              src="./src/assets/images/sunPlant.jpg"
+              src="./src/assets/images/sunPlant/sunPlant1200.jpg"
+              srcset="
+                ./src/assets/images/sunPlant/sunPlant480.jpg   480w,
+                ./src/assets/images/sunPlant/sunPlant1200.jpg 1200w
+              "
               alt="A vibrant plant with the sun in the background"
               class="shop-section__image"
               loading="lazy"

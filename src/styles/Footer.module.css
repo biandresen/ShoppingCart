@@ -85,7 +85,7 @@
   color: var(--color-text);
 }
 
-@media (min-width: 320px) and (max-width: 479px) {
+@media (max-width: 767px) {
   .footer {
     padding: var(--spacing-l) 0;
   }
@@ -132,11 +132,22 @@
   }
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
-}
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-}
-
-@media (min-width: 1400px) {
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer__links-container {
+    gap: var(--spacing-m);
+  }
+  .footer__form {
+    gap: var(--spacing-m);
+  }
+  .footer__form-group {
+    flex-direction: column;
+    width: 100%;
+    background-color: inherit;
+  }
+  .footer__form-group input {
+    border: 1px solid var(--color-text-alternative);
+  }
+  .footer__form-group input::placeholder {
+    color: var(--color-bg);
+  }
 }
