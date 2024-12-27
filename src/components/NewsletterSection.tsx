@@ -1,3 +1,4 @@
+import SignupForm from "./sharedComponents/SignupForm";
 
 export default function NewsletterSection() {
   return (
@@ -11,26 +12,7 @@ export default function NewsletterSection() {
             Subscribe to our newsletter for the latest updates and exclusive
             promotions. Don't miss out on special offers tailored just for you!
           </p>
-          <form className="newsletter-section__form">
-            <div className="newsletter-section__form-group">
-              <input
-                type="email"
-                className="newsletter-section__input"
-                placeholder="Your Email Address"
-                required
-              />
-              <button
-                className="newsletter-section__button button--filled"
-                type="submit"
-              >
-                Join Now
-              </button>
-            </div>
-            <p className="newsletter-section__terms policy-text">
-              By clicking Join Now, you agree to our Terms and Conditions and
-              Privacy Policy.
-            </p>
-          </form>
+          <SignupForm formClass="newsletter-section" buttonText="Join Now" />
         </div>
       </div>
     </section>
