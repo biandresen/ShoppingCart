@@ -1,4 +1,5 @@
 .contact-section {
+  padding-bottom: var(--spacing-2xl);
 }
 .contact-section__heading {
   text-align: center;

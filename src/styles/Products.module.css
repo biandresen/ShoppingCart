@@ -1,4 +1,5 @@
 .products-section {
+  padding-bottom: var(--spacing-2xl);
 }
 .products-section__heading {
   text-align: center;

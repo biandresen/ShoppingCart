@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-m);
+  padding-bottom: var(--spacing-3xl);
 }
 .hero-section__text-container {
   display: flex;
@@ -16,7 +17,6 @@
 }
 .hero-section__image {
   width: 100%;
-  padding: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-s);
 }

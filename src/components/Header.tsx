@@ -1,10 +1,11 @@
+import { NavLink } from "react-router";
 
 export default function Header() {
   return (
     <header className="header">
       <div className="header__container width-container">
         <div className="header__branding">
-          <a href="/" aria-label="Plant Plaza Homepage">
+          <NavLink to="/" aria-label="Plant Plaza Homepage">
             <img
               className="header__logo logo"
               src="./src/assets/icons/plantPlazaLogo.png"
@@ -12,7 +13,7 @@ export default function Header() {
               loading="lazy"
             />
             <h1 className="header__title">PLANT PLAZA</h1>
-          </a>
+          </NavLink>
           <button type="button" className="header__menu-button">
             x
           </button>
@@ -20,24 +21,24 @@ export default function Header() {
         <nav className="header__nav">
           <ul className="header__nav-links">
             <li className="header__nav-item">
-              <a href="/" className="header__nav-link">
+              <NavLink to="/" className="header__nav-link">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="header__nav-item">
-              <a href="/products" className="header__nav-link">
+              <NavLink to="/product" className="header__nav-link">
                 Products
-              </a>
+              </NavLink>
             </li>
             <li className="header__nav-item">
-              <a href="/about" className="header__nav-link">
+              <NavLink to="/about" className="header__nav-link">
                 About
-              </a>
+              </NavLink>
             </li>
             <li className="header__nav-item">
-              <a href="/contact" className="header__nav-link">
+              <NavLink to="/contact" className="header__nav-link">
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="header__nav-buttons">
