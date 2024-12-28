@@ -1,12 +1,12 @@
 import ProductCard from "../components/sharedComponents/ProductCard";
 import { useFetch } from "../hooks/useFetch";
-// import { Product } from "../types";
 
 export default function ProductPage() {
-  const { data: products, isLoading, error } = useFetch(
-    "products",
-    "http://localhost:4000/products"
-  );
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useFetch("products", "http://localhost:4000/products");
 
   if (isLoading) return <p>Loading products...</p>;
   if (error) return <p>Error fetching products: {(error as Error).message}</p>;
@@ -19,12 +19,7 @@ export default function ProductPage() {
         </h1>
         <div className="products-section__content">
           {products?.map((product) => (
-            <ProductCard
-              key={product.id}
-              {...product}
-              onAdd={() => console.log(`Added ${product.name}`)}
-              onDelete={() => console.log(`Removed ${product.name}`)}
-            />
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </section>

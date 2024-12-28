@@ -1,6 +1,8 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 export default function Nav() {
+  const navigate = useNavigate();
+
   return (
     <nav className="header__nav">
       <ul className="header__nav-links">
@@ -41,6 +43,7 @@ export default function Nav() {
           Search
         </button>
         <button
+          onClick={() => navigate("/cart")}
           className="header__cart-button"
           type="button"
           aria-label="Open Shopping Cart"

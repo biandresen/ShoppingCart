@@ -2,6 +2,7 @@ import Logo from "./sharedComponents/Logo";
 import Nav from "./Nav";
 
 export default function Header() {
+  
   return (
     <header className="header">
       <div className="header__container width-container">
