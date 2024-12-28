@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import { CartProvider } from "./context/CartContext";
 
 const queryClient = new QueryClient();
 
@@ -30,10 +31,12 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </QueryClientProvider>
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <CartProvider>
+        <RouterProvider router={router} />
+        <App />
+      </CartProvider>
+    </QueryClientProvider>
+  </StrictMode>
 );
