@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { useCart } from "../../context/CartContext";
 import { Product } from "../../types";
 
 export default function ProductCard({
+  id,
   name,
   description,
   price,
   imageUrl,
 }: Product) {
-  const [quantity, setQuantity] = useState(0);
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useCart();
 
-  function onDelete(): void {
-    if (quantity <= 0) return;
-    setQuantity((q) => q - 1);
-  }
-
-  function onAdd(): void {
-    setQuantity((q) => q + 1);
-  }
+  const quantity = getItemQuantity(id);
 
   return (
     <article className="products-section__card">
@@ -35,7 +34,7 @@ export default function ProductCard({
         <button
           type="button"
           className="product-card__delete button--filled"
-          onClick={onDelete}
+          onClick={() => decreaseCartQuantity(id)}
           aria-label={`Remove one ${name}`}
         >
           Del
@@ -43,7 +42,7 @@ export default function ProductCard({
         <div className="product-card__count" aria-label="Current quantity">
           {quantity}
           <button
-            onClick={() => setQuantity(0)}
+            onClick={() => removeFromCart(id)}
             className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
             type="button"
             aria-label="reset quantity"
@@ -54,7 +53,7 @@ export default function ProductCard({
         <button
           type="button"
           className="product-card__add button--filled"
-          onClick={onAdd}
+          onClick={() => increaseCartQuantity(id)}
           aria-label={`Add one ${name}`}
         >
           Add

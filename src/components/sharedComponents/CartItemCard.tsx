@@ -1,22 +1,16 @@
 import { useState } from "react";
 import { Product } from "../../types";
+import { useCart } from "../../context/CartContext";
 
-export default function CartItemCard({
-  name,
-  description,
-  price,
-  imageUrl,
-}: Product) {
-  const [quantity, setQuantity] = useState(0);
+export default function CartItemCard({ id, name, price, imageUrl }: Product) {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useCart();
 
-  function onDelete(): void {
-    if (quantity <= 0) return;
-    setQuantity((q) => q - 1);
-  }
-
-  function onAdd(): void {
-    setQuantity((q) => q + 1);
-  }
+  const quantity = getItemQuantity(id);
 
   return (
     <div className="cart-section__card">
@@ -35,7 +29,7 @@ export default function CartItemCard({
         </div>
         <div className="cart-card__counter">
           <button
-            onClick={onDelete}
+            onClick={() => decreaseCartQuantity(id)}
             type="button"
             className="cart-card__delete button--filled"
           >
@@ -44,7 +38,7 @@ export default function CartItemCard({
           <div className="cart-card__count">
             {quantity}
             <button
-              onClick={() => setQuantity(0)}
+              onClick={() => removeFromCart(id)}
               className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
               type="button"
               aria-label="reset quantity"
@@ -53,7 +47,7 @@ export default function CartItemCard({
             </button>
           </div>
           <button
-            onClick={onAdd}
+            onClick={() => increaseCartQuantity(id)}
             type="button"
             className="cart-card__add button--filled"
           >

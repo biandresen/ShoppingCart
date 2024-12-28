@@ -1,7 +1,10 @@
 import { NavLink, useNavigate } from "react-router";
+import { useCart } from "../context/CartContext";
 
 export default function Nav() {
   const navigate = useNavigate();
+
+  const { cartQuantity } = useCart();
 
   return (
     <nav className="header__nav">
@@ -53,7 +56,7 @@ export default function Nav() {
             src="./src/assets/icons/cartIcon.svg"
             alt=""
           />
-          <div className="cart-button__number">0</div>
+          <div className="cart-button__number">{cartQuantity}</div>
         </button>
       </div>
     </nav>
