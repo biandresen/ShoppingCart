@@ -41,7 +41,17 @@ export default function CartItemCard({
           >
             Del
           </button>
-          <div className="cart-card__count">{quantity}</div>
+          <div className="cart-card__count">
+            {quantity}
+            <button
+              onClick={() => setQuantity(0)}
+              className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
+              type="button"
+              aria-label="reset quantity"
+            >
+              x
+            </button>
+          </div>
           <button
             onClick={onAdd}
             type="button"

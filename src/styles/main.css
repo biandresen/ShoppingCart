@@ -14,6 +14,22 @@ body {
   font-family: var(--font-primary);
 }
 
+.quantity-reset {
+  position: absolute;
+  bottom: -5px;
+  translate: -23%;
+  color: var(--color-red);
+  font-weight: var(--font-weight-regular);
+  background-color: inherit;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
 .width-container {
   max-width: var(--breakpoint-2xl);
   margin: auto;
