@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router";
 import { useCart } from "../context/CartContext";
+import DoubleButton from "./sharedComponents/DoubleButton";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -31,20 +32,11 @@ export default function Nav() {
         </li>
       </ul>
       <div className="header__nav-buttons">
-        <button
-          className="header__button button--outline"
-          type="button"
-          aria-label="Get Help"
-        >
-          Help
-        </button>
-        <button
-          className="header__button button--filled"
-          type="button"
-          aria-label="Search the site"
-        >
-          Search
-        </button>
+        <DoubleButton
+          sectionClass="header"
+          firstButtonTitle="Search"
+          secondButtonTitle="Help"
+        />
         <button
           onClick={() => navigate("/cart")}
           className="header__cart-button"

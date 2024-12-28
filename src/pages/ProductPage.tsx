@@ -1,12 +1,8 @@
 import ProductCard from "../components/sharedComponents/ProductCard";
-import { useFetch } from "../hooks/useFetch";
+import { useCart } from "../context/CartContext";
 
 export default function ProductPage() {
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useFetch("products", "http://localhost:4000/products");
+  const { products, isLoading, error } = useCart();
 
   if (isLoading) return <p>Loading products...</p>;
   if (error) return <p>Error fetching products: {(error as Error).message}</p>;

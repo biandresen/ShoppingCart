@@ -1,3 +1,5 @@
+import DoubleButton from "./sharedComponents/DoubleButton";
+
 export default function HeroSection() {
   return (
     <section className="hero-section">
@@ -11,22 +13,11 @@ export default function HeroSection() {
             your needs. Start adding to your cart and enjoy a seamless shopping
             experience!
           </p>
-          <div className="hero-section__buttons u-double-buttons">
-            <button
-              className="button button--filled"
-              type="button"
-              aria-label="Search for products"
-            >
-              Search
-            </button>
-            <button
-              className="button button--outline"
-              type="button"
-              aria-label="Get help with shopping"
-            >
-              Help
-            </button>
-          </div>
+          <DoubleButton
+            sectionClass="hero-section"
+            firstButtonTitle="Search"
+            secondButtonTitle="Help"
+          />
         </div>
       </div>
       <img
