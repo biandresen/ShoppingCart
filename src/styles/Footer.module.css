@@ -29,7 +29,7 @@
 .footer__form-group {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
   border-radius: 50px;
   background-color: var(--color-secondary);
   gap: var(--spacing-m);

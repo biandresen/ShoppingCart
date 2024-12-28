@@ -29,6 +29,7 @@ export default function SignupForm({ formClass, buttonText }: SignupFormProps) {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    if (!emailError) setEmail("");
   };
 
   return (

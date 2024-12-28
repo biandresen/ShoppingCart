@@ -81,7 +81,7 @@ p {
 
 .button--filled,
 .button--outline {
-  font-size: var(--font-size-l);
+  font-size: calc(var(--font-size-l) + 0.1vw);
   font-weight: var(--font-weight-medium);
   box-shadow: var(--shadow-xs);
 }
@@ -89,7 +89,7 @@ p {
 input {
   color: var(--color-text-alternative);
   font-size: var(--font-size-xl);
-  width: 50%;
+  width: 60%;
   background-color: inherit;
   border-radius: inherit;
   padding: 0 var(--spacing-m);
