@@ -1,18 +1,23 @@
+import { useState } from "react";
 import { Product } from "../../types";
-
-type ProductCardProps = Product & {
-  onAdd: () => void;
-  onDelete: () => void;
-};
 
 export default function ProductCard({
   name,
   description,
   price,
   imageUrl,
-  onAdd,
-  onDelete,
-}: ProductCardProps) {
+}: Product) {
+  const [quantity, setQuantity] = useState(0);
+
+  function onDelete(): void {
+    if (quantity <= 0) return;
+    setQuantity((q) => q - 1);
+  }
+
+  function onAdd(): void {
+    setQuantity((q) => q + 1);
+  }
+
   return (
     <article className="products-section__card">
       <img
@@ -36,7 +41,7 @@ export default function ProductCard({
           Del
         </button>
         <div className="product-card__count" aria-label="Current quantity">
-          {0}
+          {quantity}
         </div>
         <button
           type="button"
