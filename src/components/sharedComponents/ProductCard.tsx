@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext";
 import { Product } from "../../types";
+import { formatCurrency } from "../../utils/formatCurrency";
 
 export default function ProductCard({
   id,
@@ -28,7 +29,7 @@ export default function ProductCard({
       <h3 className="product-card__heading">{name}</h3>
       <p className="product-card__body">{description}</p>
       <p className="product-card__price">
-        <data value={price}>{`$${price.toFixed(2)}`}</data>
+        <data value={price}>{"$" + formatCurrency(price)}</data>
       </p>
       <div className="product-card__counter">
         <button

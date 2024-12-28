@@ -1,22 +1,6 @@
-import { createContext, useContext, ReactNode, useState } from "react";
-
-type CartProviderProps = {
-  children: ReactNode;
-};
-
-type CartItem = {
-  id: number;
-  quantity: number;
-};
-
-type CartContextType = {
-  getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number) => void;
-  decreaseCartQuantity: (id: number) => void;
-  removeFromCart: (id: number) => void;
-  cartQuantity: number;
-  cartItems: CartItem[];
-};
+import { createContext, useContext, ReactNode, useState, useMemo } from "react";
+import { CartItem, CartContextType, CartProviderProps } from "../types";
+import { useFetch } from "../hooks/useFetch";
 
 const CartContext = createContext({} as CartContextType);
 
@@ -31,9 +15,24 @@ export function useCart() {
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity,
-    0
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useFetch("products", "http://localhost:5000/products");
+
+  const cartQuantity = useMemo(
+    () => cartItems.reduce((quantity, item) => item.quantity + quantity, 0),
+    [cartItems]
+  );
+
+  const totalPrice = useMemo(
+    () =>
+      cartItems.reduce((total, item) => {
+        const product = products?.find((p) => p.id === item.id);
+        return total + (product?.price || 0) * item.quantity;
+      }, 0),
+    [cartItems, products]
   );
 
   function getItemQuantity(id: number) {
@@ -65,7 +64,6 @@ export function CartProvider({ children }: CartProviderProps) {
           if (item.id === id) {
             return { ...item, quantity: item.quantity - 1 };
           } else {
-            decreaseCartQuantity(id);
             return item;
           }
         });
@@ -88,6 +86,10 @@ export function CartProvider({ children }: CartProviderProps) {
         removeFromCart,
         cartItems,
         cartQuantity,
+        totalPrice,
+        products,
+        isLoading,
+        error,
       }}
     >
       {children}

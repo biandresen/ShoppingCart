@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Product } from "../../types";
 import { useCart } from "../../context/CartContext";
+import { formatCurrency } from "../../utils/formatCurrency";
 
 export default function CartItemCard({ id, name, price, imageUrl }: Product) {
   const {
@@ -24,7 +24,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
         <div className="cart-card__heading-price-container">
           <h3 className="cart-card__heading">{name}</h3>
           <p className="cart-card__price">
-            <data value={price}>{`$${price.toFixed(2)}`}</data>
+            <data value={price}>{"$" + formatCurrency(price) * quantity}</data>
           </p>
         </div>
         <div className="cart-card__counter">

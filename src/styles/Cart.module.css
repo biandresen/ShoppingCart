@@ -82,6 +82,10 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
 }
+.cart-section__no-items-message {
+  color: var(--color-text-alternative);
+  font-size: var(--font-size-2xl);
+}
 
 @media (max-width: 767px) {
   .cart-section__content {

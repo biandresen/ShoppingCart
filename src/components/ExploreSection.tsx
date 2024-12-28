@@ -1,3 +1,5 @@
+import DoubleButton from "./sharedComponents/DoubleButton";
+
 export default function ExploreSection() {
   return (
     <section className="explore-section">
@@ -17,7 +19,7 @@ export default function ExploreSection() {
           <div className="explore-section__cards">
             <div className="explore-section__card">
               <img
-                src="./src/assets/images/purpleFlower.jpg"
+                src="./src/assets/images/purple-flower.png"
                 alt="A vibrant purple flower"
                 className="explore-section__image"
                 loading="lazy"
@@ -34,7 +36,7 @@ export default function ExploreSection() {
             </div>
             <div className="explore-section__card">
               <img
-                src="./src/assets/images/blueFrogFlower.jpg"
+                src="./src/assets/images/blue-frog.png"
                 alt="A bright blue flower"
                 className="explore-section__image"
                 loading="lazy"
@@ -50,7 +52,7 @@ export default function ExploreSection() {
             </div>
             <div className="explore-section__card">
               <img
-                src="./src/assets/images/tulip.jpg"
+                src="./src/assets/images/tulip.png"
                 alt="A red tulip flower"
                 className="explore-section__image"
                 loading="lazy"
@@ -65,22 +67,11 @@ export default function ExploreSection() {
               </div>
             </div>
           </div>
-          <div className="explore-section__buttons u-double-buttons">
-            <button
-              className="button button--filled explore-button"
-              type="button"
-              aria-label="Search for products"
-            >
-              Search
-            </button>
-            <button
-              className="button button--outline"
-              type="button"
-              aria-label="Learn more about our services"
-            >
-              Learn More
-            </button>
-          </div>
+          <DoubleButton
+            sectionClass="explore-section"
+            firstButtonTitle="Search"
+            secondButtonTitle="Help"
+          />
         </div>
       </div>
     </section>

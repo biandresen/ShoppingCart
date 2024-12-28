@@ -76,7 +76,7 @@
 .explore-section__card-text p {
   padding-top: 10px;
 }
-.explore-button {
+.explore-section_button {
   color: var(--color-text-alternative) !important;
   background-color: var(--color-detail) !important;
 }

@@ -1,3 +1,4 @@
+import DoubleButton from "./sharedComponents/DoubleButton";
 
 export default function ShopSection() {
   return (
@@ -13,22 +14,11 @@ export default function ShopSection() {
             Take advantage of our special promotions and find exactly what
             you're looking for.
           </p>
-          <div className="shop-section__buttons u-double-buttons">
-            <button
-              className="button button--filled"
-              type="button"
-              aria-label="Search for products"
-            >
-              Search
-            </button>
-            <button
-              className="button button--outline"
-              type="button"
-              aria-label="Get shopping help"
-            >
-              Help
-            </button>
-          </div>
+          <DoubleButton
+            sectionClass="shop-section"
+            firstButtonTitle="Search"
+            secondButtonTitle="Help"
+          />
         </div>
         <img
           src="./src/assets/images/sunPlant/sunPlant1200.jpg"
