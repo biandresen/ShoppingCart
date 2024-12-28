@@ -1,6 +1,6 @@
 /* UTILITIES */
 .u-flex-row {
-  display: flex;
+  display: flex !important;
 }
 .u-flex-column {
   display: flex;

@@ -65,8 +65,8 @@
   padding-right: var(--spacing-l);
 }
 .cart-card__counter {
+  position: relative;
   display: flex;
-  margin-left: auto;
   align-items: center;
   gap: var(--spacing-m);
   padding-right: var(--spacing-l);

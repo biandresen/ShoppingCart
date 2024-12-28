@@ -42,6 +42,14 @@ export default function ProductCard({
         </button>
         <div className="product-card__count" aria-label="Current quantity">
           {quantity}
+          <button
+            onClick={() => setQuantity(0)}
+            className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
+            type="button"
+            aria-label="reset quantity"
+          >
+            x
+          </button>
         </div>
         <button
           type="button"

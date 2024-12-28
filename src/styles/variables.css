@@ -9,6 +9,7 @@
   --color-text-muted: #666;
   --color-text-alternative: #fff;
   --color-dark: black;
+  --color-red: rgb(192, 0, 0);
 
   /* Font type */
   --font-primary: "Source Serif 4", sans-serif;
