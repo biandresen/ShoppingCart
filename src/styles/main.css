@@ -9,6 +9,7 @@
 @import "About.module.css";
 @import "Contact.module.css";
 @import "Modal.module.css";
+@import "ProductDetail.module.css";
 
 body {
   font-family: var(--font-primary);
@@ -16,6 +17,14 @@ body {
 
 button:hover {
   filter: brightness(1.1);
+}
+
+.fetch-error-message {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semi-bold);
+  background-color: var(--color-secondary);
+  text-align: center;
+  padding: var(--spacing-4xl);
 }
 
 .quantity-reset {

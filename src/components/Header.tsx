@@ -27,7 +27,7 @@ export default function Header() {
       <div className="header__container width-container">
         <div className="header__branding">
           <Logo
-            logoUrl="./src/assets/icons/plantPlazaLogo.png"
+            logoUrl="/src/assets/icons/plantPlazaLogo.png"
             alt="Plant Plaza Logo"
             imgClass="header__logo logo"
             headingClass="header__title"
@@ -42,12 +42,12 @@ export default function Header() {
               <img
                 onClick={handleMenu}
                 className="header__menu-icon"
-                src="./src/assets/icons/cross.svg"
+                src="/src/assets/icons/cross.svg"
                 alt=""
               />
             : <img
                 className="header__menu-icon"
-                src="./src/assets/icons/menu.svg"
+                src="/src/assets/icons/menu.svg"
                 alt=""
               />
             }

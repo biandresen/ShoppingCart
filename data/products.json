@@ -5,56 +5,56 @@
       "name": "Blue Flower",
       "description": "A vibrant blue flower with delicate petals, perfect for brightening up any space.",
       "price": 19.99,
-      "imageUrl": "./src/assets/images/blue-flower.png"
+      "imageUrl": "/src/assets/images/blue-flower.png"
     },
     {
       "id": 2,
       "name": "Tulip",
       "description": "A classic tulip with a rich and elegant red color, great for any occasion.",
       "price": 14.99,
-      "imageUrl": "./src/assets/images/tulip.png"
+      "imageUrl": "/src/assets/images/tulip.png"
     },
     {
       "id": 3,
       "name": "Purple Flower",
       "description": "A stunning purple flower that adds elegance and charm to any garden.",
       "price": 21.99,
-      "imageUrl": "./src/assets/images/purple-flower.png"
+      "imageUrl": "/src/assets/images/purple-flower.png"
     },
     {
       "id": 4,
       "name": "Mandala Plant",
       "description": "A unique plant with mandala-like patterns on its leaves, perfect for plant lovers.",
       "price": 29.99,
-      "imageUrl": "./src/assets/images/mandala-plant.png"
+      "imageUrl": "/src/assets/images/mandala-plant.png"
     },
     {
       "id": 5,
       "name": "Bird Foot",
       "description": "A rare and exotic flower with petals that resemble a bird’s foot, truly one-of-a-kind.",
       "price": 35.0,
-      "imageUrl": "./src/assets/images/bird-foot.png"
+      "imageUrl": "/src/assets/images/bird-foot.png"
     },
     {
       "id": 6,
       "name": "Blue Frog",
       "description": "A fun, whimsical plant with blue leaves that resemble a frog's feet.",
       "price": 27.99,
-      "imageUrl": "./src/assets/images/blue-frog.png"
+      "imageUrl": "/src/assets/images/blue-frog.png"
     },
     {
       "id": 7,
       "name": "Pink Princess",
       "description": "A delicate plant with beautiful pink and white variegated leaves, perfect for any plant enthusiast.",
       "price": 42.0,
-      "imageUrl": "./src/assets/images/pink-princess.png"
+      "imageUrl": "/src/assets/images/pink-princess.png"
     },
     {
       "id": 8,
       "name": "King's Ball",
       "description": "A majestic flower with a round shape and golden color, making it stand out in any garden.",
       "price": 50.0,
-      "imageUrl": "./src/assets/images/kings-ball.png"
+      "imageUrl": "/src/assets/images/kings-ball.png"
     }
   ]
 }

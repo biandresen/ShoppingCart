@@ -5,9 +5,16 @@ import { formatCurrency } from "../utils/formatCurrency";
 export default function CartPage() {
   const { cartItems, isLoading, error, totalPrice, products } = useCart();
 
-  if (isLoading) return <p>Loading products...</p>;
-  if (error) return <p>Error fetching products: {(error as Error).message}</p>;
-  if (!products) return <p>No products available!</p>;
+  if (isLoading)
+    return <p className="fetch-error-message"> Loading products...</p>;
+  if (error)
+    return (
+      <p className="fetch-error-message">
+        Error fetching products: {(error as Error).message}
+      </p>
+    );
+  if (!products)
+    return <p className="fetch-error-message">No products available!</p>;
 
   return (
     <div className="width-container u-flex-column">
@@ -21,14 +28,16 @@ export default function CartPage() {
                 {"$" + formatCurrency(totalPrice)}
               </data>
             </p>
-            <button className="button checkout-button" type="button">
-              Checkout:{" "}
-              <img
-                className="checkout-icon"
-                src="./src/assets/icons/checkout.svg"
-                alt=""
-              />
-            </button>
+            {totalPrice ?
+              <button className="button checkout-button" type="button">
+                Checkout:{" "}
+                <img
+                  className="checkout-icon"
+                  src="./src/assets/icons/checkout.svg"
+                  alt=""
+                />
+              </button>
+            : null}
           </div>
           {cartItems.length > 0 ?
             cartItems.map((item) => {

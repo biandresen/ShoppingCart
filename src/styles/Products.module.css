@@ -28,6 +28,13 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-s);
 }
+.product-button {
+  background-color: inherit;
+  border-radius: var(--border-radius);
+  padding: 0;
+  cursor: pointer;
+  border: none;
+}
 .product-card__image {
   border-radius: var(--border-radius);
 }
