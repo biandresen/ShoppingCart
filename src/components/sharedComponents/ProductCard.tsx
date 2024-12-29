@@ -48,7 +48,11 @@ export default function ProductCard({
             type="button"
             aria-label="reset quantity"
           >
-            x
+            <img
+              className="quantity-reset-icon"
+              src="./src/assets/icons/trash.svg"
+              alt=""
+            />
           </button>
         </div>
         <button

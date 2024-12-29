@@ -2,31 +2,55 @@ import { NavLink, useNavigate } from "react-router";
 import { useCart } from "../context/CartContext";
 import DoubleButton from "./sharedComponents/DoubleButton";
 
-export default function Nav() {
+type NavProps = {
+  menuIsOpen: boolean;
+};
+
+export default function Nav({ menuIsOpen }: NavProps) {
   const navigate = useNavigate();
 
   const { cartQuantity } = useCart();
 
   return (
-    <nav className="header__nav">
+    <nav className={menuIsOpen ? "header__nav" : "nav__toggle-hide"}>
       <ul className="header__nav-links">
         <li className="header__nav-item">
-          <NavLink to="/" className="header__nav-link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "active-link header__nav-link" : "header__nav-link"
+            }
+          >
             Home
           </NavLink>
         </li>
         <li className="header__nav-item">
-          <NavLink to="/product" className="header__nav-link">
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              isActive ? "active-link header__nav-link" : "header__nav-link"
+            }
+          >
             Products
           </NavLink>
         </li>
         <li className="header__nav-item">
-          <NavLink to="/about" className="header__nav-link">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "active-link header__nav-link" : "header__nav-link"
+            }
+          >
             About
           </NavLink>
         </li>
         <li className="header__nav-item">
-          <NavLink to="/contact" className="header__nav-link">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "active-link header__nav-link" : "header__nav-link"
+            }
+          >
             Contact
           </NavLink>
         </li>
@@ -38,7 +62,10 @@ export default function Nav() {
           secondButtonTitle="Help"
         />
         <button
-          onClick={() => navigate("/cart")}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate("/cart");
+          }}
           className="header__cart-button"
           type="button"
           aria-label="Open Shopping Cart"
@@ -48,7 +75,9 @@ export default function Nav() {
             src="./src/assets/icons/cartIcon.svg"
             alt=""
           />
-          <div className="cart-button__number">{cartQuantity}</div>
+          {cartQuantity ?
+            <div className="cart-button__number">{cartQuantity}</div>
+          : null}
         </button>
       </div>
     </nav>

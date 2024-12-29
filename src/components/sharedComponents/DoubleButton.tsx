@@ -40,7 +40,7 @@ export default function DoubleButton({
         isOpen={isModalOpen}
         onClose={closeModal}
         message={
-          "Click the 'Search' buttons or the 'Products' link to find and add items to shopping cart!"
+          "Click the 'Search' buttons or the 'Products' link to find and add items to the cart!"
         }
       />
     </div>
