@@ -12,6 +12,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 import { CartProvider } from "./context/CartContext";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/products", element: <ProductPage /> },
+      { path: "/products/:id", element: <ProductDetailPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <ContactPage /> },
       { path: "/cart", element: <CartPage /> },

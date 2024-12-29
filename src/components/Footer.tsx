@@ -16,7 +16,7 @@ export default function Footer() {
                 >
                   <img
                     className="footer__logo-image logo"
-                    src="./src/assets/icons/plantPlazaLogo.png"
+                    src="/src/assets/icons/plantPlazaLogo.png"
                     alt="Plant Plaza Logo"
                     width="40px"
                   />
@@ -70,7 +70,7 @@ export default function Footer() {
                 <a className="footer__social-link" href="/">
                   <img
                     className="footer__social-icon"
-                    src="./src/assets/icons/facebook.svg"
+                    src="/src/assets/icons/facebook.svg"
                     alt="Facebook Icon"
                     width="24"
                   />
@@ -79,7 +79,7 @@ export default function Footer() {
                 <a className="footer__social-link" href="/">
                   <img
                     className="footer__social-icon"
-                    src="./src/assets/icons/instagram.svg"
+                    src="/src/assets/icons/instagram.svg"
                     alt="Instagram Icon"
                     width="24"
                   />
@@ -88,7 +88,7 @@ export default function Footer() {
                 <a className="footer__social-link" href="/">
                   <img
                     className="footer__social-icon"
-                    src="./src/assets/icons/x.svg"
+                    src="/src/assets/icons/x.svg"
                     alt="Twitter/X Icon"
                     width="24"
                   />
@@ -97,7 +97,7 @@ export default function Footer() {
                 <a className="footer__social-link" href="/">
                   <img
                     className="footer__social-icon"
-                    src="./src/assets/icons/linkedIn.svg"
+                    src="/src/assets/icons/linkedIn.svg"
                     alt="LinkedIn Icon"
                     width="24"
                   />
@@ -106,7 +106,7 @@ export default function Footer() {
                 <a className="footer__social-link" href="/">
                   <img
                     className="footer__social-icon"
-                    src="./src/assets/icons/youtube.svg"
+                    src="/src/assets/icons/youtube.svg"
                     alt="YouTube Icon"
                     width="24"
                   />

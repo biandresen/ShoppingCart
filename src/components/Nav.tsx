@@ -72,7 +72,7 @@ export default function Nav({ menuIsOpen }: NavProps) {
         >
           <img
             className="header__cart-image"
-            src="./src/assets/icons/cartIcon.svg"
+            src="/src/assets/icons/cartIcon.svg"
             alt=""
           />
           {cartQuantity ?

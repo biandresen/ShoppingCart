@@ -20,7 +20,7 @@ export default function DoubleButton({
       <button
         onClick={() => {
           window.scrollTo(0, 0);
-          navigate("/product");
+          navigate("/products");
         }}
         className={"button button--filled " + sectionClass + "_button"}
         type="button"

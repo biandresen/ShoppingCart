@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useCart } from "../../context/CartContext";
 import { Product } from "../../types";
 import { formatCurrency } from "../../utils/formatCurrency";
@@ -16,16 +17,23 @@ export default function ProductCard({
     removeFromCart,
   } = useCart();
 
+  const navigate = useNavigate();
   const quantity = getItemQuantity(id);
 
   return (
     <article className="products-section__card">
-      <img
-        className="product-card__image"
-        src={imageUrl}
-        alt={`Product: ${name}`}
-        loading="lazy"
-      />
+      <button
+        onClick={() => navigate(`/products/${id}`)}
+        className="product-button"
+        type="button"
+      >
+        <img
+          className="product-card__image"
+          src={imageUrl}
+          alt={`Product: ${name}`}
+          loading="lazy"
+        />
+      </button>
       <h3 className="product-card__heading">{name}</h3>
       <p className="product-card__body">{description}</p>
       <p className="product-card__price">
@@ -50,7 +58,7 @@ export default function ProductCard({
           >
             <img
               className="quantity-reset-icon"
-              src="./src/assets/icons/trash.svg"
+              src="/src/assets/icons/trash.svg"
               alt=""
             />
           </button>
