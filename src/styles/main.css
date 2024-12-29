@@ -14,10 +14,14 @@ body {
   font-family: var(--font-primary);
 }
 
+button:hover {
+  filter: brightness(1.1);
+}
+
 .quantity-reset {
   position: absolute;
   bottom: -5px;
-  translate: -23%;
+  translate: -25%;
   color: var(--color-red);
   font-weight: var(--font-weight-regular);
   background-color: inherit;
@@ -28,6 +32,10 @@ body {
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
+}
+.quantity-reset-icon {
+  font-size: var(--font-size-2xl);
+  width: 15px;
 }
 
 .width-container {
@@ -44,14 +52,22 @@ body {
   border-radius: 50px;
   cursor: pointer;
 }
+.button--outline:hover::after {
+  content: "!";
+  font-size: var(--font-size-xl);
+  position: absolute;
+  translate: 40% -5%;
+  transform: skew(-20deg);
+  transition: all ease 0.2s;
+}
 .button--filled {
   color: var(--color-dark);
   background-color: var(--color-secondary);
-  /* border: 1px solid var(--color-dark); */
   border: none;
   padding: var(--spacing-s) var(--spacing-m);
   border-radius: 50px;
   cursor: pointer;
+  transition: all ease 0.2s;
 }
 
 hr {
@@ -125,11 +141,6 @@ input:focus {
 .logo {
   width: var(--font-size-5xl);
 }
-
-/* .navlink {
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-regular);
-  } */
 
 @media (max-width: 767px) {
   .width-container {

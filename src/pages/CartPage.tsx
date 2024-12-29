@@ -14,12 +14,22 @@ export default function CartPage() {
       <section className="cart-section">
         <h1 className="cart-section__heading">CART</h1>
         <div className="cart-section__content">
-          <p className="cart-section__total-price-heading">
-            Total:{" "}
-            <data className="cart-section__total-price-data">
-              {"$" + formatCurrency(totalPrice)}
-            </data>
-          </p>
+          <div className="cart-section__total-checkout-container">
+            <p className="cart-section__total-price-heading">
+              Total:{" "}
+              <data className="cart-section__total-price-data">
+                {"$" + formatCurrency(totalPrice)}
+              </data>
+            </p>
+            <button className="button checkout-button" type="button">
+              Checkout:{" "}
+              <img
+                className="checkout-icon"
+                src="./src/assets/icons/checkout.svg"
+                alt=""
+              />
+            </button>
+          </div>
           {cartItems.length > 0 ?
             cartItems.map((item) => {
               const product = products?.find((p) => p.id === item.id);

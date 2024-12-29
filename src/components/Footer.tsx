@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import SignupForm from "./sharedComponents/SignupForm";
 
 export default function Footer() {
@@ -30,21 +31,21 @@ export default function Footer() {
             <div className="footer__links-container">
               <div className="footer__links-group">
                 <h5 className="footer__links-title">Quick Links</h5>
-                <a className="footer__link" href="/">
+                <NavLink className="footer__link" to="/">
                   Home
-                </a>
-                <a className="footer__link" href="/products">
+                </NavLink>
+                <NavLink className="footer__link" to="/products">
                   Products
-                </a>
-                <a className="footer__link" href="/about">
+                </NavLink>
+                <NavLink className="footer__link" to="/about">
                   About
-                </a>
-                <a className="footer__link" href="/contact">
+                </NavLink>
+                <NavLink className="footer__link" to="/contact">
                   Contact
-                </a>
-                <a className="footer__link" href="/cart">
+                </NavLink>
+                <NavLink className="footer__link" to="/cart">
                   Cart
-                </a>
+                </NavLink>
               </div>
               <div className="footer__links-group">
                 <h5 className="footer__links-title">Connect With Us</h5>

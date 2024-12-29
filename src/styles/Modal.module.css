@@ -32,6 +32,6 @@
   cursor: pointer;
 }
 
-.close-button:hover {
+/* .close-button:hover {
   background: var(--color-primary-light);
-}
+} */

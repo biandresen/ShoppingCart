@@ -1,6 +1,7 @@
 import { Product } from "../../types";
 import { useCart } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
+import cross from "../../assets/icons/cross.svg";
 
 export default function CartItemCard({ id, name, price, imageUrl }: Product) {
   const {
@@ -43,7 +44,11 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
               type="button"
               aria-label="reset quantity"
             >
-              x
+              <img
+                className="quantity-reset-icon"
+                src="./src/assets/icons/trash.svg"
+                alt=""
+              />
             </button>
           </div>
           <button
