@@ -7,7 +7,7 @@
 }
 .products-section__content {
   background-color: var(--color-primary);
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-2xl);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
@@ -78,9 +78,13 @@
 @media (max-width: 767px) {
   .products-section__heading {
     font-size: var(--font-size-3xl);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-l) 0;
   }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
+  .products-section__card {
+    height: auto;
+  }
+  .product-card__price {
+    position: static;
+    padding-top: var(--spacing-m);
+  }
 }

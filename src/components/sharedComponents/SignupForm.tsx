@@ -52,7 +52,7 @@ export default function SignupForm({ formClass, buttonText }: SignupFormProps) {
             {buttonText}
           </button>
         </div>
-        <p className={formClass + "__terms policy_text"}>
+        <p className={formClass + "__terms policy-text"}>
           By clicking {buttonText}, you agree to our Terms and Conditions and
           Privacy Policy.
         </p>

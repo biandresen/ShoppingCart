@@ -118,13 +118,16 @@
 }
 
 @media (max-width: 767px) {
+  .cart-section__heading {
+    padding: var(--spacing-l);
+  }
   .cart-section__content {
     padding: var(--spacing-xl);
   }
   .cart-section__card {
     height: fit-content;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
   }
   .cart-card__image {
     width: 30%;
@@ -145,7 +148,7 @@
     padding: 0;
   }
   .cart-card__counter {
-    margin: 0;
+    margin: 0 0 10px 0;
     padding-right: 0;
     gap: var(--spacing-s);
   }

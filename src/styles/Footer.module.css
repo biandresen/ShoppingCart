@@ -1,5 +1,4 @@
 .footer {
-  background-color: var(--color-bg);
   padding: var(--spacing-3xl) 0;
 }
 .footer__container {

@@ -176,7 +176,8 @@
   background-color: var(--color-primary);
   gap: var(--spacing-m);
 }
-.newsletter-section__input {
+.newsletter-section__input::placeholder {
+color:var(--color-text-alternative-muted)
 }
 
 @media (max-width: 767px) {

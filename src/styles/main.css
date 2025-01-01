@@ -13,6 +13,7 @@
 
 body {
   font-family: var(--font-primary);
+  background-color: var(--color-bg);
 }
 
 button:hover {
@@ -170,6 +171,9 @@ input:focus {
     background-color: var(--color-primary);
     padding: 0;
     text-indent: 15px;
+  }
+  .quantity-reset {
+    bottom: -15px;
   }
 }
 
