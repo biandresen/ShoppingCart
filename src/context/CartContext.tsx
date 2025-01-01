@@ -19,7 +19,7 @@ export function CartProvider({ children }: CartProviderProps) {
     data: products,
     isLoading,
     error,
-  } = useFetch("products", "http://localhost:7000/products");
+  } = useFetch("products", "http://localhost:2000/products");
 
   const cartQuantity = useMemo(
     () => cartItems.reduce((quantity, item) => item.quantity + quantity, 0),

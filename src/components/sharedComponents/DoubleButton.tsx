@@ -7,6 +7,7 @@ export default function DoubleButton({
   sectionClass,
   firstButtonTitle,
   secondButtonTitle,
+  setMenuIsOpen,
 }: DoubleButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function DoubleButton({
     <div className={sectionClass + "__buttons u-double-buttons"}>
       <button
         onClick={() => {
-          window.scrollTo(0, 0);
+          setMenuIsOpen(false);
           navigate("/products");
         }}
         className={"button button--filled " + sectionClass + "_button"}
