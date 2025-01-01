@@ -1,4 +1,3 @@
-
 export default function TestimonialsSection() {
   return (
     <section className="testimonials-section">
@@ -13,35 +12,35 @@ export default function TestimonialsSection() {
           <div className="testimonial-card__rating">
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
@@ -54,7 +53,7 @@ export default function TestimonialsSection() {
             <div className="testimonial-card__image-container">
               <img
                 className="testimonial-card__image first"
-                src="./src/assets/images/JaneDoeProfile.jpg"
+                src="/assets/images/JaneDoeProfile.jpg"
                 alt="Jane Doe"
               />
             </div>
@@ -70,35 +69,35 @@ export default function TestimonialsSection() {
           <div className="testimonial-card__rating">
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
@@ -111,7 +110,7 @@ export default function TestimonialsSection() {
             <div className="testimonial-card__image-container">
               <img
                 className="testimonial-card__image second"
-                src="./src/assets/images/JohnSmithProfile.jpg"
+                src="/assets/images/JohnSmithProfile.jpg"
                 alt="John Smith"
               />
             </div>
@@ -126,35 +125,35 @@ export default function TestimonialsSection() {
           <div className="testimonial-card__rating">
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />{" "}
             </i>
             <i className="testimonial-card__star">
               <img
-                src="./src/assets/icons/star.svg"
+                src="/assets/icons/star.svg"
                 style={{ width: "20px" }}
                 alt="star-rating"
               />
@@ -167,7 +166,7 @@ export default function TestimonialsSection() {
             <div className="testimonial-card__image-container">
               <img
                 className="testimonial-card__image third"
-                src="./src/assets/images/EmiliyJohnsonProfile.jpg"
+                src="/assets/images/EmiliyJohnsonProfile.jpg"
                 alt="Emily Johnson"
               />
             </div>

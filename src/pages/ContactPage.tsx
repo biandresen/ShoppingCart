@@ -36,7 +36,7 @@ export default function ContactPage() {
           </div>
           <img
             className="contact-section__image"
-            src="./src/assets/images/spiralPlantContact.jpg"
+            src="/assets/images/spiralPlantContact.jpg"
             alt=""
           />
         </article>

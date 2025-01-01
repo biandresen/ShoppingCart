@@ -1,4 +1,3 @@
-
 export default function AboutPage() {
   return (
     <div className="width-container u-flex-column">
@@ -31,7 +30,7 @@ export default function AboutPage() {
           </div>
           <img
             className="about-section__image"
-            src="./src/assets/images/plantAbout.jpg"
+            src="/assets/images/plantAbout.jpg"
             alt=""
           />
         </article>

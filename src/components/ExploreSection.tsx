@@ -19,7 +19,7 @@ export default function ExploreSection() {
           <div className="explore-section__cards">
             <div className="explore-section__card">
               <img
-                src="/src/assets/images/purple-flower.png"
+                src="/assets/images/purple-flower.png"
                 alt="A vibrant purple flower"
                 className="explore-section__image"
                 loading="lazy"
@@ -36,7 +36,7 @@ export default function ExploreSection() {
             </div>
             <div className="explore-section__card">
               <img
-                src="/src/assets/images/blue-frog.png"
+                src="/assets/images/blue-frog.png"
                 alt="A bright blue flower"
                 className="explore-section__image"
                 loading="lazy"
@@ -52,7 +52,7 @@ export default function ExploreSection() {
             </div>
             <div className="explore-section__card">
               <img
-                src="/src/assets/images/tulip.png"
+                src="/assets/images/tulip.png"
                 alt="A red tulip flower"
                 className="explore-section__image"
                 loading="lazy"
