@@ -4,10 +4,12 @@
   --color-primary-light: hsl(184, 11%, 35%);
   --color-secondary: #eebf7f;
   --color-detail: #a7410b;
-  --color-bg: #dcd7c9;
+  /* --color-bg: #dcd7c9; */
+  --color-bg: hsla(35, 77%, 72%, 0.2);
   --color-text: #333;
-  --color-text-muted: #666;
+  --color-text-muted: hsla(0, 0%, 20%, 0.7);
   --color-text-alternative: #fff;
+  --color-text-alternative-muted: hsla(0, 0%, 100%, 0.7);
   --color-dark: black;
   --color-red: rgb(192, 0, 0);
 

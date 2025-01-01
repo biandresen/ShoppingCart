@@ -45,7 +45,7 @@
     padding: var(--spacing-l);
   }
   .contact-section__heading {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-l) 0;
     font-size: calc(var(--font-size-2xl) + 3.5vw);
   }
   .contact-section__text-area {
