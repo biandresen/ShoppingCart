@@ -33,7 +33,7 @@ export default function CartPage() {
                 Checkout:{" "}
                 <img
                   className="checkout-icon"
-                  src="./src/assets/icons/checkout.svg"
+                  src="/assets/icons/checkout.svg"
                   alt=""
                 />
               </button>

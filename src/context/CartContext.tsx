@@ -20,7 +20,7 @@ export function CartProvider({ children }: CartProviderProps) {
     data: products,
     isLoading,
     error,
-  } = useFetch("products", "http://localhost:2000/products");
+  } = useFetch("products", "/data/products.json");
 
   function toggleNavBar(alwaysClosed: boolean) {
     if (alwaysClosed) {

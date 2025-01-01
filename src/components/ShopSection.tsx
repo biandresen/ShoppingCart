@@ -21,10 +21,10 @@ export default function ShopSection() {
           />
         </div>
         <img
-          src="./src/assets/images/sunPlant/sunPlant1200.jpg"
+          src="/assets/images/sunPlant/sunPlant1200.jpg"
           srcSet="
-              ./src/assets/images/sunPlant/sunPlant480.jpg   480w,
-              ./src/assets/images/sunPlant/sunPlant1200.jpg 1200w
+              /assets/images/sunPlant/sunPlant480.jpg   480w,
+              /assets/images/sunPlant/sunPlant1200.jpg 1200w
             "
           alt="A vibrant plant with the sun in the background"
           className="shop-section__image"

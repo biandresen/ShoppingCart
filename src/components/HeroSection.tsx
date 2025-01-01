@@ -21,10 +21,10 @@ export default function HeroSection() {
         </div>
       </div>
       <img
-        src="./src/assets/images/plantImageSun/plantImageSun1200.jpg"
+        src="/assets/images/plantImageSun/plantImageSun1200.jpg"
         srcSet="
-            ./src/assets/images/plantImageSun/plantImageSun480.jpg   480w,
-            ./src/assets/images/plantImageSun/plantImageSun1200.jpg 1200w
+            /assets/images/plantImageSun/plantImageSun480.jpg   480w,
+            /assets/images/plantImageSun/plantImageSun1200.jpg 1200w
           "
         className="hero-section__image"
         alt="A green plant basking in the sun"

@@ -54,7 +54,7 @@ export default function ProductDetailCard({
             >
               <img
                 className="quantity-reset-icon"
-                src="/src/assets/icons/trash.svg"
+                src="/assets/icons/trash.svg"
                 alt=""
               />
             </button>
