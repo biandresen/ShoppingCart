@@ -1,13 +1,9 @@
 import Logo from "./sharedComponents/Logo";
 import Nav from "./Nav";
-import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 export default function Header() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  function handleMenu() {
-    setMenuIsOpen(!menuIsOpen);
-  }
+  const { toggleNavBar, menuIsOpen } = useCart();
 
   return (
     <header className="header">
@@ -21,13 +17,13 @@ export default function Header() {
             heading="PLANT PLAZA"
           />
           <button
-            onClick={handleMenu}
+            onClick={() => toggleNavBar(false)}
             type="button"
             className="header__menu-button button"
           >
             {menuIsOpen ?
               <img
-                onClick={handleMenu}
+                onClick={() => toggleNavBar(false)}
                 className="header__menu-icon"
                 src="/src/assets/icons/cross.svg"
                 alt=""
@@ -42,7 +38,7 @@ export default function Header() {
             {/*  */}
           </button>
         </div>
-        <Nav menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+        <Nav />
       </div>
     </header>
   );

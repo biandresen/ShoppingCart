@@ -2,15 +2,17 @@ import { DoubleButtonProps } from "../../types";
 import { useNavigate } from "react-router";
 import Modal from "./Modal";
 import { useState } from "react";
+import { useCart } from "../../context/CartContext";
 
 export default function DoubleButton({
   sectionClass,
   firstButtonTitle,
   secondButtonTitle,
-  setMenuIsOpen,
 }: DoubleButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  const { toggleNavBar } = useCart();
 
   function closeModal() {
     setIsModalOpen(false);
@@ -20,7 +22,7 @@ export default function DoubleButton({
     <div className={sectionClass + "__buttons u-double-buttons"}>
       <button
         onClick={() => {
-          setMenuIsOpen(false);
+          toggleNavBar(true);
           navigate("/products");
         }}
         className={"button button--filled " + sectionClass + "_button"}

@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 import { CartItem, CartContextType, CartProviderProps } from "../types";
 import { useFetch } from "../hooks/useFetch";
 
@@ -14,12 +14,21 @@ export function useCart() {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const {
     data: products,
     isLoading,
     error,
   } = useFetch("products", "http://localhost:2000/products");
+
+  function toggleNavBar(alwaysClosed: boolean) {
+    if (alwaysClosed) {
+      setMenuIsOpen(false);
+    } else {
+      setMenuIsOpen(!menuIsOpen);
+    }
+  }
 
   const cartQuantity = useMemo(
     () => cartItems.reduce((quantity, item) => item.quantity + quantity, 0),
@@ -90,6 +99,8 @@ export function CartProvider({ children }: CartProviderProps) {
         products,
         isLoading,
         error,
+        menuIsOpen,
+        toggleNavBar,
       }}
     >
       {children}
