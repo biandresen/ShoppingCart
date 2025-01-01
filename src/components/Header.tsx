@@ -1,26 +1,13 @@
 import Logo from "./sharedComponents/Logo";
 import Nav from "./Nav";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   function handleMenu() {
     setMenuIsOpen(!menuIsOpen);
   }
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth >= 768) {
-        setMenuIsOpen(true); // Reset nav state for larger screens
-      }
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <header className="header">
@@ -55,7 +42,7 @@ export default function Header() {
             {/*  */}
           </button>
         </div>
-        <Nav menuIsOpen={menuIsOpen} />
+        <Nav menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>
     </header>
   );

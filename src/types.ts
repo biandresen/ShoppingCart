@@ -31,6 +31,7 @@ export type CartContextType = {
 };
 
 export type DoubleButtonProps = {
+  setMenuIsOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
   sectionClass: string;
   firstButtonTitle: string;
   secondButtonTitle: string;

@@ -42,7 +42,7 @@ export default function CartPage() {
           {cartItems.length > 0 ?
             cartItems.map((item) => {
               const product = products?.find((p) => p.id === item.id);
-              if (!product) return null; // If no match, skip rendering
+              if (!product) return null;
 
               return <CartItemCard key={product.id} {...product} />;
             })
