@@ -2,15 +2,10 @@ import { NavLink, useNavigate } from "react-router";
 import { useCart } from "../context/CartContext";
 import DoubleButton from "./sharedComponents/DoubleButton";
 
-type NavProps = {
-  menuIsOpen: boolean;
-  setMenuIsOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
-};
-
-export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
+export default function Nav() {
   const navigate = useNavigate();
 
-  const { cartQuantity } = useCart();
+  const { cartQuantity, menuIsOpen, toggleNavBar } = useCart();
 
   return (
     <nav className={menuIsOpen ? "header__nav" : "nav__toggle-hide "}>
@@ -18,7 +13,7 @@ export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
         <li className="header__nav-item">
           <NavLink
             to="/"
-            onClick={() => setMenuIsOpen(false)}
+            onClick={() => toggleNavBar(false)}
             className={({ isActive }) =>
               isActive ? "active-link header__nav-link" : "header__nav-link"
             }
@@ -29,7 +24,7 @@ export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
         <li className="header__nav-item">
           <NavLink
             to="/products"
-            onClick={() => setMenuIsOpen(false)}
+            onClick={() => toggleNavBar(false)}
             className={({ isActive }) =>
               isActive ? "active-link header__nav-link" : "header__nav-link"
             }
@@ -40,7 +35,7 @@ export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
         <li className="header__nav-item">
           <NavLink
             to="/about"
-            onClick={() => setMenuIsOpen(false)}
+            onClick={() => toggleNavBar(false)}
             className={({ isActive }) =>
               isActive ? "active-link header__nav-link" : "header__nav-link"
             }
@@ -51,7 +46,7 @@ export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
         <li className="header__nav-item">
           <NavLink
             to="/contact"
-            onClick={() => setMenuIsOpen(false)}
+            onClick={() => toggleNavBar(false)}
             className={({ isActive }) =>
               isActive ? "active-link header__nav-link" : "header__nav-link"
             }
@@ -62,14 +57,13 @@ export default function Nav({ menuIsOpen, setMenuIsOpen }: NavProps) {
       </ul>
       <div className="header__nav-buttons">
         <DoubleButton
-          setMenuIsOpen={setMenuIsOpen}
           sectionClass="header"
           firstButtonTitle="Search"
           secondButtonTitle="Help"
         />
         <button
           onClick={() => {
-            setMenuIsOpen(false);
+            toggleNavBar(false);
             navigate("/cart");
           }}
           className="header__cart-button"

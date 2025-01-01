@@ -28,10 +28,11 @@ export type CartContextType = {
   products: Product[] | undefined;
   isLoading: boolean;
   error: Error | null;
+  menuIsOpen: boolean;
+  toggleNavBar(alwaysClosed?: boolean): void;
 };
 
 export type DoubleButtonProps = {
-  setMenuIsOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
   sectionClass: string;
   firstButtonTitle: string;
   secondButtonTitle: string;
