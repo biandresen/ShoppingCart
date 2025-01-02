@@ -30,6 +30,7 @@ export type CartContextType = {
   error: Error | null;
   menuIsOpen: boolean;
   toggleNavBar(alwaysClosed?: boolean): void;
+  emptyCart: () => void;
 };
 
 export type DoubleButtonProps = {

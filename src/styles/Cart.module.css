@@ -61,6 +61,16 @@
   border-top-right-radius: var(--border-radius);
   z-index: 0;
 }
+.cart-section__empty-cart-button {
+  background-color: var(--color-secondary);
+  padding: var(--spacing-s) var(--spacing-m);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-semi-bold);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: fit-content;
+}
 
 .cart-section__card {
   background-color: var(--color-secondary);
@@ -237,6 +247,9 @@
   }
   .cart-reset-button {
     bottom: -17px;
+  }
+  .cart-section__empty-cart-button img {
+    width: calc(10px + 0.8vw);
   }
 
   .cart-list__container {
