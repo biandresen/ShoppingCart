@@ -133,7 +133,7 @@
   font-weight: var(--font-weight-bold);
 }
 .cart-section__no-items-message {
-  color: var(--color-text-alternative);
+  color: var(--color-dark);
   font-size: var(--font-size-2xl);
 }
 .cart-reset-button {
@@ -308,6 +308,11 @@
   .cart-section__total-price-heading {
     font-size: calc(var(--font-size-s) + 3vw);
     padding: var(--spacing-xs) var(--spacing-s);
+    width: 100%;
+  }
+  .cart-list__heading-price-container {
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
   }
   .checkout-button {
