@@ -1,6 +1,7 @@
 import { Product } from "../../types";
 import { useCart } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
+import { NavLink } from "react-router-dom";
 
 export default function CartItemCard({ id, name, price, imageUrl }: Product) {
   const {
@@ -14,15 +15,20 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
 
   return (
     <div className="cart-section__card">
-      <img
-        className="cart-card__image"
-        src={imageUrl}
-        alt={`product: ${name}`}
-        aria-label={`product: ${name}`}
-      />
+      <NavLink to={`/products/${id}`}>
+        <img
+          className="cart-card__image"
+          src={imageUrl}
+          alt={`product: ${name}`}
+          aria-label={`product: ${name}`}
+        />
+      </NavLink>
+
       <div className="cart-card__container">
         <div className="cart-card__heading-price-container">
-          <h3 className="cart-card__heading">{name}</h3>
+          <h3 className="cart-card__heading">
+            <NavLink to={`/products/${id}`}>{name}</NavLink>
+          </h3>
           <p className="cart-card__price">
             <data value={price}>{"$" + formatCurrency(price) * quantity}</data>
           </p>

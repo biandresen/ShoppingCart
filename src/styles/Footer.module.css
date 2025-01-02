@@ -86,6 +86,9 @@
   text-decoration: none;
   color: var(--color-text);
 }
+.footer__links-title{
+  font-size: var(--font-size-l);
+}
 
 @media (max-width: 767px) {
   .footer {

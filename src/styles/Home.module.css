@@ -177,7 +177,7 @@
   gap: var(--spacing-m);
 }
 .newsletter-section__input::placeholder {
-color:var(--color-text-alternative-muted)
+  color: var(--color-text-alternative-muted);
 }
 
 @media (max-width: 767px) {
@@ -186,12 +186,13 @@ color:var(--color-text-alternative-muted)
   }
   .hero-section__content {
     flex-direction: column;
+    padding-bottom: var(--spacing-xs);
   }
   .hero-section__image {
     margin: var(--spacing-l) 0 0 0;
   }
   .shop-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-s) 0 var(--spacing-xl) 0;
   }
   .shop-section__content {
     flex-direction: column;

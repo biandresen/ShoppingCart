@@ -20,6 +20,11 @@ button:hover {
   filter: brightness(1.1);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .fetch-error-message {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-semi-bold);
@@ -174,6 +179,9 @@ input:focus {
   }
   .quantity-reset {
     bottom: -15px;
+  }
+  .logo {
+    width: var(--font-size-4xl);
   }
 }
 
