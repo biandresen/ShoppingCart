@@ -4,8 +4,14 @@ import { useCart } from "../context/CartContext";
 export default function ProductPage() {
   const { products, isLoading, error } = useCart();
 
-  if (isLoading) return <p className="fetch-error-message">Loading products...</p>;
-  if (error) return <p className="fetch-error-message">Error fetching products: {(error as Error).message}</p>;
+  if (isLoading)
+    return <p className="fetch-error-message">Loading products...</p>;
+  if (error)
+    return (
+      <p className="fetch-error-message">
+        Error fetching products: {(error as Error).message}
+      </p>
+    );
 
   return (
     <div className="width-container u-flex-column">
