@@ -1,4 +1,3 @@
-
 export default function ContactPage() {
   return (
     <div className="width-container u-flex-column">

@@ -56,7 +56,9 @@
 .cart-list__no-items-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--spacing-m);
+  width: 75%;
 }
 .cart-section__list-layout-button {
   background-color: var(--color-secondary);
@@ -80,7 +82,7 @@
 .cart-section__card {
   background-color: var(--color-secondary);
   display: flex;
-  width: clamp(580px, 70%, 100%);
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   border-radius: var(--border-radius);
@@ -133,7 +135,7 @@
   font-weight: var(--font-weight-bold);
 }
 .cart-section__no-items-message {
-  color: var(--color-dark);
+  color: var(--color-secondary);
   font-size: var(--font-size-2xl);
 }
 .cart-reset-button {
