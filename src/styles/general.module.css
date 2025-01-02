@@ -57,9 +57,6 @@ input {
   padding: 0 var(--spacing-m);
   border: none;
 }
-input::placeholder {
-  color: var(--color-bg);
-}
 input:focus {
   outline: none;
 }
@@ -153,6 +150,9 @@ input:focus {
     background-color: var(--color-primary);
     padding: 0;
     text-indent: 15px;
+  }
+  input::placeholder {
+    font-size: calc(var(--font-size-s) + 1.5vw);
   }
   .logo {
     width: var(--font-size-4xl);

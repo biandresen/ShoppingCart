@@ -53,6 +53,11 @@
 .checkout-icon {
   width: 45px;
 }
+.cart-list__no-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
 .cart-section__list-layout-button {
   background-color: var(--color-secondary);
   padding: var(--spacing-xs) var(--spacing-m);
@@ -208,6 +213,9 @@
   }
   .cart-section__content {
     padding: var(--spacing-xl);
+  }
+  .cart-section__no-items-message {
+    font-size: calc(var(--font-size-m) + 2vw);
   }
   .cart-section__card {
     height: fit-content;
