@@ -15,7 +15,7 @@ export default function HeroSection() {
           </p>
           <DoubleButton
             sectionClass="hero-section"
-            firstButtonTitle="Search"
+            firstButtonTitle="Products"
             secondButtonTitle="Help"
           />
         </div>

@@ -77,7 +77,7 @@
   border-radius: 50%;
   padding: var(--spacing-s);
   cursor: pointer;
-  box-shadow: var(--shadow-s);
+  box-shadow: var(--shadow-xs);
 }
 .header__menu-icon {
   width: var(--font-size-3xl);

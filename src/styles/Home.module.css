@@ -18,7 +18,7 @@
 .hero-section__image {
   width: 100%;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-s);
+  /* box-shadow: var(--shadow-s); */
 }
 
 .shop-section {
@@ -38,7 +38,7 @@
   width: 50%;
   margin: var(--spacing-3xl) 0 0 0;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-s);
+  /* box-shadow: var(--shadow-s); */
 }
 
 .explore-section {
@@ -71,7 +71,7 @@
 }
 .explore-section__image {
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-s);
+  /* box-shadow: var(--shadow-s); */
 }
 .explore-section__card-text p {
   padding-top: 10px;

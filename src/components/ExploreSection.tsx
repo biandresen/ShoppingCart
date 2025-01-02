@@ -69,7 +69,7 @@ export default function ExploreSection() {
           </div>
           <DoubleButton
             sectionClass="explore-section"
-            firstButtonTitle="Search"
+            firstButtonTitle="Products"
             secondButtonTitle="Help"
           />
         </div>

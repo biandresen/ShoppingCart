@@ -27,7 +27,6 @@
 .product-detail-card__image {
   border-radius: var(--border-radius);
   width: 500px;
-  box-shadow: var(--shadow-xs);
 }
 .product-detail-section__container {
   display: flex;
@@ -65,7 +64,6 @@
 }
 .product-detail-card__delete,
 .product-detail-card__add {
-  box-shadow: none;
   border: 1px solid black;
   color: var(--color-text-alternative);
   background-color: var(--color-detail);

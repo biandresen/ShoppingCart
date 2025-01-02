@@ -15,7 +15,7 @@ export default function DiscoverSection() {
           </p>
           <DoubleButton
             sectionClass="discover-section"
-            firstButtonTitle="Search"
+            firstButtonTitle="Products"
             secondButtonTitle="Help"
           />
         </div>
