@@ -31,7 +31,6 @@
 }
 .contact-section__image {
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-s);
   width: clamp(200px, 500px, 80%);
   height: auto;
 }

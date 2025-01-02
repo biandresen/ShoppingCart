@@ -71,6 +71,7 @@
   --breakpoint-2xl: 1400px;
 
   /* Shadows */
+  --shadow-reversed: 0px -3px 3px rgba(0, 0, 0, 0.5);
   --shadow-xs: 0px 1px 3px rgba(0, 0, 0, 0.5);
   --shadow-s: 0px 3px 3px rgba(0, 0, 0, 0.5);
   --shadow-m: 0px 4px 6px rgba(0, 0, 0, 0.5);
