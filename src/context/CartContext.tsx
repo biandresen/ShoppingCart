@@ -48,6 +48,10 @@ export function CartProvider({ children }: CartProviderProps) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
+  function emptyCart() {
+    setCartItems([]);
+  }
+
   function increaseCartQuantity(id: number) {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
@@ -101,6 +105,7 @@ export function CartProvider({ children }: CartProviderProps) {
         error,
         menuIsOpen,
         toggleNavBar,
+        emptyCart,
       }}
     >
       {children}

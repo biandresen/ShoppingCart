@@ -6,7 +6,8 @@ import { formatCurrency } from "../utils/formatCurrency";
 
 export default function CartPage() {
   const [listMode, setListMode] = useState(false);
-  const { cartItems, isLoading, error, totalPrice, products } = useCart();
+  const { cartItems, isLoading, error, totalPrice, products, emptyCart } =
+    useCart();
 
   function handleListMode() {
     setListMode(!listMode);
@@ -41,19 +42,34 @@ export default function CartPage() {
                 <img
                   className="checkout-icon"
                   src="/assets/icons/checkout.svg"
+                  aria-label="checkout"
                   alt=""
                 />
               </button>
             : null}
           </div>
           {totalPrice ?
-            <button
-              onClick={handleListMode}
-              type="button"
-              className="cart-section__list-layout-button button"
-            >
-              {`Layout: ${listMode ? "List" : "Card"}`}
-            </button>
+            <>
+              <button
+                onClick={emptyCart}
+                type="button"
+                className="cart-section__empty-cart-button button"
+              >
+                <img
+                  className="quantity-reset-icon"
+                  src="/assets/icons/trash.svg"
+                  aria-label="empty cart"
+                  alt=""
+                />
+              </button>
+              <button
+                onClick={handleListMode}
+                type="button"
+                className="cart-section__list-layout-button button"
+              >
+                {`Layout: ${listMode ? "List" : "Card"}`}
+              </button>
+            </>
           : null}
           <div
             className={
