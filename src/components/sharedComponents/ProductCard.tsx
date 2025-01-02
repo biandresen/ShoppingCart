@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { useCart } from "../../context/CartContext";
 import { Product } from "../../types";
 import { formatCurrency } from "../../utils/formatCurrency";
+import { NavLink } from "react-router-dom";
 
 export default function ProductCard({
   id,
@@ -34,7 +35,9 @@ export default function ProductCard({
           loading="lazy"
         />
       </button>
-      <h3 className="product-card__heading">{name}</h3>
+      <h3 className="product-card__heading">
+        <NavLink to={`/products/${id}`}>{name}</NavLink>
+      </h3>
       <p className="product-card__body">{description}</p>
       <p className="product-card__price">
         <data value={price}>{"$" + formatCurrency(price)}</data>

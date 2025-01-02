@@ -32,6 +32,7 @@
   background-color: inherit;
   border-radius: var(--border-radius);
   padding: 0;
+  flex: 0;
   cursor: pointer;
   border: none;
 }
@@ -82,6 +83,7 @@
   }
   .products-section__card {
     height: auto;
+    padding-bottom: 30px;
   }
   .product-card__price {
     position: static;
