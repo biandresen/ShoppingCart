@@ -72,8 +72,15 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
 }
-.product-reset-button{
+.product-reset-button {
   bottom: -5px;
+}
+.no-products-found-message {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--color-secondary);
+}
+.search-failed-button {
 }
 
 @media (max-width: 767px) {
@@ -87,5 +94,11 @@
   .product-card__price {
     position: static;
     padding-top: var(--spacing-m);
+  }
+  .no-products-found-message {
+    font-size: calc(var(--font-size-xs) + 3vw);
+  }
+  .search-failed-button {
+    font-size: calc(var(--font-size-xs) + 1vw);
   }
 }

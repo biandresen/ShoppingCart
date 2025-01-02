@@ -136,7 +136,7 @@
 }
 .cart-section__no-items-message {
   color: var(--color-secondary);
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
 }
 .cart-reset-button {
   bottom: -8px;

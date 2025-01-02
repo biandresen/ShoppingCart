@@ -31,10 +31,21 @@ export type CartContextType = {
   menuIsOpen: boolean;
   toggleNavBar(alwaysClosed?: boolean): void;
   emptyCart: () => void;
+  searchProducts: (productName: string) => void;
+  searchResults: Product[] | null;
+  resetSearch: () => void;
 };
 
 export type DoubleButtonProps = {
   sectionClass: string;
   firstButtonTitle: string;
   secondButtonTitle: string;
+};
+
+export type SearchModalProps = {
+  isOpen: boolean;
+  onSearch: (productName: string) => void;
+  onClose: () => void;
+  message: string;
+  toggleNavBar(alwaysClosed?: boolean): void;
 };
