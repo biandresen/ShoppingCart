@@ -77,8 +77,8 @@
   padding-top: 10px;
 }
 .explore-section_button {
-  color: var(--color-text-alternative) !important;
-  background-color: var(--color-detail) !important;
+  color: var(--color-text-alternative);
+  background-color: var(--color-detail);
 }
 
 .testimonials-section {

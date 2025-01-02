@@ -26,12 +26,5 @@
   background: var(--color-primary);
   color: var(--color-text-alternative);
   font-size: var(--font-size-l);
-  border: none;
   padding: var(--spacing-s) var(--spacing-m);
-  border-radius: var(--border-radius);
-  cursor: pointer;
 }
-
-/* .close-button:hover {
-  background: var(--color-primary-light);
-} */

@@ -46,7 +46,7 @@ export default function SignupForm({ formClass, buttonText }: SignupFormProps) {
           />
           <button
             onClick={handleButtonClick}
-            className={formClass + "__button button--filled"}
+            className={formClass + "__button button--filled button"}
             type="submit"
           >
             {buttonText}

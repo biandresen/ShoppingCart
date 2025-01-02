@@ -1,9 +1,16 @@
+import { useState } from "react";
 import CartItemCard from "../components/sharedComponents/CartItemCard";
+import CartItemList from "../components/sharedComponents/CartItemList";
 import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
 
 export default function CartPage() {
+  const [listMode, setListMode] = useState(false);
   const { cartItems, isLoading, error, totalPrice, products } = useCart();
+
+  function handleListMode() {
+    setListMode(!listMode);
+  }
 
   if (isLoading)
     return <p className="fetch-error-message"> Loading products...</p>;
@@ -39,17 +46,35 @@ export default function CartPage() {
               </button>
             : null}
           </div>
-          {cartItems.length > 0 ?
-            cartItems.map((item) => {
-              const product = products?.find((p) => p.id === item.id);
-              if (!product) return null;
-
-              return <CartItemCard key={product.id} {...product} />;
-            })
-          : <p className="cart-section__no-items-message">
-              No items in cart yet...
-            </p>
-          }
+          {totalPrice ?
+            <button
+              onClick={handleListMode}
+              type="button"
+              className="cart-section__list-layout-button button"
+            >
+              {`Layout: ${listMode ? "List" : "Card"}`}
+            </button>
+          : null}
+          <div
+            className={
+              listMode ? "cart-list__container" : "cart-list__no-container"
+            }
+          >
+            {cartItems.length > 0 ?
+              cartItems.map((item) => {
+                const product = products?.find((p) => p.id === item.id);
+                if (!product) return null;
+                if (listMode) {
+                  return <CartItemList key={product.id} {...product} />;
+                } else {
+                  return <CartItemCard key={product.id} {...product} />;
+                }
+              })
+            : <p className="cart-section__no-items-message">
+                No items in cart yet...
+              </p>
+            }
+          </div>
         </div>
       </section>
     </div>

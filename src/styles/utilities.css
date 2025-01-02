@@ -1,6 +1,6 @@
 /* UTILITIES */
 .u-flex-row {
-  display: flex !important;
+  display: flex;
 }
 .u-flex-column {
   display: flex;
@@ -24,4 +24,7 @@
 .u-double-buttons {
   display: flex;
   gap: var(--spacing-m);
+}
+.u-d-none {
+  display: none;
 }

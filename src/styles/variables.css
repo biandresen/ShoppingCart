@@ -60,6 +60,7 @@
 
   /* Border Radius */
   --border-radius: 20px;
+  --border-radius-button: 100px;
 
   /* Breakpoints */
   --breakpoint-xs: 320px;

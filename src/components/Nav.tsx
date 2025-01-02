@@ -66,7 +66,7 @@ export default function Nav() {
             toggleNavBar(false);
             navigate("/cart");
           }}
-          className="header__cart-button"
+          className="button header__cart-button"
           type="button"
           aria-label="Open Shopping Cart"
         >
