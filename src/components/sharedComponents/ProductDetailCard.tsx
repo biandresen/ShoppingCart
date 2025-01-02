@@ -35,7 +35,7 @@ export default function ProductDetailCard({
         <div className="product-detail-card__counter">
           <button
             type="button"
-            className="product-detail-card__delete button--filled"
+            className="button product-detail-card__delete button--filled"
             onClick={() => decreaseCartQuantity(id)}
             aria-label={`Remove one ${name}`}
           >
@@ -48,7 +48,7 @@ export default function ProductDetailCard({
             {quantity}
             <button
               onClick={() => removeFromCart(id)}
-              className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
+              className={`${quantity ? "button quantity-reset-button product-detail__reset-button" : "u-d-none"}`}
               type="button"
               aria-label="reset quantity"
             >
@@ -61,7 +61,7 @@ export default function ProductDetailCard({
           </div>
           <button
             type="button"
-            className="product-detail-card__add button--filled"
+            className="button product-detail-card__add button--filled"
             onClick={() => increaseCartQuantity(id)}
             aria-label={`Add one ${name}`}
           >

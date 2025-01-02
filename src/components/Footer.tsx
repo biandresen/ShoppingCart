@@ -48,7 +48,7 @@ export default function Footer() {
                 </NavLink>
               </div>
               <div className="footer__links-group">
-                <h5 className="footer__links-title">Connect With Us</h5>
+                <h5 className="footer__links-title">Connect</h5>
                 <a className="footer__link" href="/">
                   Blog Posts
                 </a>

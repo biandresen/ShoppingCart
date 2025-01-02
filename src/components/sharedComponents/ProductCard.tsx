@@ -25,7 +25,7 @@ export default function ProductCard({
     <article className="products-section__card">
       <button
         onClick={() => navigate(`/products/${id}`)}
-        className="product-button"
+        className="button product-button"
         type="button"
       >
         <img
@@ -45,7 +45,7 @@ export default function ProductCard({
       <div className="product-card__counter">
         <button
           type="button"
-          className="product-card__delete button--filled"
+          className="button product-card__delete button--filled"
           onClick={() => decreaseCartQuantity(id)}
           aria-label={`Remove one ${name}`}
         >
@@ -55,7 +55,7 @@ export default function ProductCard({
           {quantity}
           <button
             onClick={() => removeFromCart(id)}
-            className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
+            className={`${quantity ? "button quantity-reset-button product-reset-button" : "u-d-none"}`}
             type="button"
             aria-label="reset quantity"
           >
@@ -68,7 +68,7 @@ export default function ProductCard({
         </div>
         <button
           type="button"
-          className="product-card__add button--filled"
+          className="button product-card__add button--filled"
           onClick={() => increaseCartQuantity(id)}
           aria-label={`Add one ${name}`}
         >

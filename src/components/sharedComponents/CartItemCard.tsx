@@ -30,14 +30,16 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
             <NavLink to={`/products/${id}`}>{name}</NavLink>
           </h3>
           <p className="cart-card__price">
-            <data value={price}>{"$" + formatCurrency(price) * quantity}</data>
+            <data value={price}>
+              {"$" + (formatCurrency(price) * quantity).toFixed(2)}
+            </data>
           </p>
         </div>
         <div className="cart-card__counter">
           <button
             onClick={() => decreaseCartQuantity(id)}
             type="button"
-            className="cart-card__delete button--filled"
+            className="button cart-card__delete button--filled"
           >
             Del
           </button>
@@ -45,7 +47,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
             {quantity}
             <button
               onClick={() => removeFromCart(id)}
-              className={`quantity-reset ${quantity ? "u-flex-row" : ""}`}
+              className={`button quantity-reset-button cart-reset-button ${quantity ? "u-flex-row" : ""}`}
               type="button"
               aria-label="reset quantity"
             >
@@ -59,7 +61,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
           <button
             onClick={() => increaseCartQuantity(id)}
             type="button"
-            className="cart-card__add button--filled"
+            className="button cart-card__add button--filled"
           >
             Add
           </button>
