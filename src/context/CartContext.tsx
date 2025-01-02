@@ -1,5 +1,10 @@
 import { createContext, useContext, useState, useMemo } from "react";
-import { CartItem, CartContextType, CartProviderProps } from "../types";
+import {
+  CartItem,
+  CartContextType,
+  CartProviderProps,
+  Product,
+} from "../types";
 import { useFetch } from "../hooks/useFetch";
 
 const CartContext = createContext({} as CartContextType);
@@ -15,6 +20,7 @@ export function useCart() {
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState<Product[] | null>(null);
 
   const {
     data: products,
@@ -43,6 +49,19 @@ export function CartProvider({ children }: CartProviderProps) {
       }, 0),
     [cartItems, products]
   );
+
+  function searchProducts(productName: string): void {
+    if (!products) return;
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(productName.toLowerCase())
+    );
+    console.log(filteredProducts);
+    setSearchResults(filteredProducts);
+  }
+
+  function resetSearch() {
+    setSearchResults(null); // Clear search results
+  }
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -106,6 +125,9 @@ export function CartProvider({ children }: CartProviderProps) {
         menuIsOpen,
         toggleNavBar,
         emptyCart,
+        searchProducts,
+        searchResults,
+        resetSearch,
       }}
     >
       {children}

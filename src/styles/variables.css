@@ -3,6 +3,7 @@
   --color-primary: #3f4e4f;
   --color-primary-light: hsl(184, 11%, 35%);
   --color-secondary: #eebf7f;
+  --color-secondary-dark: hsl(35, 77%, 60%);
   --color-detail: #a7410b;
   /* --color-bg: #dcd7c9; */
   --color-bg: hsla(35, 77%, 72%, 0.4);
