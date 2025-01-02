@@ -1,0 +1,19 @@
+.sticky-cart-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: var(--border-radius-button);
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .sticky-cart-button {
+    display: flex;
+  }
+}
+.sticky-cart-image {
+  width: 38px;
+  height: 38px;
+}

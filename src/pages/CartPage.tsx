@@ -3,11 +3,14 @@ import CartItemCard from "../components/sharedComponents/CartItemCard";
 import CartItemList from "../components/sharedComponents/CartItemList";
 import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
+import { useNavigate } from "react-router";
 
 export default function CartPage() {
   const [listMode, setListMode] = useState(false);
   const { cartItems, isLoading, error, totalPrice, products, emptyCart } =
     useCart();
+
+  const navigate = useNavigate();
 
   function handleListMode() {
     setListMode(!listMode);
@@ -30,12 +33,14 @@ export default function CartPage() {
         <h1 className="cart-section__heading">CART</h1>
         <div className="cart-section__content">
           <div className="cart-section__total-checkout-container">
-            <p className="cart-section__total-price-heading">
-              Total:{" "}
-              <data className="cart-section__total-price-data">
-                {"$" + formatCurrency(totalPrice)}
-              </data>
-            </p>
+            {totalPrice ?
+              <p className="cart-section__total-price-heading">
+                Total:{" "}
+                <data className="cart-section__total-price-data">
+                  {"$" + formatCurrency(totalPrice)}
+                </data>
+              </p>
+            : null}
             {totalPrice ?
               <button className="button checkout-button" type="button">
                 Checkout:{" "}
@@ -73,7 +78,9 @@ export default function CartPage() {
           : null}
           <div
             className={
-              listMode ? "cart-list__container" : "cart-list__no-container"
+              listMode ?
+                "cart-list__container"
+              : "cart-list__no-items-container"
             }
           >
             {cartItems.length > 0 ?
@@ -86,9 +93,23 @@ export default function CartPage() {
                   return <CartItemCard key={product.id} {...product} />;
                 }
               })
-            : <p className="cart-section__no-items-message">
-                No items in cart yet...
-              </p>
+            : <>
+                <p className="cart-section__no-items-message">
+                  No Products In Cart Yet...
+                </p>
+                <button
+                  onClick={() => {
+                    navigate("/products");
+                  }}
+                  className={
+                    "button button--filled cart-section__search-button"
+                  }
+                  type="button"
+                  aria-label={"product search button"}
+                >
+                  Find Products
+                </button>
+              </>
             }
           </div>
         </div>
