@@ -3,7 +3,7 @@ import { useCart } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { NavLink } from "react-router-dom";
 
-export default function CartItemCard({ id, name, price, imageUrl }: Product) {
+export default function CartItemCard({ id, name, price }: Product) {
   const {
     getItemQuantity,
     increaseCartQuantity,

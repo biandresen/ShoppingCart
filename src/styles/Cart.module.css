@@ -85,6 +85,7 @@
   align-items: center;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-s);
+  z-index: 1;
 }
 .cart-card__container {
   display: flex;
