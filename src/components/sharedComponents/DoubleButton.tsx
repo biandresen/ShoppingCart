@@ -53,14 +53,14 @@ export default function DoubleButton({
         isOpen={isHelpModalOpen}
         onClose={closeHelpModal}
         message={
-          'Click the "Search"-button to search for specific products. Click the "Products"-button or the "Products"-link to look at all products!'
+          'Click "Search" to search for specific products. Click "Products" to look at all products!'
         }
       />
       <SearchModal
         isOpen={isSearchModalOpen}
         onSearch={searchProducts}
         onClose={closeSearchModal}
-        message="Search Product"
+        message="Search For Products"
         toggleNavBar={toggleNavBar}
       />
     </div>

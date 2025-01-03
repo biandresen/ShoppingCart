@@ -33,23 +33,23 @@ export default function ProductPage() {
           Look Through All Of Our Fantastic Plants!
         </h1>
         <div className="products-section__content">
+          {searchResults && (
+            <button
+              onClick={resetSearch}
+              className={"button button--filled search-failed-button"}
+              type="button"
+              aria-label={"product search button"}
+            >
+              Show All Products
+            </button>
+          )}
           {displayedProducts && displayedProducts.length > 0 ?
             displayedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))
-          : <>
-              <p className="no-products-found-message">
-                <b>No Products Found.</b> Search Again Or Click Here:
-              </p>
-              <button
-                onClick={resetSearch}
-                className={"button button--filled search-failed-button"}
-                type="button"
-                aria-label={"product search button"}
-              >
-                All Products
-              </button>
-            </>
+          : <p className="no-products-found-message">
+              <b>No Products Found.</b> Search Again Or "Show All Products"
+            </p>
           }
         </div>
       </section>
