@@ -16,14 +16,6 @@ export default function DoubleButton({
   const { toggleNavBar, searchProducts } = useCart();
   const navigate = useNavigate();
 
-  function closeHelpModal() {
-    setIsHelpModalOpen(false);
-  }
-
-  function closeSearchModal() {
-    setIsSearchModalOpen(false);
-  }
-
   return (
     <div className={sectionClass + "__buttons u-double-buttons"}>
       <button
@@ -51,15 +43,15 @@ export default function DoubleButton({
       </button>
       <Modal
         isOpen={isHelpModalOpen}
-        onClose={closeHelpModal}
+        onClose={() => setIsHelpModalOpen(false)}
         message={
-          'Click "Search" to search for specific products. Click "Products" to look at all products!'
+          'Click "Search" to search for specific products. Click "Products" to look at all products.'
         }
       />
       <SearchModal
         isOpen={isSearchModalOpen}
         onSearch={searchProducts}
-        onClose={closeSearchModal}
+        onClose={() => setIsSearchModalOpen(false)}
         message="Search For Products"
         toggleNavBar={toggleNavBar}
       />

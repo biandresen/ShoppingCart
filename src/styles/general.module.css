@@ -96,6 +96,13 @@ input:focus {
   background-color: var(--color-secondary);
   transition: all ease 0.2s;
 }
+.info-button {
+  background-color: transparent;
+  box-shadow: none;
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  position: absolute;
+}
 
 .fetch-error-message {
   font-size: var(--font-size-3xl);
