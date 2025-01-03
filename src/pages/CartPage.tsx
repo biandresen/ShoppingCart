@@ -78,7 +78,7 @@ export default function CartPage() {
           : null}
           <div
             className={
-              listMode ?
+              listMode && totalPrice ?
                 "cart-list__container"
               : "cart-list__no-items-container"
             }

@@ -372,4 +372,7 @@
     position: relative;
     left: -15px;
   }
+  .cart-section__search-button{
+    margin-bottom: 30px;
+  }
 }

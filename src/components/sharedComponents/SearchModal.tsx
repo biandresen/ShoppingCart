@@ -17,6 +17,25 @@ export default function SearchModal({
     }
   }, [isOpen]);
 
+  const startSearch = () => {
+    if (!productName.trim()) return;
+    onSearch(productName);
+    setProductName("");
+    onClose();
+    toggleNavBar(true);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      startSearch();
+    }
+  };
+
+  const handleClick = () => {
+    startSearch();
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -32,18 +51,16 @@ export default function SearchModal({
             className="modal-search-input"
             ref={inputRef}
             value={productName}
+            onKeyDown={handleKeyDown}
             onChange={(e) => setProductName(e.target.value)}
             placeholder="product search..."
+            aria-label="Search products"
           />
           <button
             type="button"
             className="button modal-search-button modal-button"
-            onClick={() => {
-              onSearch(productName);
-              setProductName("");
-              onClose();
-              toggleNavBar(true);
-            }}
+            onClick={handleClick}
+            aria-label="Search button"
           >
             Search
           </button>
