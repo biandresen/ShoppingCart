@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import {
   CartItem,
   CartContextType,
@@ -6,6 +6,7 @@ import {
   Product,
 } from "../types";
 import { useFetch } from "../hooks/useFetch";
+import { getLocalItems, storeLocalItems } from "../utils/localStorage";
 
 const CartContext = createContext({} as CartContextType);
 
@@ -18,7 +19,9 @@ export function useCart() {
 }
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    return getLocalItems<CartItem[]>("cartItems") || [];
+  });
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<Product[] | null>(null);
 
@@ -35,6 +38,10 @@ export function CartProvider({ children }: CartProviderProps) {
       setMenuIsOpen(!menuIsOpen);
     }
   }
+
+  useEffect(() => {
+    storeLocalItems("cartItems", cartItems);
+  }, [cartItems]);
 
   const cartQuantity = useMemo(
     () => cartItems.reduce((quantity, item) => item.quantity + quantity, 0),
@@ -59,8 +66,9 @@ export function CartProvider({ children }: CartProviderProps) {
     setSearchResults(filteredProducts);
   }
 
+  // Clear search results
   function resetSearch() {
-    setSearchResults(null); // Clear search results
+    setSearchResults(null);
   }
 
   function getItemQuantity(id: number) {
