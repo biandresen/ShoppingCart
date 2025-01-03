@@ -26,6 +26,7 @@
   z-index: 1000;
 }
 .modal-content {
+  position: relative;
   color: var(--color-dark);
   background: var(--color-secondary);
   padding: var(--spacing-m);
@@ -43,6 +44,10 @@
   color: var(--color-text-alternative);
   font-size: var(--font-size-l);
   padding: var(--spacing-s) var(--spacing-m);
+}
+
+.modal-help-message {
+  padding: var(--spacing-l) var(--spacing-m) var(--spacing-s) var(--spacing-m);
 }
 
 .modal-search-overlay {
@@ -72,6 +77,13 @@
 }
 .modal-search-button {
   margin-top: 0;
+}
+.modal-exit-button {
+  background-color: var(--color-secondary-dark);
+  position: absolute;
+  box-shadow: none;
+  top: 10px;
+  right: 10px;
 }
 
 @media (max-width: 768px) {

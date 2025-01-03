@@ -44,6 +44,14 @@ export default function SearchModal({
         className="modal-search-content modal-content"
         onClick={(e) => e.stopPropagation()}
       >
+        <button
+          type="button"
+          className="button modal-exit-button"
+          onClick={onClose}
+          aria-label="close search box"
+        >
+          X
+        </button>
         <p className="modal-search-message modal-message">{message}</p>
         <div className="modal-search-container">
           <input

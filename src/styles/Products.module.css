@@ -6,8 +6,9 @@
   padding: var(--spacing-3xl);
 }
 .products-section__content {
+  position: relative;
   background-color: var(--color-primary);
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
@@ -81,6 +82,8 @@
   color: var(--color-secondary);
 }
 .search-failed-button {
+  position: absolute;
+  top: 15px;
 }
 
 @media (max-width: 767px) {
