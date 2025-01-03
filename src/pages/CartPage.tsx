@@ -4,9 +4,12 @@ import CartItemList from "../components/sharedComponents/CartItemList";
 import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
 import { useNavigate } from "react-router";
+import Modal from "../components/sharedComponents/Modal";
 
 export default function CartPage() {
   const [listMode, setListMode] = useState(false);
+  const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false);
+  const [isPulsingButton, setIsPulsingButton] = useState(true);
   const { cartItems, isLoading, error, totalPrice, products, emptyCart } =
     useCart();
 
@@ -68,9 +71,28 @@ export default function CartPage() {
                 />
               </button>
               <button
+                type="button"
+                className={`info-button cart-section__info-button button ${
+                  isPulsingButton ? "animation__pulse" : ""
+                }`}
+                onClick={() => setInfoButtonIsOpen(true)}
+                aria-label='info: Click "Trash" to empty cart. Click "Layout:" to change the layout.'
+              >
+                ?
+              </button>
+              <Modal
+                isOpen={infoButtonIsOpen}
+                onClose={() => {
+                  setInfoButtonIsOpen(false);
+                  setIsPulsingButton(false);
+                }}
+                message='Click "Trash" to empty cart. Click "Layout:" to change the layout.'
+              />
+              <button
                 onClick={handleListMode}
                 type="button"
                 className="cart-section__list-layout-button button"
+                aria-label="change visual layout of products"
               >
                 {`Layout: ${listMode ? "List" : "Card"}`}
               </button>

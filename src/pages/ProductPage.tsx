@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../components/sharedComponents/ProductCard";
 import { useCart } from "../context/CartContext";
 import { useLocation } from "react-router";
+import Modal from "../components/sharedComponents/Modal";
 
 export default function ProductPage() {
+  const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false);
+  const [isPulsingProduct, setIsPulsingProduct] = useState(true);
   const { products, searchResults, resetSearch, isLoading, error } = useCart();
 
   const location = useLocation();
@@ -43,6 +46,23 @@ export default function ProductPage() {
               Show All Products
             </button>
           )}
+          <button
+            type="button"
+            className={`info-button button products-section__info-button  ${
+              isPulsingProduct ? "animation__pulse" : ""
+            }`}
+            onClick={() => setInfoButtonIsOpen(true)}
+          >
+            ?
+          </button>
+          <Modal
+            isOpen={infoButtonIsOpen}
+            onClose={() => {
+              setInfoButtonIsOpen(false);
+              setIsPulsingProduct(false);
+            }}
+            message="Click image or title for product details."
+          />
           {displayedProducts && displayedProducts.length > 0 ?
             displayedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
