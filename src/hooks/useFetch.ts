@@ -1,6 +1,9 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import axios from "axios";
 
+//* Using generics (T) to make the function reusable
+
+// Fetch data from an API
 async function fetchData<T>(url: string): Promise<T> {
   const response = await axios.get(url);
 
@@ -13,6 +16,7 @@ async function fetchData<T>(url: string): Promise<T> {
   }
 }
 
+// Custom hook to fetch data with TanStack's react-query
 export function useFetch<T>(key: string, url: string): UseQueryResult<T> {
   return useQuery<T>({
     queryKey: [key],

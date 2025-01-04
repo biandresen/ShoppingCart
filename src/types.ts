@@ -43,7 +43,7 @@ export type CartContextType = {
   emptyCart: () => void;
   searchProducts: (productName: string) => void;
   resetSearch: () => void;
-  toggleNavBar(alwaysClosed?: boolean): void;
+  toggleMenu(alwaysClosed?: boolean): void;
 
   // States
   cartQuantity: number;
@@ -68,5 +68,5 @@ export type SearchModalProps = {
   message: string;
   onSearch: (productName: string) => void;
   onClose: () => void;
-  toggleNavBar(alwaysClosed?: boolean): void;
+  toggleMenu(alwaysClosed?: boolean): void;
 };
