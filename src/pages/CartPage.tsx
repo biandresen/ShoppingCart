@@ -27,7 +27,7 @@ export default function CartPage() {
   if (isLoading || !cartItems)
     return (
       <LoadingMessage
-        message={messages.loading.pageContent || "Loading content..."}
+        message={messages.loading.page || "Loading content..."}
       />
     );
 
@@ -37,7 +37,7 @@ export default function CartPage() {
     return (
       <FetchErrorMessage
         message={
-          messages.error.pageContent ||
+          messages.error.page ||
           "There was an error fetching the content."
         }
       />
