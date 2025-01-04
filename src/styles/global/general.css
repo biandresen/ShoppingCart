@@ -59,8 +59,12 @@ input {
 }
 input:focus {
   outline: none;
+  background-color: rgba(0, 0, 0, 0.2); /* For accessibility concerns*/
 }
 
+button:focus, a:focus {
+  outline: 4px solid red; /* For accessibility concerns*/
+}
 .button {
   cursor: pointer;
   box-shadow: var(--shadow-xs);
