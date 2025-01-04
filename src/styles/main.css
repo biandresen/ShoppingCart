@@ -3,7 +3,7 @@
 @import "/src/styles/global/utilities.css";
 @import "/src/styles/global/general.css";
 @import "/src/styles/global/layers.css";
-@import "/src/styles/global/global-animations.css";
+@import "/src/styles/global/animations.css";
 @import "/src/styles/pages/error-page.module.css";
 @import "/src/styles/components/header.module.css";
 @import "/src/styles/pages/home-page.module.css";

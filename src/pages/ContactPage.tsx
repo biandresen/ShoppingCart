@@ -22,7 +22,7 @@ export default function ContactPage() {
   if (isLoading || !contactPageContent) {
     return (
       <LoadingMessage
-        message={messages.loading.pageContent || "Loading content..."}
+        message={messages.loading.page || "Loading content..."}
       />
     );
   }
@@ -33,7 +33,7 @@ export default function ContactPage() {
     return (
       <FetchErrorMessage
         message={
-          messages.error.pageContent ||
+          messages.error.page ||
           "There was an error fetching the content."
         }
       />

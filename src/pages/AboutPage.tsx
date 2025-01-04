@@ -16,12 +16,12 @@ export default function AboutPage() {
   const {data: aboutPageContent, isLoading, error} = useFetch<AboutPageContent>(DATA_KEY, DATA_URL);
 
   if (isLoading || !aboutPageContent)
-    return <LoadingMessage message={messages.loading.pageContent || "Loading content..."} />;
+    return <LoadingMessage message={messages.loading.page || "Loading content..."} />;
 
   if (error) {
     // Logging error for debugging
     logger.error("Error fetching about page content", error);
-    return <FetchErrorMessage message={messages.error.pageContent || "There was an error fetching the content."} />;
+    return <FetchErrorMessage message={messages.error.page || "There was an error fetching the content."} />;
   }
 
   const {heading, content, image } = aboutPageContent || {};

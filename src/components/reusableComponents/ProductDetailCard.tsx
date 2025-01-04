@@ -29,7 +29,7 @@ export default function ProductDetailCard({
       <div className="product-detail-card-section__container">
         <h3 className="product-detail-card__heading">
           {name}
-          <data value={price}>{" $" + formatCurrency(price)}</data>
+          <data value={price}>{formatCurrency(price)}</data>
         </h3>
         <p className="product-detail-card__body">{description}</p>
         <div className="product-detail-card__counter">

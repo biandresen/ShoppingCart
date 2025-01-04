@@ -5,6 +5,9 @@
 .animation__bounceIn {
   animation: bounceIn 5s linear infinite;
 }
+.animation__spinner {
+  animation: spin 1s linear infinite;
+}
 
 @keyframes pulse {
   0% {
@@ -18,3 +21,11 @@
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
