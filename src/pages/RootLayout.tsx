@@ -7,11 +7,11 @@ import StickyCartButton from "../components/StickyCartButton";
 export default function RootLayout() {
   return (
     <>
-      <ScrollToTop />
+      <ScrollToTop /> {/* Makes sure scroll to top of page on route change */}
       <Header />
       <main>
-        <Outlet />
-        <StickyCartButton />
+        <Outlet /> {/* Renders all pages */}
+        <StickyCartButton /> {/* Renders the sticky cart button on narrow devices like mobile*/}
       </main>
       <Footer />
     </>
