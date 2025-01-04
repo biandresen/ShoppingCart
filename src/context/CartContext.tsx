@@ -6,7 +6,10 @@ import {
   Product,
 } from "../types";
 import { useFetch } from "../hooks/useFetch";
-import { getLocalStorage, setLocalStorage} from "../utils/localStorage";
+import { getLocalStorage, setLocalStorage } from "../utils/localStorage";
+
+const DATA_KEY = "products";
+const DATA_URL = "/data/products.json";
 
 const CartContext = createContext({} as CartContextType);
 
@@ -25,11 +28,8 @@ export function CartProvider({ children }: CartProviderProps) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<Product[] | null>(null);
 
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useFetch("products", "/data/products.json");
+  const { data, isLoading, error } = useFetch<{ products: Product[] }>(DATA_KEY, DATA_URL);
+  const products = data?.products || []; // Extract products from the data
 
   function toggleNavBar(alwaysClosed: boolean) {
     if (alwaysClosed) {
@@ -63,7 +63,6 @@ export function CartProvider({ children }: CartProviderProps) {
     const filteredProducts = products.filter((product) =>
       product.name.toLowerCase().includes(productName.toLowerCase())
     );
-    console.log(filteredProducts);
     setSearchResults(filteredProducts);
   }
 

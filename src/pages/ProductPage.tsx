@@ -7,6 +7,7 @@ import Modal from "../components/reusableComponents/Modal";
 export default function ProductPage() {
   const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false);
   const [isPulsingProduct, setIsPulsingProduct] = useState(true);
+
   const { products, searchResults, resetSearch, isLoading, error } = useCart();
 
   const location = useLocation();
@@ -20,7 +21,7 @@ export default function ProductPage() {
     }
   }, [location.pathname]);
 
-  if (isLoading)
+  if (isLoading || !displayedProducts)
     return <p className="fetch-error-message">Loading products...</p>;
   if (error)
     return (
