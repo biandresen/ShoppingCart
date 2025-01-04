@@ -12,7 +12,7 @@ export default function Header() {
           <Logo
             logoUrl="/assets/icons/plantPlazaLogo.png"
             alt="Plant Plaza Logo"
-            imgClass="header__logo logo"
+            imgClass="header__logo"
             headingClass="header__title"
             heading="PLANT PLAZA"
           />

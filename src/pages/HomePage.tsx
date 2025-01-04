@@ -1,3 +1,4 @@
+import { Container } from "../components/SmallComponents";
 import DiscoverSection from "../components/DiscoverSection";
 import ExploreSection from "../components/ExploreSection";
 import HeroSection from "../components/HeroSection";
@@ -8,16 +9,16 @@ import TestimonialsSection from "../components/TestimonialsSection";
 export default function HomePage() {
   return (
     <>
-      <div className="width-container u-flex-column">
+      <Container>
         <HeroSection />
         <ShopSection />
-      </div>
+      </Container>
       <ExploreSection />
-      <div className="width-container u-flex-column">
+      <Container>
         <TestimonialsSection />
         <DiscoverSection />
         <NewsletterSection />
-      </div>
+      </Container>
     </>
   );
 }
