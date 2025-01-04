@@ -1,6 +1,11 @@
 import { ReactNode } from "react";
 
 // Page-content-related types
+export type DiscoverSectionContent = {
+  header: string;
+  body: string;
+}
+
 export type AboutPageContent = {
   heading: string;
   content: { id: number; boldText: string | null; text: string }[];

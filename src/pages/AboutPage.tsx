@@ -8,6 +8,7 @@ import { AboutPageContent } from "../types";
 import { logger } from "../utils/logger";
 import messages from "../utils/messages";
 
+// Constants for fetching "about page" content
 const DATA_KEY = "aboutPageContent";
 const DATA_URL = "/data/aboutPageContent.json";
 

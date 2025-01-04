@@ -8,6 +8,7 @@ import { ContactPageContent } from "../types";
 import { logger } from "../utils/logger";
 import messages from "../utils/messages";
 
+// Constants for fetching "contact page" content
 const DATA_KEY = "contactPageContent";
 const DATA_URL = "/data/contactPageContent.json";
 
