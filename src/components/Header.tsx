@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import { useCart } from "../context/CartContext";
 
 export default function Header() {
-  const { toggleNavBar, menuIsOpen } = useCart();
+  const { toggleMenu, menuIsOpen } = useCart();
 
   return (
     <header className="header">
@@ -17,13 +17,13 @@ export default function Header() {
             heading="PLANT PLAZA"
           />
           <button
-            onClick={() => toggleNavBar(false)}
+            onClick={() => toggleMenu(false)}
             type="button"
             className="header__menu-button button"
           >
             {menuIsOpen ?
               <img
-                onClick={() => toggleNavBar(false)}
+                onClick={() => toggleMenu(false)}
                 className="header__menu-icon"
                 src="/assets/icons/cross.svg"
                 alt=""

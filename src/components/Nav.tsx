@@ -5,7 +5,7 @@ import DoubleButton from "./reusableComponents/DoubleButton";
 export default function Nav() {
   const navigate = useNavigate();
 
-  const { cartQuantity, menuIsOpen, toggleNavBar } = useCart();
+  const { cartQuantity, menuIsOpen, toggleMenu } = useCart();
 
   return (
     <nav className={menuIsOpen ? "nav" : "nav__toggle-hide"}>
@@ -13,7 +13,7 @@ export default function Nav() {
         <li className="nav__list-item">
           <NavLink
             to="/"
-            onClick={() => toggleNavBar(false)}
+            onClick={() => toggleMenu(false)}
             className={({ isActive }) =>
               isActive ? "active-link nav__link" : "nav__link"
             }
@@ -24,7 +24,7 @@ export default function Nav() {
         <li className="nav__list-item">
           <NavLink
             to="/products"
-            onClick={() => toggleNavBar(false)}
+            onClick={() => toggleMenu(false)}
             className={({ isActive }) =>
               isActive ? "active-link nav__link" : "nav__link"
             }
@@ -35,7 +35,7 @@ export default function Nav() {
         <li className="nav__list-item">
           <NavLink
             to="/about"
-            onClick={() => toggleNavBar(false)}
+            onClick={() => toggleMenu(false)}
             className={({ isActive }) =>
               isActive ? "active-link nav__link" : "nav__link"
             }
@@ -46,7 +46,7 @@ export default function Nav() {
         <li className="nav__list-item">
           <NavLink
             to="/contact"
-            onClick={() => toggleNavBar(false)}
+            onClick={() => toggleMenu(false)}
             className={({ isActive }) =>
               isActive ? "active-link nav__link" : "nav__link"
             }
@@ -63,7 +63,7 @@ export default function Nav() {
         />
         <button
           onClick={() => {
-            toggleNavBar(false);
+            toggleMenu(false);
             navigate("/cart");
           }}
           className="button cart-button"
