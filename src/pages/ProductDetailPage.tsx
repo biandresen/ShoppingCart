@@ -45,6 +45,7 @@ export default function ProductDetailPage() {
       />
     );
   }
+
   return (
     <Container>
       <section className="product-detail-page" aria-labelledby="product-detail">
