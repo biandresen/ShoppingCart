@@ -6,8 +6,9 @@ const messages = {
   },
   error: {
     default: "An unexpected error occurred. Please try again later.",
-    pageContent: "Oops! Something went wrong while fetching the page content. Please try again later.",
     fetch: "Error fetching data. Please try again later.",
+    pageContent: "Oops! Something went wrong while fetching the page content. Please try again later.",
+    pageNotFound: "The page you are looking for does not exist."
   },
 };
 
