@@ -43,7 +43,8 @@ export default function ContactPage() {
   const { heading, intro, getInTouch, follow, image } =
     contactPageContent || {};
 
-  function RenderIntroSection(): JSX.Element {
+  // Renders the "Introduction" section of the contact page
+  function IntroSection(): JSX.Element {
     return (
       <p className="contact-page__body">
         <b>{intro.boldText}</b> {intro.text}
@@ -51,7 +52,8 @@ export default function ContactPage() {
     );
   }
 
-  function RenderGetInTouchSection(): JSX.Element {
+  // Renders the "Get in touch" section of the contact page
+  function GetInTouchSection(): JSX.Element {
     return (
       <>
         <h3 className="contact-page__content-heading">
@@ -68,7 +70,8 @@ export default function ContactPage() {
     );
   }
 
-  function RenderFollowSection(): JSX.Element {
+  // Renders the "Follow us" section of the contact page
+  function FollowSection(): JSX.Element {
     return (
       <>
         <h3 className="contact-page__content-heading">{follow.heading}</h3>
@@ -99,9 +102,9 @@ export default function ContactPage() {
         <h1 className="contact-page__heading">{heading}</h1>
         <article className="contact-page__content-container">
           <div className="contact-page__content">
-            <RenderIntroSection />
-            <RenderGetInTouchSection />
-            <RenderFollowSection />
+            <IntroSection />
+            <GetInTouchSection />
+            <FollowSection />
           </div>
           <img
             className="contact-page__image"

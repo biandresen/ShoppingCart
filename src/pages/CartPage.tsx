@@ -130,7 +130,7 @@ export default function CartPage() {
   }
 
   // Rendering cart items in the selected layout (card or list)
-  function RenderCartItems(): JSX.Element {
+  function CartItems(): JSX.Element {
     return (
       <>
         {cartItems.map((item) => {
@@ -163,7 +163,7 @@ export default function CartPage() {
             }
           >
             {cartItems.length > 0 ?
-              <RenderCartItems />
+              <CartItems />
             : <NoItemsInCartState />}
           </div>
         </div>
