@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import SignupForm from "./reusableComponents/SignupForm";
+import Logo from "./reusableComponents/Logo";
 
 export default function Footer() {
   return (
@@ -9,18 +10,11 @@ export default function Footer() {
           <div className="footer__info-field">
             <div className="footer__website-summary">
               <div className="footer__logo-container">
-                <a
-                  href="/"
-                  className="footer__logo"
-                  aria-label="Plant Plaza Homepage"
-                >
-                  <img
-                    className="footer__logo-image logo"
-                    src="/assets/icons/plantPlazaLogo.png"
-                    alt="Plant Plaza Logo"
-                    width="40px"
-                  />
-                </a>
+                <Logo
+                  logoUrl="/assets/icons/plantPlazaLogo.png"
+                  alt="Plant Plaza Logo"
+                  imgClass="footer__logo"
+                />
               </div>
               <p className="footer__description">
                 Subscribe to our newsletter for the latest updates on features

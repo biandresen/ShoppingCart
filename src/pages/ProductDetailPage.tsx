@@ -1,4 +1,5 @@
 import ProductDetailCard from "../components/reusableComponents/ProductDetailCard";
+import { Container } from "../components/SmallComponents";
 import { useCart } from "../context/CartContext";
 import { useParams } from "react-router-dom";
 
@@ -21,12 +22,12 @@ export default function ProductDetailPage() {
     return <p className="fetch-error-message">Product not found.</p>;
 
   return (
-    <div className="width-container u-flex-column">
+    <Container>
       <section className="product-detail-page">
         <div className="product-detail-page__content">
           <ProductDetailCard key={product.id} {...product} />
         </div>
       </section>
-    </div>
+    </Container>
   );
 }

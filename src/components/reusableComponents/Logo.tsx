@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 type LogoProps = {
   logoUrl: string;
   alt: string;
-  imgClass?: string; // Optional class
-  headingClass?: string; // Optional class
-  heading: string;
+  imgClass?: string;
+  headingClass?: string;
+  heading?: string;
 };
 
 export default function Logo({
@@ -18,7 +18,7 @@ export default function Logo({
   return (
     <>
       <NavLink to="/" aria-label={alt}>
-        <img className={imgClass} src={logoUrl} alt={alt} loading="lazy" />
+        <img className={imgClass+"__logo logo"} src={logoUrl} alt={alt} loading="lazy" />
         <h1 className={headingClass}>{heading}</h1>
       </NavLink>
     </>

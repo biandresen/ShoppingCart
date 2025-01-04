@@ -20,12 +20,24 @@
   animation-delay: 1.2s;
 }
 .error-page__body {
+  font-size: var(--font-size-2xl);
   animation: shake 0.5s ease-in-out 1;
   animation-delay: 1.7s;
 }
+.error-page__home-button {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-s) var(--spacing-l);
+  margin-top: 10px;
+
+  background-color: var(--color-detail);
+  color: var(--color-secondary);
+  animation: shake 0.5s ease-in-out 1;
+  animation-delay: 2.2s;
+}
 
 /* Media Queries for smaller screens */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .error-page__logo {
     width: 100px;
   }
@@ -33,18 +45,31 @@
     font-size: var(--font-size-2xl);
   }
   .error-page__body {
-    font-size: var(--font-size-m);
+    font-size: calc(var(--font-size-m) + 1vw);
     margin: 0 20px;
+  }
+  .error-page__home-button {
+    font-size: calc(var(--font-size-m) + 1vw);
   }
 }
 
 /* Animations */
 @keyframes shake {
-  0% { transform: translateX(-10px); }
-  25% { transform: translateX(10px); }
-  50% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes rollIn {
