@@ -1,4 +1,4 @@
-import SignupForm from "./sharedComponents/SignupForm";
+import SignupForm from "./reusableComponents/SignupForm";
 
 export default function NewsletterSection() {
   return (

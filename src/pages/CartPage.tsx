@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CartItemCard from "../components/sharedComponents/CartItemCard";
-import CartItemList from "../components/sharedComponents/CartItemList";
+import CartItemCard from "../components/reusableComponents/CartCard";
+import CartItemList from "../components/reusableComponents/CartItemList";
 import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
 import { useNavigate } from "react-router";
-import Modal from "../components/sharedComponents/Modal";
+import Modal from "../components/reusableComponents/Modal";
 
 export default function CartPage() {
   const [listMode, setListMode] = useState(false);
@@ -34,21 +34,24 @@ export default function CartPage() {
     <div className="width-container u-flex-column">
       <section className="cart-section">
         <h1 className="cart-section__heading">CART</h1>
-        <div className="cart-section__content">
+        <div className="cart-section__content-container">
           <div className="cart-section__total-checkout-container">
             {totalPrice ?
               <p className="cart-section__total-price-heading">
                 Total:{" "}
                 <data className="cart-section__total-price-data">
-                  {"$" + formatCurrency(totalPrice)}
+                  {formatCurrency(totalPrice)}
                 </data>
               </p>
             : null}
             {totalPrice ?
-              <button className="button checkout-button" type="button">
+              <button
+                className="button cart-section__checkout-button"
+                type="button"
+              >
                 Checkout:{" "}
                 <img
-                  className="checkout-icon"
+                  className="cart-section__checkout-icon"
                   src="/assets/icons/checkout.svg"
                   aria-label="checkout"
                   alt=""
@@ -101,8 +104,8 @@ export default function CartPage() {
           <div
             className={
               listMode && totalPrice ?
-                "cart-list__container"
-              : "cart-list__no-items-container"
+                "cart-section__cart-list-container"
+              : "cart-section__no-items-container"
             }
           >
             {cartItems.length > 0 ?

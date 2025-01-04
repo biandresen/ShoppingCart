@@ -3,7 +3,7 @@ import { useCart } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { NavLink } from "react-router-dom";
 
-export default function CartItemCard({ id, name, price, imageUrl }: Product) {
+export default function CartCard({ id, name, price, imageUrl }: Product) {
   const {
     getItemQuantity,
     increaseCartQuantity,
@@ -14,7 +14,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
   const quantity = getItemQuantity(id);
 
   return (
-    <div className="cart-section__card">
+    <div className="cart-card">
       <NavLink to={`/products/${id}`}>
         <img
           className="cart-card__image"
@@ -30,9 +30,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
             <NavLink to={`/products/${id}`}>{name}</NavLink>
           </h3>
           <p className="cart-card__price">
-            <data value={price}>
-              {"$" + (formatCurrency(price) * quantity).toFixed(2)}
-            </data>
+            <data value={price}>{formatCurrency(price * quantity)}</data>
           </p>
         </div>
         <div className="cart-card__counter">
@@ -47,7 +45,7 @@ export default function CartItemCard({ id, name, price, imageUrl }: Product) {
             {quantity}
             <button
               onClick={() => removeFromCart(id)}
-              className={`button quantity-reset-button cart-reset-button ${quantity ? "u-flex-row" : ""}`}
+              className={`button quantity-reset-button cart-card__reset-item-count-button ${quantity ? "u-flex-row" : ""}`}
               type="button"
               aria-label="reset quantity"
             >

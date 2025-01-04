@@ -1,3 +1,4 @@
+/* Base styles for desktop */
 .contact-section {
   padding-bottom: var(--spacing-2xl);
 }
@@ -5,28 +6,30 @@
   text-align: center;
   padding: var(--spacing-3xl);
 }
-.contact-section__content {
-  background-color: var(--color-primary);
+.contact-section__content-container {
   padding: var(--spacing-3xl);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-m);
+
+  background-color: var(--color-primary);
 }
-.contact-section__text-area {
+.contact-section__content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: clamp(auto, 70ch, 100%);
+
   color: var(--color-text-alternative);
-  width: clamp(340px, 70ch, 100%);
 }
-.contact-section__body-heading {
+.contact-section__content-heading {
   padding: var(--spacing-xl) 0 var(--spacing-m) 0;
 }
-.contact-section__body-item {
+.contact-section__body-list-item {
   font-size: var(--font-size-xl);
 }
-.contact-section__body-text {
+.contact-section__body {
   font-size: var(--font-size-xl);
 }
 .contact-section__image {
@@ -35,19 +38,26 @@
   height: auto;
 }
 
-@media (max-width: 768px) {
+/* Media Queries for smaller screens */
+@media (max-width: 1100px) {
+  .contact-section__content-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) {
   .contact-section__image {
     min-width: 100%;
     height: auto;
   }
-  .contact-section__content {
+  .contact-section__content-container {
     padding: var(--spacing-l);
   }
   .contact-section__heading {
     padding: var(--spacing-l) 0;
     font-size: calc(var(--font-size-2xl) + 3.5vw);
   }
-  .contact-section__text-area {
+  .contact-section__body {
     width: 100%;
   }
   .contact-section__body-list {
@@ -55,8 +65,24 @@
     padding-left: 25px;
   }
 }
-@media (max-width: 1100px) {
-  .contact-section__content {
-    flex-direction: column;
+
+@media (max-width: 580px) {
+  .contact-section__image {
+    min-width: 100%;
+    height: auto;
+  }
+  .contact-section__content-container {
+    padding: var(--spacing-l);
+  }
+  .contact-section__heading {
+    padding: var(--spacing-l) 0;
+    font-size: calc(var(--font-size-2xl) + 3.5vw);
+  }
+  .contact-section__body {
+    width: 100%;
+  }
+  .contact-section__body-list {
+    overflow-wrap: break-word;
+    padding-left: 25px;
   }
 }

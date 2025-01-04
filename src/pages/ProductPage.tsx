@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ProductCard from "../components/sharedComponents/ProductCard";
+import ProductCard from "../components/reusableComponents/ProductCard";
 import { useCart } from "../context/CartContext";
 import { useLocation } from "react-router";
-import Modal from "../components/sharedComponents/Modal";
+import Modal from "../components/reusableComponents/Modal";
 
 export default function ProductPage() {
   const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false);
@@ -31,15 +31,15 @@ export default function ProductPage() {
 
   return (
     <div className="width-container u-flex-column">
-      <section className="products-section">
-        <h1 className="products-section__heading">
+      <section className="products-page">
+        <h1 className="products-page__heading">
           Look Through All Of Our Fantastic Plants!
         </h1>
-        <div className="products-section__content">
+        <div className="products-page__content">
           {searchResults && (
             <button
               onClick={resetSearch}
-              className={"button button--filled search-failed-button"}
+              className={"button button--filled products-page__all-products-button"}
               type="button"
               aria-label={"product search button"}
             >
@@ -48,7 +48,7 @@ export default function ProductPage() {
           )}
           <button
             type="button"
-            className={`info-button button products-section__info-button  ${
+            className={`info-button button products-page__info-button  ${
               isPulsingProduct ? "animation__pulse" : ""
             }`}
             onClick={() => setInfoButtonIsOpen(true)}
@@ -67,7 +67,7 @@ export default function ProductPage() {
             displayedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))
-          : <p className="no-products-found-message">
+          : <p className="products-page__no-products-found-message">
               <b>No Products Found.</b> Search Again Or "Show All Products"
             </p>
           }

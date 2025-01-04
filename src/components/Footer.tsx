@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import SignupForm from "./sharedComponents/SignupForm";
+import SignupForm from "./reusableComponents/SignupForm";
 
 export default function Footer() {
   return (

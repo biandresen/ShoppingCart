@@ -13,11 +13,11 @@ export default function StickyCartButton() {
     <button
       type="button"
       onClick={() => navigate("/cart")}
-      className="button sticky-cart-button header__cart-button"
+      className="button sticky-cart-button cart-button"
       aria-label="Open Shopping Cart"
     >
       <img
-        className="header__cart-image sticky-cart-image"
+        className="cart-image sticky-cart-image"
         src="/assets/icons/cartIcon.svg"
         alt=""
       />

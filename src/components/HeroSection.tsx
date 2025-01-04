@@ -1,4 +1,4 @@
-import DoubleButton from "./sharedComponents/DoubleButton";
+import DoubleButton from "./reusableComponents/DoubleButton";
 
 export default function HeroSection() {
   return (

@@ -1,15 +1,12 @@
 import { ReactNode } from "react";
 
+// Product-related types
 export type Product = {
   id: number;
   name: string;
   description: string;
   price: number;
-  imageUrl?: string;
-};
-
-export type CartProviderProps = {
-  children: ReactNode;
+  imageUrl?: string; // Optional: URL of the product image
 };
 
 export type CartItem = {
@@ -17,25 +14,34 @@ export type CartItem = {
   quantity: number;
 };
 
+// Context-related types
+export type CartProviderProps = {
+  children: ReactNode;
+};
+
 export type CartContextType = {
+  // Methods
   getItemQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  emptyCart: () => void;
+  searchProducts: (productName: string) => void;
+  resetSearch: () => void;
+  toggleNavBar(alwaysClosed?: boolean): void;
+
+  // States
   cartQuantity: number;
   totalPrice: number;
   cartItems: CartItem[];
-  products: Product[] | undefined;
+  products: Product[] | undefined; // Undefined when loading
   isLoading: boolean;
   error: Error | null;
   menuIsOpen: boolean;
-  toggleNavBar(alwaysClosed?: boolean): void;
-  emptyCart: () => void;
-  searchProducts: (productName: string) => void;
   searchResults: Product[] | null;
-  resetSearch: () => void;
 };
 
+// Component Props
 export type DoubleButtonProps = {
   sectionClass: string;
   firstButtonTitle: string;
@@ -44,8 +50,8 @@ export type DoubleButtonProps = {
 
 export type SearchModalProps = {
   isOpen: boolean;
+  message: string;
   onSearch: (productName: string) => void;
   onClose: () => void;
-  message: string;
   toggleNavBar(alwaysClosed?: boolean): void;
 };

@@ -1,4 +1,4 @@
-import Logo from "./sharedComponents/Logo";
+import Logo from "./reusableComponents/Logo";
 import Nav from "./Nav";
 import { useCart } from "../context/CartContext";
 

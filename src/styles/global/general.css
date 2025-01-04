@@ -77,7 +77,6 @@ input:focus {
   box-shadow: var(--shadow-xs);
   padding: var(--spacing-s) var(--spacing-m);
 }
-
 .button--outline {
   color: inherit;
   background-color: inherit;
@@ -104,7 +103,48 @@ input:focus {
   position: absolute;
 }
 
+.cart-button {
+  position: relative;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.cart-image {
+  width: var(--font-size-3xl);
+  background-color: var(--color-detail);
+  border-radius: 50%;
+  padding: var(--spacing-s);
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+}
+.cart-button__number {
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-link {
+  text-decoration: underline;
+  text-shadow: var(--shadow-xs);
+}
+
 .fetch-error-message {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semi-bold);
+  background-color: var(--color-secondary);
+  text-align: center;
+  padding: var(--spacing-4xl);
+}
+
+.loading-message {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-semi-bold);
   background-color: var(--color-secondary);

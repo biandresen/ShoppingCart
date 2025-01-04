@@ -22,10 +22,10 @@ export default function ProductCard({
   const quantity = getItemQuantity(id);
 
   return (
-    <article className="products-section__card">
+    <article className="product-card">
       <button
         onClick={() => navigate(`/products/${id}`)}
-        className="button product-button"
+        className="button product-card__button"
         type="button"
       >
         <img
@@ -40,7 +40,7 @@ export default function ProductCard({
       </h3>
       <p className="product-card__body">{description}</p>
       <p className="product-card__price">
-        <data value={price}>{"$" + formatCurrency(price)}</data>
+        <data value={price}>{formatCurrency(price)}</data>
       </p>
       <div className="product-card__counter">
         <button
@@ -55,7 +55,7 @@ export default function ProductCard({
           {quantity}
           <button
             onClick={() => removeFromCart(id)}
-            className={`${quantity ? "button quantity-reset-button product-reset-button" : "u-d-none"}`}
+            className={`${quantity ? "button quantity-reset-button product-card__reset-button" : "u-d-none"}`}
             type="button"
             aria-label="reset quantity"
           >

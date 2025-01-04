@@ -1,4 +1,4 @@
-import ProductDetailCard from "../components/sharedComponents/ProductDetailCard";
+import ProductDetailCard from "../components/reusableComponents/ProductDetailCard";
 import { useCart } from "../context/CartContext";
 import { useParams } from "react-router-dom";
 
@@ -22,8 +22,8 @@ export default function ProductDetailPage() {
 
   return (
     <div className="width-container u-flex-column">
-      <section className="product-detail-section">
-        <div className="product-detail-section__content">
+      <section className="product-detail-page">
+        <div className="product-detail-page__content">
           <ProductDetailCard key={product.id} {...product} />
         </div>
       </section>

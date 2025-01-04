@@ -19,14 +19,14 @@ export default function ProductDetailCard({
   const quantity = getItemQuantity(id);
 
   return (
-    <article className="product-detail-section__card">
+    <article className="product-detail-card">
       <img
         className="product-detail-card__image"
         src={imageUrl}
         alt={`Product: ${name}`}
         loading="lazy"
       />
-      <div className="product-detail-section__container">
+      <div className="product-detail-card-section__container">
         <h3 className="product-detail-card__heading">
           {name}
           <data value={price}>{" $" + formatCurrency(price)}</data>
@@ -48,7 +48,7 @@ export default function ProductDetailCard({
             {quantity}
             <button
               onClick={() => removeFromCart(id)}
-              className={`${quantity ? "button quantity-reset-button product-detail__reset-button" : "u-d-none"}`}
+              className={`${quantity ? "button quantity-reset-button product-detail-card__reset-button" : "u-d-none"}`}
               type="button"
               aria-label="reset quantity"
             >

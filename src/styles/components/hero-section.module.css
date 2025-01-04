@@ -1,0 +1,33 @@
+/* Base styles for desktop */
+.hero-section {
+  padding: var(--spacing-3xl) 0;
+}
+.hero-section__content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+  padding-bottom: var(--spacing-3xl);
+}
+.hero-section__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+.hero-section__image {
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 767px) {
+  .hero-section {
+    padding: var(--spacing-xl) 0;
+  }
+  .hero-section__content {
+    flex-direction: column;
+    padding-bottom: var(--spacing-xs);
+  }
+  .hero-section__image {
+    margin: var(--spacing-l) 0 0 0;
+  }
+}

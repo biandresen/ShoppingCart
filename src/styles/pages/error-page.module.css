@@ -1,0 +1,57 @@
+/* Base styles for desktop */
+.error-page__container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-secondary);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.error-page__logo {
+  width: 150px;
+  margin-top: 100px;
+  animation: rollIn 1.2s ease-out forwards;
+}
+.error-page__heading {
+  animation: shake 0.5s ease-in-out 1;
+  animation-delay: 1.2s;
+}
+.error-page__body {
+  animation: shake 0.5s ease-in-out 1;
+  animation-delay: 1.7s;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px){
+  .error-page__logo {
+    width: 100px;
+  }
+  .error-page__heading {
+    font-size: var(--font-size-2xl);
+  }
+  .error-page__body {
+    font-size: var(--font-size-m);
+    margin: 0 20px;
+  }
+}
+
+/* Animations */
+@keyframes shake {
+  0% { transform: translateX(-10px); }
+  25% { transform: translateX(10px); }
+  50% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateX(-800%) rotate(-360deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
