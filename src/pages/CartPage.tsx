@@ -5,140 +5,169 @@ import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
 import { useNavigate } from "react-router";
 import Modal from "../components/reusableComponents/Modal";
+import {
+  Container,
+  FetchErrorMessage,
+  LoadingMessage,
+} from "../components/SmallComponents";
+import { logger } from "../utils/logger";
+import messages from "../utils/messages";
 
 export default function CartPage() {
-  const [listMode, setListMode] = useState(false);
-  const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false);
-  const [isPulsingButton, setIsPulsingButton] = useState(true);
+  const [listMode, setListMode] = useState(false); // State to toggle between card and list layout
+  const [infoButtonIsOpen, setInfoButtonIsOpen] = useState(false); // Modal state for the info button
+  const [isPulsingButton, setIsPulsingButton] = useState(true); // Button animation state for visual feedback
+
+  // Extracting data from CartContext
   const { cartItems, isLoading, error, totalPrice, products, emptyCart } =
     useCart();
 
   const navigate = useNavigate();
 
-  function handleListMode() {
-    setListMode(!listMode);
+  if (isLoading || !cartItems)
+    return (
+      <LoadingMessage
+        message={messages.loading.pageContent || "Loading content..."}
+      />
+    );
+
+  if (error) {
+    // Logging error for debugging
+    logger.error("Error fetching about page content", error);
+    return (
+      <FetchErrorMessage
+        message={
+          messages.error.pageContent ||
+          "There was an error fetching the content."
+        }
+      />
+    );
   }
 
-  if (isLoading)
-    return <p className="fetch-error-message"> Loading products...</p>;
-  if (error)
+  // Renders elements when non-empty cart
+  function FilledCartState(): JSX.Element {
     return (
-      <p className="fetch-error-message">
-        Error fetching products: {(error as Error).message}
-      </p>
+      <>
+        <p className="cart-page__total-price-heading">
+          Total:{" "}
+          <data className="cart-page__total-price-data">
+            {formatCurrency(totalPrice)}
+          </data>
+        </p>
+        <button className="button cart-page__checkout-button" type="button" aria-label="checkout button">
+          Checkout:{" "}
+          <img
+            className="cart-page__checkout-icon"
+            src="/assets/icons/checkout.svg"
+            aria-label="checkout"
+            alt="checkout icon"
+          />
+        </button>
+        <button
+          onClick={emptyCart}
+          type="button"
+          className="button cart-page__empty-cart-button"
+          aria-label="empty cart button"
+        >
+          <img
+            className="quantity-reset-icon"
+            src="/assets/icons/trash.svg"
+            aria-label="empty cart"
+            alt="empty cart icon"
+          />
+        </button>
+        <button
+          type="button"
+          className={`button info-button cart-page__info-button ${
+            isPulsingButton ? "animation__pulse" : ""
+          }`}
+          onClick={() => setInfoButtonIsOpen(true)}
+          aria-label='info: Click "Trash" to empty cart. Click "Layout:" to change the layout.'
+        >
+          ?
+        </button>
+        <Modal
+          isOpen={infoButtonIsOpen}
+          onClose={() => {
+            setInfoButtonIsOpen(false);
+            setIsPulsingButton(false);
+          }}
+          message='Click "Trash" to empty cart. Click "Layout:" to change the layout.'
+        />
+        <button
+          onClick={() => {
+            setListMode(!listMode);
+          }}
+          type="button"
+          className="button cart-page__list-layout-button "
+          aria-label="change visual layout of products"
+        >
+          {`Layout: ${listMode ? "List" : "Card"}`}
+        </button>
+      </>
     );
-  if (!products)
-    return <p className="fetch-error-message">No products available!</p>;
+  }
 
+  // Renders info and button when cart is empty
+  function NoItemsInCartState(): JSX.Element {
+    return (
+      <>
+        <p className="cart-page__no-items-message">
+          No Products In Cart Yet...
+        </p>
+        <button
+          onClick={() => {
+            navigate("/products");
+          }}
+          className={"button button--filled cart-page__search-button"}
+          type="button"
+          aria-label="product search button"
+        >
+          Find Products
+        </button>
+      </>
+    );
+  }
+
+  // Rendering cart items in the selected layout (card or list)
+  function RenderCartItems(): JSX.Element {
+    return (
+      <>
+        {cartItems.map((item) => {
+          const product = products?.find((p) => p.id === item.id);
+          if (!product) return null;
+          return listMode ?
+              <CartItemList key={product.id} {...product} />
+            : <CartItemCard key={product.id} {...product} />;
+        })}
+      </>
+    );
+  }
+
+  //Renders the main content of the cart page
   return (
-    <div className="width-container u-flex-column">
-      <section className="cart-section">
-        <h1 className="cart-section__heading">CART</h1>
-        <div className="cart-section__content-container">
-          <div className="cart-section__total-checkout-container">
+    <Container>
+      <section className="cart-page">
+        <h1 className="cart-page__heading">CART</h1>
+        <div className="cart-page__content-container">
+          <div className="cart-page__total-checkout-container">
             {totalPrice ?
-              <p className="cart-section__total-price-heading">
-                Total:{" "}
-                <data className="cart-section__total-price-data">
-                  {formatCurrency(totalPrice)}
-                </data>
-              </p>
-            : null}
-            {totalPrice ?
-              <button
-                className="button cart-section__checkout-button"
-                type="button"
-              >
-                Checkout:{" "}
-                <img
-                  className="cart-section__checkout-icon"
-                  src="/assets/icons/checkout.svg"
-                  aria-label="checkout"
-                  alt=""
-                />
-              </button>
+              <FilledCartState />
             : null}
           </div>
-          {totalPrice ?
-            <>
-              <button
-                onClick={emptyCart}
-                type="button"
-                className="cart-section__empty-cart-button button"
-              >
-                <img
-                  className="quantity-reset-icon"
-                  src="/assets/icons/trash.svg"
-                  aria-label="empty cart"
-                  alt=""
-                />
-              </button>
-              <button
-                type="button"
-                className={`info-button cart-section__info-button button ${
-                  isPulsingButton ? "animation__pulse" : ""
-                }`}
-                onClick={() => setInfoButtonIsOpen(true)}
-                aria-label='info: Click "Trash" to empty cart. Click "Layout:" to change the layout.'
-              >
-                ?
-              </button>
-              <Modal
-                isOpen={infoButtonIsOpen}
-                onClose={() => {
-                  setInfoButtonIsOpen(false);
-                  setIsPulsingButton(false);
-                }}
-                message='Click "Trash" to empty cart. Click "Layout:" to change the layout.'
-              />
-              <button
-                onClick={handleListMode}
-                type="button"
-                className="cart-section__list-layout-button button"
-                aria-label="change visual layout of products"
-              >
-                {`Layout: ${listMode ? "List" : "Card"}`}
-              </button>
-            </>
-          : null}
           <div
             className={
               listMode && totalPrice ?
-                "cart-section__cart-list-container"
-              : "cart-section__no-items-container"
+                "cart-page__cart-list-container"
+              : "cart-page__no-items-container"
             }
           >
             {cartItems.length > 0 ?
-              cartItems.map((item) => {
-                const product = products?.find((p) => p.id === item.id);
-                if (!product) return null;
-                if (listMode) {
-                  return <CartItemList key={product.id} {...product} />;
-                } else {
-                  return <CartItemCard key={product.id} {...product} />;
-                }
-              })
-            : <>
-                <p className="cart-section__no-items-message">
-                  No Products In Cart Yet...
-                </p>
-                <button
-                  onClick={() => {
-                    navigate("/products");
-                  }}
-                  className={
-                    "button button--filled cart-section__search-button"
-                  }
-                  type="button"
-                  aria-label={"product search button"}
-                >
-                  Find Products
-                </button>
-              </>
-            }
+              <RenderCartItems />
+            : <NoItemsInCartState />}
           </div>
         </div>
       </section>
-    </div>
+    </Container>
   );
 }

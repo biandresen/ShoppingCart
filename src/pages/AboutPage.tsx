@@ -27,18 +27,18 @@ export default function AboutPage() {
 
   return (
     <Container>
-      <section className="about-section">
-        <h1 className="about-section__heading">{heading}</h1>
-        <article className="about-section__content-container">
-          <div className="about-section__content">
+      <section className="about-page">
+        <h1 className="about-page__heading">{heading}</h1>
+        <article className="about-page__content-container">
+          <div className="about-page__content">
             {content.map(({id, boldText, text }, index) => (
-              <p className="about-section__body" key={id || index}>
+              <p className="about-page__body" key={id || index}>
                 {boldText && <b>{boldText}</b>} {text}
               </p>
             ))}
           </div>
           <img
-            className="about-section__image"
+            className="about-page__image"
             src={image.src}
             alt={image.alt}
           />
