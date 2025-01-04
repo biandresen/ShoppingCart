@@ -1,27 +1,20 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import axios from "axios";
-import { Product } from "../types";
 
-
-async function fetchData(url: string): Promise<Product[]> {
+async function fetchData<T>(url: string): Promise<T> {
   const response = await axios.get(url);
 
-  // If response.data is an object and has a 'products' property, return it
-  if (response.data && typeof response.data === "object" && Array.isArray(response.data.products)) {
-    return response.data.products;
-  }
-
-  // If response.data is already an array of products, return it directly
-  if (Array.isArray(response.data)) {
+  // Check if the response has the expected data structure
+  if (response.data) {
     return response.data;
+  } else {
+    // In case of any unexpected data, throw an error
+    throw new Error("Invalid data structure");
   }
-
-  // In case of any unexpected data, throw an error
-  throw new Error("Invalid data structure");
 }
 
-export function useFetch(key: string, url: string) {
-  return useQuery<Product[]>({
+export function useFetch<T>(key: string, url: string): UseQueryResult<T> {
+  return useQuery<T>({
     queryKey: [key],
     queryFn: () => fetchData(url),
   });

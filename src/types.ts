@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
+// Page-content-related types
+export type AboutPageContent = {
+  heading: string;
+  content: { id: number; boldText: string | null; text: string }[];
+  image: { src: string; alt: string };
+};
+
 // Product-related types
 export type Product = {
   id: number;
