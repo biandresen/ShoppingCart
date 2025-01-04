@@ -1,45 +1,115 @@
+import {
+  FetchErrorMessage,
+  LoadingMessage,
+  Container,
+} from "../components/SmallComponents";
+import { useFetch } from "../hooks/useFetch";
+import { ContactPageContent } from "../types";
+import { logger } from "../utils/logger";
+import messages from "../utils/messages";
+
+const DATA_KEY = "contactPageContent";
+const DATA_URL = "/data/contactPageContent.json";
+
 export default function ContactPage() {
+  // Fetch contact page content using a custom hook
+  const {
+    data: contactPageContent,
+    isLoading,
+    error,
+  } = useFetch<ContactPageContent>(DATA_KEY, DATA_URL);
+
+  if (isLoading || !contactPageContent) {
+    return (
+      <LoadingMessage
+        message={messages.loading.pageContent || "Loading content..."}
+      />
+    );
+  }
+
+  if (error) {
+    // Logging error for debugging
+    logger.error("Error fetching contact page content", error);
+    return (
+      <FetchErrorMessage
+        message={
+          messages.error.pageContent ||
+          "There was an error fetching the content."
+        }
+      />
+    );
+  }
+
+  const { heading, intro, getInTouch, follow, image } =
+    contactPageContent || {};
+
+  function RenderIntroSection(): JSX.Element {
+    return (
+      <p className="contact-page__body">
+        <b>{intro.boldText}</b> {intro.text}
+      </p>
+    );
+  }
+
+  function RenderGetInTouchSection(): JSX.Element {
+    return (
+      <>
+        <h3 className="contact-page__content-heading">
+          {getInTouch.heading}
+        </h3>
+        <ul className="contact-page__body-list">
+          {getInTouch.list.map(({ id, boldText, text }, index) => (
+            <li key={id || index} className="contact-page__body-list-item">
+              <b>{boldText}</b> {text}
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
+  function RenderFollowSection(): JSX.Element {
+    return (
+      <>
+        <h3 className="contact-page__content-heading">{follow.heading}</h3>
+        {follow.body.map(({ id, boldText, text }, index) => {
+          const isLastItem = index === follow.body.length - 1;
+
+          return (
+            <p key={id || index} className="contact-page__body">
+              {isLastItem ?
+                <>
+                  {text} <b>{boldText}</b>
+                </>
+              : <>
+                  <b>{boldText}</b> {text}
+                </>
+              }
+            </p>
+          );
+        })}
+      </>
+    );
+  }
+
+  // Main layout of the contact page
   return (
-    <div className="width-container u-flex-column">
-      <section className="contact-section">
-        <h1 className="contact-section__heading">CONTACT US</h1>
-        <article className="contact-section__content-container">
-          <div className="contact-section__content">
-            <p className="contact-section__body">
-              <b>We’re here to help!</b> Whether you have questions about our
-              plants, need care tips, or want assistance with your order, the
-              Plant Plaza team is just a message away.
-            </p>
-            <h3 className="contact-section__content-heading">Get in Touch</h3>
-            <ul className="contact-section__body-list">
-              <li className="contact-section__body-list-item">
-                <b>Email us:</b> Reach out to our support team at
-                support@plantplaza.com, and we’ll get back to you as soon as
-                possible.
-              </li>
-              <li className="contact-section__body-list-item">
-                <b>Call us:</b> Speak with our customer care team at (123)
-                456-7890 during business hours.
-              </li>
-            </ul>
-            <h3 className="contact-section__content-heading">Follow Us</h3>
-            <p className="contact-section__body">
-              <b>Stay connected</b> and get inspired by joining our growing
-              community on Instagram, Facebook, and Pinterest. Share your plant
-              journey and tag us with #PlantPlazaLove!
-            </p>
-            <p className="contact-section__body">
-              We look forward to hearing from you and helping you bring more
-              <b>greenery into your life! 🌿</b>
-            </p>
+    <Container>
+      <section className="contact-page" aria-labelledby="contact-page">
+        <h1 className="contact-page__heading">{heading}</h1>
+        <article className="contact-page__content-container">
+          <div className="contact-page__content">
+            <RenderIntroSection />
+            <RenderGetInTouchSection />
+            <RenderFollowSection />
           </div>
           <img
-            className="contact-section__image"
-            src="/assets/images/spiralPlantContact.jpg"
-            alt=""
+            className="contact-page__image"
+            src={image.src || "/assets/icons/plantPlazaLogo.png"}
+            alt={image.alt || "Logo on contact page"}
           />
         </article>
       </section>
-    </div>
+    </Container>
   );
 }

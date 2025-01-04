@@ -1,12 +1,12 @@
 /* Base styles for desktop */
-.contact-section {
+.contact-page {
   padding-bottom: var(--spacing-2xl);
 }
-.contact-section__heading {
+.contact-page__heading {
   text-align: center;
   padding: var(--spacing-3xl);
 }
-.contact-section__content-container {
+.contact-page__content-container {
   padding: var(--spacing-3xl);
   border-radius: var(--border-radius);
   display: flex;
@@ -15,7 +15,7 @@
 
   background-color: var(--color-primary);
 }
-.contact-section__content {
+.contact-page__content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -23,16 +23,16 @@
 
   color: var(--color-text-alternative);
 }
-.contact-section__content-heading {
+.contact-page__content-heading {
   padding: var(--spacing-xl) 0 var(--spacing-m) 0;
 }
-.contact-section__body-list-item {
+.contact-page__body-list-item {
   font-size: var(--font-size-xl);
 }
-.contact-section__body {
+.contact-page__body {
   font-size: var(--font-size-xl);
 }
-.contact-section__image {
+.contact-page__image {
   border-radius: var(--border-radius);
   width: clamp(200px, 500px, 80%);
   height: auto;
@@ -40,48 +40,48 @@
 
 /* Media Queries for smaller screens */
 @media (max-width: 1100px) {
-  .contact-section__content-container {
+  .contact-page__content-container {
     flex-direction: column;
   }
 }
 
 @media (max-width: 950px) {
-  .contact-section__image {
+  .contact-page__image {
     min-width: 100%;
     height: auto;
   }
-  .contact-section__content-container {
+  .contact-page__content-container {
     padding: var(--spacing-l);
   }
-  .contact-section__heading {
+  .contact-page__heading {
     padding: var(--spacing-l) 0;
     font-size: calc(var(--font-size-2xl) + 3.5vw);
   }
-  .contact-section__body {
+  .contact-page__body {
     width: 100%;
   }
-  .contact-section__body-list {
+  .contact-page__body-list {
     overflow-wrap: break-word;
     padding-left: 25px;
   }
 }
 
 @media (max-width: 580px) {
-  .contact-section__image {
+  .contact-page__image {
     min-width: 100%;
     height: auto;
   }
-  .contact-section__content-container {
+  .contact-page__content-container {
     padding: var(--spacing-l);
   }
-  .contact-section__heading {
+  .contact-page__heading {
     padding: var(--spacing-l) 0;
     font-size: calc(var(--font-size-2xl) + 3.5vw);
   }
-  .contact-section__body {
+  .contact-page__body {
     width: 100%;
   }
-  .contact-section__body-list {
+  .contact-page__body-list {
     overflow-wrap: break-word;
     padding-left: 25px;
   }

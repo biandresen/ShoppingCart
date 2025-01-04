@@ -7,6 +7,14 @@ export type AboutPageContent = {
   image: { src: string; alt: string };
 };
 
+export type ContactPageContent = {
+  heading: string;
+  intro: { boldText: string; text: string };
+  getInTouch: { heading: string; list: {id: number, boldText: string; text: string }[] };
+  follow: { heading: string; body: { id: number, boldText: string; text: string }[] };
+  image: { src: string; alt: string };
+};
+
 // Product-related types
 export type Product = {
   id: number;

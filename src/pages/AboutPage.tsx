@@ -12,6 +12,7 @@ const DATA_KEY = "aboutPageContent";
 const DATA_URL = "/data/aboutPageContent.json";
 
 export default function AboutPage() {
+  // Fetch about page content using a custom hook
   const {data: aboutPageContent, isLoading, error} = useFetch<AboutPageContent>(DATA_KEY, DATA_URL);
 
   if (isLoading || !aboutPageContent)
@@ -23,11 +24,11 @@ export default function AboutPage() {
     return <FetchErrorMessage message={messages.error.pageContent || "There was an error fetching the content."} />;
   }
 
-  const {heading, content, image } = aboutPageContent;
+  const {heading, content, image } = aboutPageContent || {};
 
   return (
     <Container>
-      <section className="about-page">
+      <section className="about-page" aria-labelledby="about-section">
         <h1 className="about-page__heading">{heading}</h1>
         <article className="about-page__content-container">
           <div className="about-page__content">
@@ -39,8 +40,8 @@ export default function AboutPage() {
           </div>
           <img
             className="about-page__image"
-            src={image.src}
-            alt={image.alt}
+            src={image.src || "/assets/icons/plantPlazaLogo.png"}
+            alt={image.alt || "Logo on about page"}
           />
         </article>
       </section>
