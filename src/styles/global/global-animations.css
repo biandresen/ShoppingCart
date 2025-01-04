@@ -2,6 +2,9 @@
 .animation__pulse {
   animation: pulse 1s infinite;
 }
+.animation__bounceIn {
+  animation: bounceIn 5s linear infinite;
+}
 
 @keyframes pulse {
   0% {
@@ -14,3 +17,4 @@
     transform: scale(1);
   }
 }
+

@@ -1,3 +1,4 @@
+/* Base styles for desktop */
 .footer {
   padding: var(--spacing-3xl) 0;
 }
@@ -94,6 +95,7 @@
   font-size: var(--font-size-m);
 }
 
+/* Media Queries for smaller screens */
 @media (min-width: 768px) and (max-width: 1199px) {
   .footer__links-container {
     gap: var(--spacing-m);

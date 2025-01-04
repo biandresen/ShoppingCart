@@ -1,0 +1,102 @@
+/* Base styles for desktop */
+.nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.nav__toggle-hide {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.nav__links {
+  display: flex;
+  margin-right: auto;
+  list-style: none;
+  gap: var(--spacing-l);
+  font-size: var(--font-size-l);
+}
+.nav__link {
+  color: var(--color-text-alternative);
+}
+.nav__link:hover {
+  text-decoration: underline;
+  text-shadow: var(--shadow-xs);
+}
+.nav__buttons-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+.nav__menu-icon {
+  width: var(--font-size-3xl);
+  padding: var(--spacing-s);
+  cursor: pointer;
+}
+
+/* Media Queries for smaller screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .nav__links {
+    font-size: var(--font-size-m);
+    gap: var(--spacing-m);
+  }
+  .nav__buttons-container {
+    gap: var(--spacing-s);
+    padding-left: var(--spacing-m);
+  }
+  .nav__buttons-container * {
+    font-size: calc(var(--font-size-xs) + 0.5vw);
+  }
+  .nav__cart-button {
+    min-width: 63px;
+  }
+  .nav__cart-image {
+    min-width: var(--font-size-m);
+    width: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav__toggle-hide {
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  .nav {
+    flex-direction: column;
+    padding: var(--spacing-l) 0;
+    max-height: 500px;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .nav__links {
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 0;
+    gap: var(--spacing-m);
+  }
+  .nav__buttons-container {
+    padding-top: var(--spacing-m);
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+  .nav__double-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav__buttons-container {
+    order: 3;
+  }
+  .nav__double-buttons {
+    order: 2;
+  }
+  .nav__cart-button {
+    order: 1;
+    width: fit-content;
+  }
+}

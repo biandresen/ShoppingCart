@@ -1,0 +1,51 @@
+@import "/src/styles/components/product-card.module.css";
+
+/* Base styles for desktop */
+.products-page {
+  padding-bottom: var(--spacing-2xl);
+}
+.products-page__heading {
+  text-align: center;
+  padding: var(--spacing-3xl);
+}
+.products-page__content {
+  position: relative;
+  background-color: var(--color-primary);
+  padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-2xl)
+    var(--spacing-2xl);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-l);
+  flex-wrap: wrap;
+}
+.products-page__all-products-button {
+  position: absolute;
+  top: 15px;
+}
+.products-page__info-button {
+  top: 10px;
+  right: 20px;
+}
+.products-page__no-products-found-message {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--color-secondary);
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 767px) {
+  .products-page__content {
+    padding-top: 75px;
+  }
+  .products-page__heading {
+    font-size: var(--font-size-3xl);
+    padding: var(--spacing-l) 0;
+  }
+  .products-page__no-products-found-message {
+    font-size: calc(var(--font-size-xs) + 3vw);
+  }
+  .products-page__all-products-button {
+    font-size: calc(var(--font-size-xs) + 1vw);
+  }
+}

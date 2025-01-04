@@ -6,7 +6,7 @@ import {
   Product,
 } from "../types";
 import { useFetch } from "../hooks/useFetch";
-import { getLocalItems, storeLocalItems } from "../utils/localStorage";
+import { getLocalStorage, setLocalStorage} from "../utils/localStorage";
 
 const CartContext = createContext({} as CartContextType);
 
@@ -20,7 +20,7 @@ export function useCart() {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    return getLocalItems<CartItem[]>("cartItems") || [];
+    return getLocalStorage<CartItem[]>("cartItems") || [];
   });
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<Product[] | null>(null);
@@ -40,7 +40,7 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   useEffect(() => {
-    storeLocalItems("cartItems", cartItems);
+    setLocalStorage("cartItems", cartItems);
   }, [cartItems]);
 
   const cartQuantity = useMemo(
@@ -57,6 +57,7 @@ export function CartProvider({ children }: CartProviderProps) {
     [cartItems, products]
   );
 
+  // Search products
   function searchProducts(productName: string): void {
     if (!products) return;
     const filteredProducts = products.filter((product) =>

@@ -1,0 +1,10 @@
+@import "/src/styles/components/hero-section.module.css";
+@import "/src/styles/components/shop-section.module.css";
+@import "/src/styles/components/explore-section.module.css";
+@import "/src/styles/components/testimonials-section.module.css";
+@import "/src/styles/components/discover-section.module.css";
+@import "/src/styles/components/newsletter-section.module.css";
+
+.main {
+  background-color: var(--color-bg);
+}

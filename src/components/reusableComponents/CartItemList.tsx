@@ -14,15 +14,13 @@ export default function CartItemCard({ id, name, price }: Product) {
   const quantity = getItemQuantity(id);
 
   return (
-    <div className="cart-list__card">
+    <div className="cart-list">
       <div className="cart-list__heading-price-container">
         <h3 className="cart-list__heading">
           <NavLink to={`/products/${id}`}>{name}</NavLink>
         </h3>
         <p className="cart-list__price">
-          <data value={price}>
-            {"$" + (formatCurrency(price) * quantity).toFixed(2)}
-          </data>
+          <data value={price}>{formatCurrency(price * quantity)}</data>
         </p>
       </div>
       <div className="cart-list__counter">

@@ -32,7 +32,7 @@
       "id": 5,
       "name": "Bird Foot",
       "description": "A rare and exotic flower with petals that resemble a bird’s foot, truly one-of-a-kind.",
-      "price": 35.00,
+      "price": 35.0,
       "imageUrl": "/assets/images/bird-foot.png"
     },
     {

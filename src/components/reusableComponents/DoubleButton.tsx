@@ -17,17 +17,17 @@ export default function DoubleButton({
   const navigate = useNavigate();
 
   return (
-    <div className={sectionClass + "__buttons u-double-buttons"}>
+    <div className={sectionClass + "__double-buttons u-double-buttons"}>
       <button
         onClick={() => {
           navigate("/products");
-          if (sectionClass === "header") {
+          if (sectionClass === "nav") {
             setIsSearchModalOpen(!isSearchModalOpen);
           } else {
             toggleNavBar(true);
           }
         }}
-        className={"button button--filled " + sectionClass + "_button"}
+        className={"button button--filled " + sectionClass + "__button"}
         type="button"
         aria-label={`button saying: ${firstButtonTitle}`}
       >
