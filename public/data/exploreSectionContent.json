@@ -1,0 +1,28 @@
+{
+  "subHeading": "Explore",
+  "heading": "Discover a Seamless Shopping Experience Today",
+  "body": "Our platform offers an intuitive interface that makes shopping effortless. Enjoy browsing through a diverse range of products with just a few clicks.",
+  "cards": [
+    {
+      "id": 1,
+      "imageUrl": "/assets/images/purple-flower.png",
+      "alt": "Vibrant purple flower",
+      "title": "Easy Product Management for Your Convenience",
+      "body": "Add products to your cart with ease and manage your selections effortlessly."
+    },
+    {
+      "id": 2,
+      "imageUrl": "/assets/images/blue-frog.png",
+      "alt": "Bright blue flower",
+      "title": "Instant Access to Your Shopping Cart",
+      "body": "View and modify your cart anytime with a simple click."
+    },
+    {
+      "id": 3,
+      "imageUrl": "/assets/images/tulip.png",
+      "alt": "Red tulip flower",
+      "title": "No Registration Required for Quick Shopping",
+      "body": "Start shopping immediately without the hassle of signing up."
+    }
+  ]
+}

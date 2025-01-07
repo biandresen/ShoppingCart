@@ -1,71 +1,65 @@
+import { useFetch } from "../hooks/useFetch";
+import { ExploreSectionContent } from "../types";
+import { logger } from "../utils/logger";
+import messages from "../utils/messages";
 import DoubleButton from "./reusableComponents/DoubleButton";
+import { FetchErrorMessage, LoadingMessage } from "./SmallComponents";
+import ExploreSectionCard from "./ExploreSectionCard";
+
+// Constants for fetching explore section content
+const DATA_KEY = "exploreSectionContent";
+const DATA_URL = "/data/exploreSectionContent.json";
 
 export default function ExploreSection() {
+  // Fetch explore section content with custom hook
+  const {
+    data: exploreSectionContent,
+    isLoading,
+    error,
+  } = useFetch<ExploreSectionContent>(DATA_KEY, DATA_URL);
+
+  // Handle loading state
+  if (isLoading || !exploreSectionContent) {
+    return (
+      <LoadingMessage message={messages.loading.page || "Loading content..."} />
+    );
+  }
+
+  if (error) {
+    // Logging error for debugging
+    logger.error("Error fetching explore section content", error);
+    return (
+      <FetchErrorMessage
+        message={
+          messages.error.page || "There was an error fetching the content."
+        }
+      />
+    );
+  }
+
+  // Destructure content with fallback values
+  const {
+    subHeading = "Explore",
+    heading = "Discover a Seamless Shopping Experience",
+    body = "Easy and intuitive shopping experience",
+    cards = [],
+  } = exploreSectionContent;
+
+  // Render main content
   return (
     <section className="explore-section">
       <div className="width-container u-flex-column">
         <div className="explore-section__content">
           <div className="explore-section__text">
-            <h5 className="explore-section__subheading">Explore</h5>
-            <h2 className="explore-section__heading">
-              Discover a Seamless Shopping Experience Today
-            </h2>
-            <p className="explore-section__description">
-              Our platform offers an intuitive interface that makes shopping
-              effortless. Enjoy browsing through a diverse range of products
-              with just a few clicks.
-            </p>
+            <h5 className="explore-section__subheading">{subHeading}</h5>
+            <h2 className="explore-section__heading">{heading}</h2>
+            <p className="explore-section__body">{body}</p>
           </div>
           <div className="explore-section__cards">
-            <div className="explore-section__card">
-              <img
-                src="/assets/images/purple-flower.png"
-                alt="A vibrant purple flower"
-                className="explore-section__image"
-                loading="lazy"
-              />
-              <div className="explore-section__card-text">
-                <h3 className="explore-section__card-title">
-                  Easy Product Management for Your Convenience
-                </h3>
-                <p className="explore-section__card-description">
-                  Add products to your cart with ease and manage your selections
-                  effortlessly.
-                </p>
-              </div>
-            </div>
-            <div className="explore-section__card">
-              <img
-                src="/assets/images/blue-frog.png"
-                alt="A bright blue flower"
-                className="explore-section__image"
-                loading="lazy"
-              />
-              <div className="explore-section__card-text">
-                <h3 className="explore-section__card-title">
-                  Instant Access to Your Shopping Cart
-                </h3>
-                <p className="explore-section__card-description">
-                  View and modify your cart anytime with a simple click.
-                </p>
-              </div>
-            </div>
-            <div className="explore-section__card">
-              <img
-                src="/assets/images/tulip.png"
-                alt="A red tulip flower"
-                className="explore-section__image"
-                loading="lazy"
-              />
-              <div className="explore-section__card-text">
-                <h3 className="explore-section__card-title">
-                  No Registration Required for Quick Shopping
-                </h3>
-                <p className="explore-section__card-description">
-                  Start shopping immediately without the hassle of signing up.
-                </p>
-              </div>
-            </div>
+            {/* Render each card dynamically */}
+            {cards.map((card, index) => (
+              <ExploreSectionCard key={card.id || index} {...card} />
+            ))}
           </div>
           <DoubleButton
             sectionClass="explore-section"
