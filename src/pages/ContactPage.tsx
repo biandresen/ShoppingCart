@@ -1,48 +1,26 @@
-import {
-  FetchErrorMessage,
-  LoadingMessage,
-  Container,
-} from "../components/SmallComponents";
-import { useFetch } from "../hooks/useFetch";
-import { ContactPageContent } from "../types";
-import { logger } from "../utils/logger";
+import ContentStatusHandler from "../components/reusableComponents/ContentStatusHandler";
+import { Container } from "../components/SmallComponents";
+import { useWebsiteText } from "../context/WebsiteTextContext";
 import messages from "../utils/messages";
 
-// Constants for fetching "contact page" content
-const DATA_KEY = "contactPageContent";
-const DATA_URL = "/data/contactPageContent.json";
-
 export default function ContactPage() {
-  // Fetch contact page content using a custom hook
-  const {
-    data: contactPageContent,
-    isLoading,
-    error,
-  } = useFetch<ContactPageContent>(DATA_KEY, DATA_URL);
+  // Fetch the about page content
+  const { websiteText, isLoading, error } = useWebsiteText();
 
-  if (isLoading || !contactPageContent) {
-    return (
-      <LoadingMessage
-        message={messages.loading.page || "Loading content..."}
-      />
-    );
-  }
+  const contentStatusHandler = (
+    <ContentStatusHandler
+      isLoading={isLoading}
+      error={error}
+      websiteText={websiteText}
+      loadingMessage={messages.loading.page}
+      errorMessage={messages.error.page}
+    />
+  );
 
-  if (error) {
-    // Logging error for debugging
-    logger.error("Error fetching contact page content", error);
-    return (
-      <FetchErrorMessage
-        message={
-          messages.error.page ||
-          "There was an error fetching the content."
-        }
-      />
-    );
-  }
+  if (isLoading || error || !websiteText) return contentStatusHandler;
 
   const { heading, intro, getInTouch, follow, image } =
-    contactPageContent || {};
+    websiteText.contactPage || {};
 
   // Renders the "Introduction" section of the contact page
   function IntroSection(): JSX.Element {
@@ -57,9 +35,7 @@ export default function ContactPage() {
   function GetInTouchSection(): JSX.Element {
     return (
       <>
-        <h3 className="contact-page__content-heading">
-          {getInTouch.heading}
-        </h3>
+        <h3 className="contact-page__content-heading">{getInTouch.heading}</h3>
         <ul className="contact-page__body-list">
           {getInTouch.list.map(({ id, boldText, text }, index) => (
             <li key={id || index} className="contact-page__body-list-item">

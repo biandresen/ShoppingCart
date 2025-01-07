@@ -1,10 +1,17 @@
-import { createContext, useContext, useState, useMemo, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
+  ReactNode,
+} from "react";
 import {
   CartItem,
   CartContextType,
   CartProviderProps,
   Product,
-} from "../types";
+} from "../types/cartContextTypes";
 import { useFetch } from "../hooks/useFetch";
 import { getLocalStorage, setLocalStorage } from "../utils/localStorage";
 
@@ -23,14 +30,18 @@ export function useCart() {
 }
 
 // Main component
-export function CartProvider({ children }: CartProviderProps) {
+export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     return getLocalStorage<CartItem[]>("cartItems") || [];
   });
   const [menuIsOpen, setMenuIsOpen] = useState(false); // State for the mobile menu(navbar)
   const [searchResults, setSearchResults] = useState<Product[] | null>(null); // State for search results
 
-  const { data, isLoading, error } = useFetch<{ products: Product[] }>(DATA_KEY, DATA_URL); // Fetch products with custom hook
+  // Fetch products with custom hook
+  const { data, isLoading, error } = useFetch<{ products: Product[] }>(
+    DATA_KEY,
+    DATA_URL
+  );
   const products = data?.products || []; // Extract products from the data
 
   // Toggle mobile menu(navbar)
@@ -131,25 +142,25 @@ export function CartProvider({ children }: CartProviderProps) {
   return (
     <CartContext.Provider
       value={{
-        getItemQuantity,       // Function to get quantity of a specific item in the cart
-        increaseCartQuantity,  // Function to increase quantity of a specific item in the cart
-        decreaseCartQuantity,  // Function to decrease quantity of a specific item in the cart
-        removeFromCart,        // Function to remove a specific item from the cart
-        cartItems,             // Array of cart items
-        cartQuantity,          // Total quantity of all items in the cart
-        totalPrice,            // Total price of all items in the cart
-        products,              // Array of products
-        isLoading,             // Loading state of the products fetched by useFetch custom hook. Built into tanStackQuery
-        error,                 // Error state of the products fetched by useFetch custom hook. Built into tanStackQuery
-        menuIsOpen,            // State for the mobile menu(navbar)
-        toggleMenu,            // Function to toggle the mobile menu(navbar)
-        emptyCart,             // Function to empty the cart
-        searchProducts,        // Function to search products
-        searchResults,         // Array of search results
-        resetSearch,           // Function to clear search results
+        getItemQuantity, // Function to get quantity of a specific item in the cart
+        increaseCartQuantity, // Function to increase quantity of a specific item in the cart
+        decreaseCartQuantity, // Function to decrease quantity of a specific item in the cart
+        removeFromCart, // Function to remove a specific item from the cart
+        cartItems, // Array of cart items
+        cartQuantity, // Total quantity of all items in the cart
+        totalPrice, // Total price of all items in the cart
+        products, // Array of products
+        isLoading, // Loading state of the products fetched by useFetch custom hook. Built into tanStackQuery
+        error, // Error state of the products fetched by useFetch custom hook. Built into tanStackQuery
+        menuIsOpen, // State for the mobile menu(navbar)
+        toggleMenu, // Function to toggle the mobile menu(navbar)
+        emptyCart, // Function to empty the cart
+        searchProducts, // Function to search products
+        searchResults, // Array of search results
+        resetSearch, // Function to clear search results
       }}
     >
-      {children}              {/* Render children components within the provider */}
+      {children} {/* Render children components within the provider */}
     </CartContext.Provider>
   );
 }

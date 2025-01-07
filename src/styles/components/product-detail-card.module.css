@@ -1,5 +1,5 @@
 /* Base styles for desktop */
-.product-detail-card{
+.product-detail-card {
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -62,17 +62,21 @@
   translate: -75%;
 }
 
-
 /* Media Queries for smaller screens */
 @media (max-width: 1000px) {
-  .product-detail-card{
+  .product-detail-card {
     flex-direction: column;
     align-items: center;
+  }
+  .product-detail-card__container {
+    align-items: center;
+    text-align: center;
   }
   .product-detail-card__image {
     width: 400px;
   }
   .product-detail-card__counter {
+    justify-content: center;
     position: static;
     align-items: center;
     padding: var(--spacing-xl) 0 0 0;

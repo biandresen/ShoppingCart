@@ -50,7 +50,7 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
 }
-.cart-card__reset-item-count-button {
+.cart-card__reset-icon {
   bottom: -8px;
 }
 
@@ -89,7 +89,7 @@
     padding-bottom: 1px;
     font-size: calc(var(--font-size-xs) + 1vw);
   }
-  .cart-card__reset-item-count-button {
+  .cart-card__reset-icon{
     bottom: -15px;
   }
 }

@@ -1,7 +1,8 @@
-import { Product } from "../../types";
+import { Product } from "../../types/cartContextTypes";
 import { useCart } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { NavLink } from "react-router-dom";
+import CartCounter from "./CartCounter";
 
 export default function CartItemCard({ id, name, price }: Product) {
   const {
@@ -23,37 +24,14 @@ export default function CartItemCard({ id, name, price }: Product) {
           <data value={price}>{formatCurrency(price * quantity)}</data>
         </p>
       </div>
-      <div className="cart-list__counter">
-        <button
-          onClick={() => decreaseCartQuantity(id)}
-          type="button"
-          className="button cart-list__delete button--filled"
-        >
-          Del
-        </button>
-        <div className="cart-list__count">
-          {quantity}
-          <button
-            onClick={() => removeFromCart(id)}
-            className={"button cart-list__quantity-reset"}
-            type="button"
-            aria-label="reset quantity"
-          >
-            <img
-              className="quantity-reset-icon cart-list__reset-icon"
-              src="/assets/icons/trash.svg"
-              alt=""
-            />
-          </button>
-        </div>
-        <button
-          onClick={() => increaseCartQuantity(id)}
-          type="button"
-          className="button cart-list__add button--filled"
-        >
-          Add
-        </button>
-      </div>
+      <CartCounter
+        id={id}
+        quantity={quantity}
+        onAdd={increaseCartQuantity}
+        onRemove={decreaseCartQuantity}
+        onReset={removeFromCart}
+        className={"cart-list"}
+      />
     </div>
   );
 }

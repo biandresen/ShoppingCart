@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router";
 import { useCart } from "../../context/CartContext";
-import { Product } from "../../types";
+import { Product } from "../../types/cartContextTypes";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { NavLink } from "react-router-dom";
+import CartCounter from "./CartCounter";
 
 export default function ProductCard({
   id,
@@ -42,39 +43,14 @@ export default function ProductCard({
       <p className="product-card__price">
         <data value={price}>{formatCurrency(price)}</data>
       </p>
-      <div className="product-card__counter">
-        <button
-          type="button"
-          className="button product-card__delete button--filled"
-          onClick={() => decreaseCartQuantity(id)}
-          aria-label={`Remove one ${name}`}
-        >
-          Del
-        </button>
-        <div className="product-card__count" aria-label="Current quantity">
-          {quantity}
-          <button
-            onClick={() => removeFromCart(id)}
-            className={`${quantity ? "button quantity-reset-button product-card__reset-button" : "u-d-none"}`}
-            type="button"
-            aria-label="reset quantity"
-          >
-            <img
-              className="quantity-reset-icon"
-              src="/assets/icons/trash.svg"
-              alt=""
-            />
-          </button>
-        </div>
-        <button
-          type="button"
-          className="button product-card__add button--filled"
-          onClick={() => increaseCartQuantity(id)}
-          aria-label={`Add one ${name}`}
-        >
-          Add
-        </button>
-      </div>
+      <CartCounter
+        id={id}
+        quantity={quantity}
+        onAdd={increaseCartQuantity}
+        onRemove={decreaseCartQuantity}
+        onReset={removeFromCart}
+        className={"product-card"}
+      />
     </article>
   );
 }

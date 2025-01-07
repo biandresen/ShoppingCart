@@ -1,28 +1,38 @@
 import { NavLink } from "react-router-dom";
 import SignupForm from "./reusableComponents/SignupForm";
 import Logo from "./reusableComponents/Logo";
-import {
-  Container,
-  FetchErrorMessage,
-  LoadingMessage,
-} from "./SmallComponents";
-import {
-  NavigationLinkGroupProps,
-  SocialLinkProps,
-  SocialLinkGroupProps,
-  NavigationLinkProps,
-  FooterSectionContent,
-} from "../types";
-import { useFetch } from "../hooks/useFetch";
+import { Container } from "./SmallComponents";
 import messages from "../utils/messages";
-import { logger } from "../utils/logger";
+import { useWebsiteText } from "../context/WebsiteTextContext";
+import ContentStatusHandler from "./reusableComponents/ContentStatusHandler";
 
-// Constants for fetching explore section content
-const DATA_KEY = "footerContent";
-const DATA_URL = "/data/footerSectionContent.json";
+import {
+  LinkSection as NavigationLinkGroupProps,
+  SocialLinksSection as SocialLinkGroupProps,
+  NavigationLinkProps,
+  SocialLinkProps,
+} from "../types/websiteTextTypes";
 
-function NewsletterSection(): JSX.Element {
-  return (
+export default function Footer() {
+  const { websiteText, isLoading, error } = useWebsiteText();
+
+  const contentStatusHandler = (
+    <ContentStatusHandler
+      isLoading={isLoading}
+      error={error}
+      websiteText={websiteText}
+      loadingMessage={messages.loading.page}
+      errorMessage={messages.error.page}
+    />
+  );
+
+  if (isLoading || error || !websiteText) return contentStatusHandler;
+
+  const { footerNewsletter, quickLinks, connectLinks, socialLinks, policy } =
+    websiteText.footer || {};
+
+  // Website section
+  const NewsletterSection = () => (
     <div className="footer__newsletter-section">
       <div className="footer__logo-container">
         <Logo
@@ -30,121 +40,98 @@ function NewsletterSection(): JSX.Element {
           alt="Plant Plaza Logo"
           imgClass="footer__logo"
         />
+        <h3 className="footer__newsletter-heading">
+          {footerNewsletter.heading}
+        </h3>
       </div>
-      <p className="footer__newsletter-body">
-        Subscribe to our newsletter for the latest updates on features and new
-        product.
-      </p>
+      <p className="footer__newsletter-body">{footerNewsletter.body}</p>
       <SignupForm formClass="footer" buttonText="Join Now" />
     </div>
   );
-}
 
-const NavigationLink = ({ href, to, children }: NavigationLinkProps) => {
-  return to ?
-      <NavLink className="footer__link" to={to}>
-        {children}
-      </NavLink>
-    : <a className="footer__link" href={href}>
-        {children}
-      </a>;
-};
+  // Local component
+  const NavigationLink = ({ href, to, children }: NavigationLinkProps) => {
+    return to ?
+        <NavLink className="footer__link" to={to}>
+          {children}
+        </NavLink>
+      : <a className="footer__link" href={href}>
+          {children}
+        </a>;
+  };
 
-const SocialLink = ({ href, iconSrc, alt, label }: SocialLinkProps) => (
-  <a className="footer__social-link" href={href}>
-    <img className="footer__social-icon" src={iconSrc} alt={alt} />
-    <span>{label}</span>
-  </a>
-);
-
-function NavigationLinkGroup(navigationSection: NavigationLinkGroupProps): JSX.Element {
-  return (
-    <div className="footer__navigation-links">
-      <h5 className="footer__link-title">{navigationSection.header}</h5>
-      {navigationSection.links.map((link, index) => (
-        <NavigationLink key={link.text || link.to || link.href || index} to={link.to}>
-          {link.text}
-        </NavigationLink>
-      ))}
-    </div>
+  // Local component
+  const SocialLink = ({ href, iconSrc, alt, label }: SocialLinkProps) => (
+    <a className="footer__social-link" href={href}>
+      <img className="footer__social-icon" src={iconSrc} alt={alt} />
+      <span>{label}</span>
+    </a>
   );
-}
 
-function SocialLinkGroup(socialSection: SocialLinkGroupProps): JSX.Element {
-  return (
-    <div className="footer__social-links">
-      <h5 className="footer__link-title">Stay Updated</h5>
-      {socialSection.links.map((link, index) => (
-        <SocialLink key={index} {...link} />
-      ))}
-    </div>
-  );
-}
-
-function LinkSection() {
-  // Fetch explore section content with custom hook
-  const {
-    data: footerSectionContent,
-    isLoading,
-    error,
-  } = useFetch<FooterSectionContent>(DATA_KEY, DATA_URL);
-
-  const { quickLinks, connectLinks, socialLinks } = footerSectionContent || {};
-
-  // Handle loading state
-  if (isLoading || !footerSectionContent) {
+  // Local component
+  const NavigationLinkGroup = ({
+    header,
+    links,
+  }: NavigationLinkGroupProps): JSX.Element => {
     return (
-      <LoadingMessage message={messages.loading.page || "Loading content..."} />
+      <div className="footer__navigation-links">
+        <h5 className="footer__link-title">{header}</h5>
+        {links.map((link, index) => (
+          <NavigationLink
+            key={link.text || link.to || link.href || index}
+            to={link.to}
+            href={link.href}
+          >
+            {link.text}
+          </NavigationLink>
+        ))}
+      </div>
     );
-  }
+  };
 
-  if (error) {
-    // Logging error for debugging
-    logger.error(`Error fetching content from ${DATA_URL}:`, error);
+  // Local component
+  const SocialLinkGroup = ({ links }: SocialLinkGroupProps): JSX.Element => {
     return (
-      <FetchErrorMessage
-        message={
-          messages.error.page || "There was an error fetching the content."
-        }
-      />
+      <div className="footer__social-links">
+        <h5 className="footer__link-title">Stay Updated</h5>
+        {links.map((link, index) => (
+          <SocialLink key={index} {...link} />
+        ))}
+      </div>
     );
-  }
+  };
 
-  return (
+  // Website Section
+  const LinkSection = () => (
     <div className="footer__link-section">
       {quickLinks && <NavigationLinkGroup {...quickLinks} />}
       {connectLinks && <NavigationLinkGroup {...connectLinks} />}
       {socialLinks && <SocialLinkGroup {...socialLinks} />}
     </div>
   );
-}
 
-function PolicySection() {
-  return (
+  // Website Section
+  const PolicySection = () => (
     <div className="footer__policy">
       <hr />
       <div className="footer__policy-content">
-        <p className="footer__copyright">
-          © 2024 Plant Plaza. All rights reserved.
-        </p>
+        <p className="footer__copyright">{policy?.copyright}</p>
         <div className="footer__policy-links">
           <a className="footer__policy-link" href="/">
-            Privacy Policy
+            {policy?.privacy}
           </a>
           <a className="footer__policy-link" href="/">
-            Terms of Service
+            {policy?.terms}
           </a>
           <a className="footer__policy-link" href="/">
-            Cookie Settings
+            {policy?.cookies}
           </a>
         </div>
       </div>
     </div>
   );
-}
 
-// Main footer content
-export default function Footer() {
+  // Main content
   return (
     <footer className="footer">
       <Container>

@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
-import { SearchModalProps } from "../../types";
+import { SearchModalProps } from "../../types/componentTypes";
 
 export default function SearchModal({
   isOpen,
   onSearch,
   onClose,
   message,
-  toggleNavBar,
+  toggleMenu,
 }: SearchModalProps) {
   const [productName, setProductName] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -22,7 +22,7 @@ export default function SearchModal({
     onSearch(productName);
     setProductName("");
     onClose();
-    toggleNavBar(true);
+    toggleMenu(true);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

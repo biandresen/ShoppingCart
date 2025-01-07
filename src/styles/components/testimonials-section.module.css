@@ -27,6 +27,9 @@
 .testimonial-card__rating {
   display: flex;
 }
+.testimonial-card__star-icon {
+  width: 20px;
+}
 .testimonial-card__profile {
   display: flex;
   flex-direction: column;
