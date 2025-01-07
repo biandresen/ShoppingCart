@@ -1,4 +1,4 @@
-import { DoubleButtonProps } from "../../types";
+import { DoubleButtonProps } from "../../types/componentTypes";
 import { useNavigate } from "react-router";
 import Modal from "./Modal";
 import { useState } from "react";
@@ -13,7 +13,7 @@ export default function DoubleButton({
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
-  const { toggleNavBar, searchProducts } = useCart();
+  const { toggleMenu, searchProducts } = useCart();
   const navigate = useNavigate();
 
   return (
@@ -24,7 +24,7 @@ export default function DoubleButton({
           if (sectionClass === "nav") {
             setIsSearchModalOpen(!isSearchModalOpen);
           } else {
-            toggleNavBar(true);
+            toggleMenu(true);
           }
         }}
         className={"button button--filled " + sectionClass + "__button"}
@@ -53,7 +53,7 @@ export default function DoubleButton({
         onSearch={searchProducts}
         onClose={() => setIsSearchModalOpen(false)}
         message="Search For Products"
-        toggleNavBar={toggleNavBar}
+        toggleMenu={toggleMenu}
       />
     </div>
   );

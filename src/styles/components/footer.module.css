@@ -21,6 +21,16 @@
   gap: var(--spacing-m);
   flex: 1;
 }
+.footer__logo-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+.footer__newsletter-heading {
+  color: var(--color-secondary);
+  font-size: calc(var(--font-size-m) + 1.8vw);
+}
 .footer__form {
   display: flex;
   flex-direction: column;
@@ -83,7 +93,7 @@
   display: flex;
   justify-content: space-between;
 }
-.footer__policy-link {
+.footer__policy-links {
   display: flex;
   gap: var(--spacing-l);
 }
@@ -102,6 +112,10 @@
   }
   .footer__form {
     gap: var(--spacing-m);
+  }
+  .footer__form-group {
+    flex-direction: column;
+    background-color: inherit;
   }
   .footer__navigation-links {
     flex-direction: column;
@@ -126,6 +140,10 @@
   }
   .footer__form {
     gap: var(--spacing-m);
+  }
+  .footer__form-group {
+    flex-direction: column;
+    background-color: inherit;
   }
   .footer__navigation-links {
     flex-direction: column;

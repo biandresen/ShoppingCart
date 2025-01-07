@@ -1,5 +1,5 @@
 // ENTRY POINT OF THE APPLICATION
-
+import { WebsiteTextProvider } from "./context/WebsiteTextContext";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/main.css";
@@ -14,9 +14,11 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <AppRouter />
-      </CartProvider>
+      <WebsiteTextProvider>
+        <CartProvider>
+          <AppRouter />
+        </CartProvider>
+      </WebsiteTextProvider>
     </QueryClientProvider>
   </StrictMode>
 );
