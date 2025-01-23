@@ -9,7 +9,6 @@ import {
 import {
   CartItem,
   CartContextType,
-  CartProviderProps,
   Product,
 } from "../types/cartContextTypes";
 import { useFetch } from "../hooks/useFetch";

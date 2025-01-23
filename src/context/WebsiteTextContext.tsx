@@ -1,6 +1,6 @@
 // Import types
 import { createContext, useContext, ReactNode } from "react";
-import { WebsiteTextData, TextContentContextProps } from "../types/websiteTextTypes"; // Assuming this file exists
+import { WebsiteTextData, TextContentContextProps } from "../types/websiteTextTypes";
 import { useFetch } from "../hooks/useFetch";
 
 // Define constants

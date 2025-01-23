@@ -1,4 +1,4 @@
-//* DEFINE APPLICATION ROUTES AND ERROR HANDLING
+//* APPLICATION ROUTES AND ERROR HANDLING
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "../pages/RootLayout";
