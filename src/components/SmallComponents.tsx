@@ -1,5 +1,6 @@
 import Logo from "./reusableComponents/Logo";
 
+// Loading message type and component
 type LoadingMessageProps = {
   message: string;
 };
@@ -16,6 +17,7 @@ export function LoadingMessage({ message }: LoadingMessageProps) {
   );
 }
 
+// Fetch error-message type and component
 type FetchErrorMessageProps = {
   message: string;
 };
@@ -23,6 +25,7 @@ export function FetchErrorMessage({ message }: FetchErrorMessageProps) {
   return <p className="fetch-error-message">{message}</p>;
 }
 
+// Container type and component
 type ContainerProps = {
   children: React.ReactNode;
   className?: string;

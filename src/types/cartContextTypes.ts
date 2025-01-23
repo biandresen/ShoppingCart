@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 // Product-related types
 export type Product = {
@@ -12,11 +11,6 @@ export type Product = {
 export type CartItem = {
   id: number;
   quantity: number;
-};
-
-// Context-related types
-export type CartProviderProps = {
-  children: ReactNode;
 };
 
 export type CartContextType = {
