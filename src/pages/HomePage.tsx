@@ -1,29 +1,15 @@
 import { Container } from "../components/SmallComponents";
-import messages from "../utils/messages";
-import { useWebsiteText } from "../context/WebsiteTextContext";
 import DoubleButton from "../components/reusableComponents/DoubleButton";
-import ContentStatusHandler from "../components/reusableComponents/ContentStatusHandler";
+import { useOutletContext } from "react-router";
 import {
   ExploreCard as ExploreSectionCardProps,
   TestimonialCardProps,
+  WebsiteTextData,
 } from "../types/websiteTextTypes";
 import SignupForm from "../components/reusableComponents/SignupForm";
 
 export default function HomePage() {
-  // Fetch the about page content
-  const { websiteText, isLoading, error } = useWebsiteText();
-
-  const contentStatusHandler = (
-    <ContentStatusHandler
-      isLoading={isLoading}
-      error={error}
-      websiteText={websiteText}
-      loadingMessage={messages.loading.page}
-      errorMessage={messages.error.page}
-    />
-  );
-
-  if (isLoading || error || !websiteText) return contentStatusHandler;
+  const { websiteText } = useOutletContext<{ websiteText: WebsiteTextData }>()
 
   const {
     heroSection,

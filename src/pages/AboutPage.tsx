@@ -1,23 +1,9 @@
-import ContentStatusHandler from "../components/reusableComponents/ContentStatusHandler";
 import { Container } from "../components/SmallComponents";
-import { useWebsiteText } from "../context/WebsiteTextContext";
-import messages from "../utils/messages";
+import { useOutletContext } from "react-router-dom";
+import { WebsiteTextData } from "../types/websiteTextTypes";
 
 export default function AboutPage() {
-  // Fetch the about page content
-  const { websiteText, isLoading, error } = useWebsiteText();
-
-  const contentStatusHandler = (
-    <ContentStatusHandler
-      isLoading={isLoading}
-      error={error}
-      websiteText={websiteText}
-      loadingMessage={messages.loading.page}
-      errorMessage={messages.error.page}
-    />
-  );
-
-  if (isLoading || error || !websiteText) return contentStatusHandler;
+  const { websiteText } = useOutletContext<{ websiteText: WebsiteTextData }>()
 
   const { heading, content, image } = websiteText.aboutPage || {};
 

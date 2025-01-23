@@ -26,9 +26,7 @@ export default function CartPage() {
 
   if (isLoading || !cartItems)
     return (
-      <LoadingMessage
-        message={messages.loading.page || "Loading content..."}
-      />
+      <LoadingMessage message={messages.loading.page || "Loading content..."} />
     );
 
   if (error) {
@@ -37,8 +35,7 @@ export default function CartPage() {
     return (
       <FetchErrorMessage
         message={
-          messages.error.page ||
-          "There was an error fetching the content."
+          messages.error.page || "There was an error fetching the content."
         }
       />
     );
@@ -54,7 +51,11 @@ export default function CartPage() {
             {formatCurrency(totalPrice)}
           </data>
         </p>
-        <button className="button cart-page__checkout-button" type="button" aria-label="checkout button">
+        <button
+          className="button cart-page__checkout-button"
+          type="button"
+          aria-label="checkout button"
+        >
           Checkout:{" "}
           <img
             className="cart-page__checkout-icon"

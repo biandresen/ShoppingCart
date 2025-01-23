@@ -2,32 +2,20 @@ import { NavLink } from "react-router-dom";
 import SignupForm from "./reusableComponents/SignupForm";
 import Logo from "./reusableComponents/Logo";
 import { Container } from "./SmallComponents";
-import messages from "../utils/messages";
-import { useWebsiteText } from "../context/WebsiteTextContext";
-import ContentStatusHandler from "./reusableComponents/ContentStatusHandler";
 
 import {
   LinkSection as NavigationLinkGroupProps,
   SocialLinksSection as SocialLinkGroupProps,
   NavigationLinkProps,
   SocialLinkProps,
+  WebsiteTextData,
 } from "../types/websiteTextTypes";
 
-export default function Footer() {
-  const { websiteText, isLoading, error } = useWebsiteText();
+type FooterProps = {
+  websiteText: WebsiteTextData;
+};
 
-  const contentStatusHandler = (
-    <ContentStatusHandler
-      isLoading={isLoading}
-      error={error}
-      websiteText={websiteText}
-      loadingMessage={messages.loading.page}
-      errorMessage={messages.error.page}
-    />
-  );
-
-  if (isLoading || error || !websiteText) return contentStatusHandler;
-
+export default function Footer({ websiteText }: FooterProps) {
   const { footerNewsletter, quickLinks, connectLinks, socialLinks, policy } =
     websiteText.footer || {};
 

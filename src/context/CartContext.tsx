@@ -6,11 +6,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import {
-  CartItem,
-  CartContextType,
-  Product,
-} from "../types/cartContextTypes";
+import { CartItem, CartContextType, Product } from "../types/cartContextTypes";
 import { useFetch } from "../hooks/useFetch";
 import { getLocalStorage, setLocalStorage } from "../utils/localStorage";
 
