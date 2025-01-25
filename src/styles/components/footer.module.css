@@ -29,7 +29,7 @@
 }
 .footer__newsletter-heading {
   color: var(--color-secondary);
-  font-size: calc(var(--font-size-m) + 1.8vw);
+  font-size: calc(var(--font-size-3xl));
 }
 .footer__form {
   display: flex;
@@ -125,6 +125,9 @@
   .footer__input {
     background-color: var(--color-secondary);
   }
+  .footer__newsletter-heading {
+    font-size: calc(var(--font-size-xl) + 1.2vw);
+  }
 }
 
 @media (max-width: 767px) {
@@ -175,5 +178,8 @@
     flex-direction: column;
     gap: var(--spacing-s);
     padding: 0 0 20px 0;
+  }
+  .footer__newsletter-heading {
+    font-size: calc(var(--font-size-m) + 3vw);
   }
 }
