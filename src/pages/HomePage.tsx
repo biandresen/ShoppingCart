@@ -43,7 +43,6 @@ export default function HomePage() {
             "
           className="hero-section__image"
           alt="A green plant basking in the sun"
-          loading="lazy"
         />
       </section>
     );
