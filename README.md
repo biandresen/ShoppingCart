@@ -5,11 +5,11 @@ Welcome to my e-commerce website project! This project is part of [The Odin Proj
 🚀 **Live server:** [https://shopping-cart-onb6ibnls-biandresens-projects.vercel.app/](https://shopping-cart-onb6ibnls-biandresens-projects.vercel.app/)
 
 ## 💻 Preview
-![Desktop: Home page scroll](desktop_homepagescroll.gif)
+![desktop_homepagescroll](https://github.com/user-attachments/assets/c2084324-475a-4294-b72b-5f6ed0a5358a)
 
 ## 📝Planning
 Planned with Figma.
-![Figma design](figma_design.png)
+![figma_design](https://github.com/user-attachments/assets/00ebd83a-d88f-420c-8298-6b30661b7fbf)
 
 ## ✨ Features
 
@@ -78,56 +78,6 @@ src/
 ├── utils/              # 🛠️ Utility functions
 └── main.tsx            # 🚪 Entry point
 ```
-## 📸 Screenshots
-
-### Homepage
-![Desktop: Home page](desktop_homepage.png)
-
-#### 📱Mobile View
-![Mobile: Home page](mobile_homepage.png)
-*Sticky cart button and toggleable menu on mobile.*
-
-### Products Page
-![Desktop: Products page](desktop_productspage.png)
-*Add, delete and reset items from cart*
-
-#### 📱Mobile View
-![Mobile: Products page](mobile_productspage.png)
-
-### Product Details Page
-![Desktop: Product details page](desktop_productdetailspage.png)
-*View the details of a product, isolated*
-
-#### 📱Mobile View
-![Mobile: Product details page](mobile_productdetailspage.png)
-
-### About Page
-![Desktop: About page](desktop_aboutpage.png)
-
-#### 📱Mobile View
-![Mobile: About page](mobile_aboutpage.png)
-
-### Contact Page
-![Desktop: Contact page](desktop_contactpage.png)
-
-#### 📱Mobile View
-![Mobile: Contact page](mobile_contactpage.png)
-
-### Cart Page
-![Desktop: Cart page, card layout](desktop_cartpage_cardlayout.png)
-![Desktop: Cart page, list layout](desktop_cartpage_listlayout.png)
-*Real-time updates for price and quantity in the cart.*
-
-#### 📱Mobile View
-![Mobile: Cart page, card layout](mobile_cartpage__cardlayout.png)
-![Mobile: Cart page, list layout](mobile_cartpage_listlayout.png)
-
-### Product Search
-![Desktop: Product Search](desktop_productsearch.gif)
-
-### Open/Close Menu
-![Mobile: Open/Close menu](mobile_openclosemenu.gif)
-
 ## 📝 Lessons Learned
 
 This project allowed me to:
@@ -140,11 +90,12 @@ This project allowed me to:
 
 ## 🚀 Potential for Future Improvements
 
-While this project achieves its core objectives, here are some enhancements I’d like to implement:
+While this project achieves its core objectives, here are some enhancements I’d consider implementing:
 
 - 🛠️ Add a backend for user authentication, payment processing, and order management.
 - 🛒 Implement a fully functional checkout process.
 - ♿ Enhance accessibility for improved usability.
+- ⚡ Enhance performance and SEO
 - 🧪 Add unit and integration tests for robust code quality.
 
 ## 📞 Contact
@@ -156,5 +107,58 @@ If you have any questions or feedback, feel free to reach out:
 - 💼 **LinkedIn**: [https://www.linkedin.com/in/birger-andresen-75690322b/](https://www.linkedin.com/in/birger-andresen-75690322b/)
 
 ---
+## 🙏Thank You
 
-Thank you for taking the time to review my project! I hope it demonstrates my current skills and potential as a developer. Feedback is always welcome! 🙏
+Thank you for taking the time to review my project! I hope it demonstrates my current skills and potential as a developer. Feedback is always welcome!
+
+## 📸 Screenshots
+
+### Product Search
+![desktop_productsearch](https://github.com/user-attachments/assets/eb8127ba-d860-439c-88b1-51e96f41ce83)
+
+### Open/Close Menu
+![mobile_openclosemenu](https://github.com/user-attachments/assets/4d577ffb-4702-4d06-9a80-964058b073ae)
+
+### Homepage
+![desktop_homepage](https://github.com/user-attachments/assets/da5e91e7-c988-4742-adba-acda69a93bce)
+
+#### 📱Mobile View
+![mobile_homepage](https://github.com/user-attachments/assets/03742c4a-9f42-4f69-acf1-575a061bfdf9)
+*Sticky cart button and toggleable menu on mobile.*
+
+### Products Page
+![desktop_productspage](https://github.com/user-attachments/assets/54812ace-f420-44d1-aed5-622858d52fbc)
+*Add, delete and reset items from cart*
+
+#### 📱Mobile View
+![mobile_productspage](https://github.com/user-attachments/assets/132d27c8-7b74-41d8-8dae-0837b82dbb74)
+
+### Product Details Page
+![desktop_productdetailspage](https://github.com/user-attachments/assets/f5185d71-55b2-49b8-9abd-b72c41450c5c)
+*View the details of a product, isolated*
+
+#### 📱Mobile View
+![mobile_productdetailspage](https://github.com/user-attachments/assets/6689db93-74c9-40cc-92ab-ae423397ddf2)
+
+### About Page
+![desktop_aboutpage](https://github.com/user-attachments/assets/dc9fa164-9504-487f-9602-738216c7ce74)
+
+#### 📱Mobile View
+![mobile_aboutpage](https://github.com/user-attachments/assets/f7a763a8-2da5-4cfb-b08b-842f3270068e)
+
+### Contact Page
+![desktop_contactpage](https://github.com/user-attachments/assets/3ae605ae-3d3f-4cbc-bd0c-424e4a731878)
+
+#### 📱Mobile View
+![mobile_contactpage](https://github.com/user-attachments/assets/ed26983b-cf09-4bc8-a047-e4e3b6a6400e)
+
+### Cart Page
+![desktop_cartpage_cardlayout](https://github.com/user-attachments/assets/104346de-d8d5-4ec9-9b04-8e60a2db4f85)
+####
+![desktop_cartpage_listlayout](https://github.com/user-attachments/assets/5c72c775-3ed8-4b77-8ced-0feea21c7077)
+*Real-time updates for price and quantity in the cart.*
+
+#### 📱Mobile View
+![mobile_cartpage__cardlayout](https://github.com/user-attachments/assets/7728b9b9-08fb-45c2-bc55-35ebed314830)
+####
+![mobile_cartpage_listlayout](https://github.com/user-attachments/assets/ac7c6f13-7c99-4570-bf57-333b9c2c9797)
