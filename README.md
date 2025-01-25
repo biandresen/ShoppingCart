@@ -2,7 +2,7 @@
 
 Welcome to my e-commerce website project! This project is part of [The Odin Project](https://www.theodinproject.com), a full-stack web development course, and serves as a demonstration of my skills in building a modern web application using React, TypeScript, and other popular libraries.
 
-🚀 **Live server:** [https://shopping-cart-onb6ibnls-biandresens-projects.vercel.app/](https://shopping-cart-onb6ibnls-biandresens-projects.vercel.app/)
+🚀 **Live Demo:** <a href="https://shopping-cart-onb6ibnls-biandresens-projects.vercel.app/">Check it out here</a>
 
 ## 💻 Preview
 ![desktop_homepagescroll](https://github.com/user-attachments/assets/c2084324-475a-4294-b72b-5f6ed0a5358a)
@@ -109,7 +109,7 @@ If you have any questions or feedback, feel free to reach out:
 ---
 ## 🙏Thank You
 
-Thank you for taking the time to review my project! I hope it demonstrates my current skills and potential as a developer. Feedback is always welcome!
+Thank you for taking the time to review my project. I hope it demonstrates my current skills and potential as a developer. Feedback is always welcome!
 
 ## 📸 Screenshots
 
